@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alpha Whale | Prediction Market Trading Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=Inter:wght@200;300;400&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-deep: #0a0a0a;
+      --accent-primary: #00d4ff;
+      --accent-secondary: #0066ff;
+      --accent-glow: rgba(0, 212, 255, 0.5);
+      --text-primary: #ffffff;
+      --text-muted: rgba(255, 255, 255, 0.5);
+    }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      font-family: 'Bebas Neue', sans-serif;
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* Grungy noise texture overlay */
+    .noise {
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      opacity: 0.04;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Subtle color wash */
+    .color-wash {
+      position: fixed;
+      inset: 0;
+      background: 
+        radial-gradient(ellipse 100% 100% at 30% 20%, rgba(0, 50, 80, 0.4) 0%, transparent 50%),
+        radial-gradient(ellipse 80% 80% at 80% 80%, rgba(0, 100, 150, 0.2) 0%, transparent 50%);
+      z-index: 0;
+    }
+
+    /* Main content */
+    .hero {
+      position: relative;
+      z-index: 10;
+      text-align: left;
+      padding: 2rem 4rem;
+      max-width: 1400px;
+      width: 100%;
+    }
+
+    /* Logo */
+    .brand {
+      margin-bottom: 2rem;
+      animation: slideIn 0.8s ease-out;
+    }
+
+    .brand-logo {
+      height: 80px;
+      width: auto;
+      filter: brightness(1.1);
+    }
+
+    /* Stacked typography */
+    .headline {
+      position: relative;
+      margin-bottom: 2rem;
+    }
+
+    .line {
+      display: block;
+      font-family: 'Bebas Neue', sans-serif;
+      text-transform: uppercase;
+      line-height: 0.85;
+      letter-spacing: 0.02em;
+    }
+
+    .line-1 {
+      font-size: clamp(3rem, 10vw, 8rem);
+      color: var(--text-primary);
+      animation: slideIn 0.8s ease-out 0.1s backwards;
+    }
+
+    .line-2 {
+      font-size: clamp(4rem, 14vw, 11rem);
+      color: var(--accent-primary);
+      margin-left: -0.05em;
+      animation: slideIn 0.8s ease-out 0.2s backwards;
+      text-shadow: 
+        0 0 60px var(--accent-glow),
+        0 0 120px var(--accent-glow);
+    }
+
+    .line-3 {
+      font-size: clamp(2.5rem, 8vw, 6rem);
+      color: var(--text-primary);
+      animation: slideIn 0.8s ease-out 0.3s backwards;
+    }
+
+    /* Accent tagline */
+    .handwritten {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic;
+      color: var(--accent-primary);
+      font-size: clamp(1.3rem, 3vw, 2.2rem);
+      display: inline-block;
+      margin-top: 1.5rem;
+      animation: slideIn 0.8s ease-out 0.4s backwards;
+      text-shadow: 0 0 30px var(--accent-glow);
+    }
+
+    /* Decorative elements */
+    .scratch {
+      position: absolute;
+      width: 120px;
+      height: 3px;
+      background: var(--text-primary);
+      opacity: 0.6;
+    }
+
+    .scratch-1 {
+      top: 0;
+      left: -20px;
+      transform: rotate(-5deg);
+      animation: scratchIn 0.5s ease-out 0.6s backwards;
+    }
+
+    .x-mark {
+      position: absolute;
+      font-family: 'Permanent Marker', cursive;
+      font-size: 2rem;
+      color: var(--text-muted);
+      animation: fadeIn 0.5s ease-out 0.7s backwards;
+    }
+
+    .x-1 { top: 15%; left: 45%; transform: rotate(15deg); }
+    .x-2 { bottom: 25%; left: 5%; transform: rotate(-10deg); }
+
+    /* Description */
+    .hero-description {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+      font-weight: 400;
+      color: var(--text-muted);
+      line-height: 1.6;
+      max-width: 450px;
+      margin: 2rem 0;
+      letter-spacing: 0.02em;
+      animation: slideIn 0.8s ease-out 0.5s backwards;
+    }
+
+    /* CTA Button - Raw style */
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 1rem 2rem;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.1em;
+      color: var(--bg-deep);
+      background: var(--accent-primary);
+      border: none;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.2s ease;
+      animation: slideIn 0.8s ease-out 0.6s backwards;
+      text-decoration: none;
+    }
+
+    .cta-button:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 6px 6px 0 var(--text-primary);
+    }
+
+    .cta-button svg {
+      width: 20px;
+      height: 20px;
+      transition: transform 0.2s ease;
+    }
+
+    .cta-button:hover svg {
+      transform: translateX(4px);
+    }
+
+    /* Animations */
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes scratchIn {
+      from {
+        transform: rotate(-5deg) scaleX(0);
+      }
+      to {
+        transform: rotate(-5deg) scaleX(1);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Social link */
+    .social-link {
+      position: fixed;
+      bottom: 2rem;
+      right: 3rem;
+      z-index: 20;
+      animation: fadeIn 0.8s ease-out 0.8s backwards;
+    }
+
+    .social-link a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: transparent;
+      border: 2px solid var(--text-muted);
+      color: var(--text-muted);
+      transition: all 0.2s ease;
+    }
+
+    .social-link a:hover {
+      border-color: var(--accent-primary);
+      color: var(--accent-primary);
+      transform: translate(-2px, -2px);
+      box-shadow: 4px 4px 0 var(--accent-primary);
+    }
+
+    .social-link svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    /* Animated Graph */
+    .graph-container {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 45%;
+      z-index: 5;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .graph-svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Graph line */
+    .graph-line {
+      fill: none;
+      stroke: url(#graphGradient);
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.6));
+    }
+
+    /* Animated line drawing */
+    .graph-line-animated {
+      stroke-dasharray: 2000;
+      stroke-dashoffset: 2000;
+      animation: drawLine 3s ease-out 0.5s forwards;
+    }
+
+    @keyframes drawLine {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    /* Graph area fill */
+    .graph-area {
+      fill: url(#areaGradient);
+      opacity: 0;
+      animation: fadeInArea 1s ease-out 2s forwards;
+    }
+
+    @keyframes fadeInArea {
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Data points - positioned with CSS to stay circular */
+    .data-points-container {
+      position: absolute;
+      inset: 0;
+    }
+
+    .data-point {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: #fff;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 6px rgba(0, 212, 255, 0.8), 0 0 12px rgba(0, 212, 255, 0.5);
+      opacity: 0;
+      animation: popIn 0.3s ease-out forwards;
+    }
+
+    /* Position each point: left = x/1600*100%, bottom = (450-y)/450*100% */
+    .data-point:nth-child(1) { left: 6.25%; bottom: 17.78%; animation-delay: 1s; }
+    .data-point:nth-child(2) { left: 25%; bottom: 24.44%; animation-delay: 1.3s; }
+    .data-point:nth-child(3) { left: 43.75%; bottom: 37.78%; animation-delay: 1.6s; }
+    .data-point:nth-child(4) { left: 62.5%; bottom: 60%; animation-delay: 1.9s; }
+
+    @keyframes popIn {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+      }
+      100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+
+    /* Vertical lines from points */
+    .graph-vertical {
+      stroke: rgba(0, 212, 255, 0.2);
+      stroke-width: 1;
+      stroke-dasharray: 4 4;
+    }
+
+    /* Big background text */
+    .bg-text {
+      position: fixed;
+      bottom: -5%;
+      right: -2%;
+      font-size: clamp(15rem, 35vw, 40rem);
+      font-family: 'Bebas Neue', sans-serif;
+      color: rgba(255, 255, 255, 0.02);
+      z-index: 0;
+      pointer-events: none;
+      line-height: 0.8;
+      letter-spacing: -0.02em;
+    }
+
+    /* 3D iPhone Mockup */
+    .phone-container {
+      position: fixed;
+      right: 8%;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 15;
+      perspective: 1200px;
+      animation: phoneFloat 6s ease-in-out infinite, fadeIn 1s ease-out 0.5s backwards;
+    }
+
+    .phone {
+      position: relative;
+      width: 280px;
+      height: 580px;
+      background: linear-gradient(145deg, #2a2a2a 0%, #1a1a1a 20%, #0d0d0d 50%, #1a1a1a 80%, #2a2a2a 100%);
+      border-radius: 45px;
+      padding: 12px;
+      box-shadow: 
+        /* Main shadow */
+        0 60px 120px rgba(0, 0, 0, 0.6),
+        0 30px 60px rgba(0, 0, 0, 0.4),
+        /* Edge highlight */
+        0 0 0 1px rgba(255, 255, 255, 0.15),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+        /* Cyan glow */
+        0 0 100px rgba(0, 212, 255, 0.2),
+        0 0 40px rgba(0, 212, 255, 0.1);
+      transform: rotateY(-25deg) rotateX(8deg) rotateZ(3deg);
+      transform-style: preserve-3d;
+    }
+
+    /* Phone left edge (3D depth) */
+    .phone-edge-left {
+      position: absolute;
+      left: -8px;
+      top: 20px;
+      bottom: 20px;
+      width: 8px;
+      background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 50%, #1a1a1a 100%);
+      border-radius: 8px 0 0 8px;
+      transform: rotateY(90deg) translateZ(4px);
+      transform-origin: right center;
+    }
+
+    /* Phone bottom edge (3D depth) */
+    .phone-edge-bottom {
+      position: absolute;
+      bottom: -8px;
+      left: 20px;
+      right: 20px;
+      height: 8px;
+      background: linear-gradient(90deg, #1a1a1a 0%, #0a0a0a 50%, #1a1a1a 100%);
+      border-radius: 0 0 8px 8px;
+      transform: rotateX(-90deg) translateZ(4px);
+      transform-origin: top center;
+    }
+
+    /* Phone frame shine */
+    .phone::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 45px;
+      background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0.15) 0%,
+        rgba(255, 255, 255, 0.05) 20%,
+        transparent 40%,
+        transparent 100%
+      );
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    /* Side buttons */
+    .phone::after {
+      content: '';
+      position: absolute;
+      right: -4px;
+      top: 120px;
+      width: 4px;
+      height: 70px;
+      background: linear-gradient(180deg, #3a3a3a, #1a1a1a, #3a3a3a);
+      border-radius: 0 3px 3px 0;
+      box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    }
+
+    /* Volume buttons on left */
+    .phone-buttons {
+      position: absolute;
+      left: -4px;
+      top: 140px;
+      width: 4px;
+      height: 50px;
+      background: linear-gradient(180deg, #3a3a3a, #1a1a1a, #3a3a3a);
+      border-radius: 3px 0 0 3px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    }
+
+    .phone-buttons::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 60px;
+      width: 4px;
+      height: 50px;
+      background: linear-gradient(180deg, #3a3a3a, #1a1a1a, #3a3a3a);
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* Reflection/shadow on surface */
+    .phone-reflection {
+      position: absolute;
+      bottom: -80px;
+      left: 10%;
+      right: 10%;
+      height: 60px;
+      background: linear-gradient(180deg, rgba(0, 212, 255, 0.08) 0%, transparent 100%);
+      filter: blur(20px);
+      transform: rotateX(-90deg) translateZ(-40px);
+      opacity: 0.6;
+    }
+
+    .phone-screen {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(145deg, #1a1a2e 0%, #0f0f1a 100%);
+      border-radius: 35px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Dynamic Island / Notch */
+    .phone-notch {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90px;
+      height: 26px;
+      background: #000;
+      border-radius: 20px;
+      z-index: 20;
+      box-shadow: 0 0 0 3px #000;
+    }
+
+    /* Screen content placeholder */
+    .screen-content {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(
+        160deg,
+        #0a0a12 0%,
+        #0d1020 30%,
+        #0a1525 60%,
+        #081018 100%
+      );
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Placeholder text */
+    .screen-placeholder {
+      font-family: system-ui, sans-serif;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-align: center;
+      padding: 2rem;
+    }
+
+    /* Screen glow effect */
+    .screen-content::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        ellipse 80% 50% at 50% 0%,
+        rgba(0, 212, 255, 0.1) 0%,
+        transparent 60%
+      );
+    }
+
+    /* Screenshot image */
+    .screen-content img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      border-radius: 35px;
+    }
+
+    @keyframes phoneFloat {
+      0%, 100% {
+        transform: translateY(-50%) translateX(0) rotateY(0deg);
+      }
+      50% {
+        transform: translateY(-53%) translateX(-8px) rotateY(-3deg);
+      }
+    }
+
+    @media (max-width: 1200px) {
+      .phone-container {
+        right: 2%;
+      }
+      .phone {
+        width: 220px;
+        height: 460px;
+        border-radius: 35px;
+        padding: 10px;
+      }
+      .phone-screen {
+        border-radius: 28px;
+      }
+      .phone-notch {
+        width: 80px;
+        height: 22px;
+        top: 10px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .phone-container {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 2rem;
+        text-align: center;
+      }
+      .headline {
+        text-align: center;
+      }
+      .hero-description {
+        margin: 2rem auto;
+      }
+      .x-mark { display: none; }
+      .scratch { display: none; }
+      .bg-text { display: none; }
+      .social-link {
+        right: 50%;
+        transform: translateX(50%);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Background -->
+  <div class="color-wash"></div>
+  <div class="noise"></div>
+  <div class="bg-text">ALPHA</div>
+
+
+  <!-- 3D iPhone Mockup -->
+  <div class="phone-container">
+    <div class="phone">
+      <div class="phone-edge-left"></div>
+      <div class="phone-edge-bottom"></div>
+      <div class="phone-buttons"></div>
+      <div class="phone-screen">
+        <div class="phone-notch"></div>
+        <div class="screen-content">
+          <img src="phone3.png" alt="Alpha Whale App">
+        </div>
+      </div>
+      <div class="phone-reflection"></div>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <main class="hero">
+    <div class="brand">
+      <img src="alphawhale_logowebsite.png" alt="Alpha Whale" class="brand-logo">
+    </div>
+
+    <div class="headline">
+      <span class="line line-1">Trade Like</span>
+      <span class="line line-2">The Whales</span>
+      <span class="line line-3">To Become One</span>
+      <span class="handwritten">→ copy the smartest polymarket traders</span>
+    </div>
+    
+    <p class="hero-description">
+      Trade like the most profitable accounts in under 5 minutes of set-up. 
+      Copy top traders, watch whale wallets, and ride the wave to success
+    </p>
+    
+    <a href="https://app.alphawhale.trade/" class="cta-button" target="_blank" rel="noopener noreferrer">
+      <span>START TRADING</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+    </a>
+  </main>
+
+  <!-- Social link -->
+  <div class="social-link">
+    <a href="https://x.com/alphawhale888" target="_blank" rel="noopener noreferrer" aria-label="Follow us on X">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- Animated Graph -->
+  <div class="graph-container">
+    <svg class="graph-svg" viewBox="0 0 1600 450" preserveAspectRatio="none">
+      <defs>
+        <!-- Line gradient -->
+        <linearGradient id="graphGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#0066ff;stop-opacity:1" />
+          <stop offset="50%" style="stop-color:#00d4ff;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#00d4ff;stop-opacity:1" />
+        </linearGradient>
+        <!-- Area fill gradient -->
+        <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0.3" />
+          <stop offset="100%" style="stop-color:#00d4ff;stop-opacity:0" />
+        </linearGradient>
+      </defs>
+      
+      <!-- Vertical dashed lines -->
+      <line class="graph-vertical" x1="100" y1="370" x2="100" y2="450"/>
+      <line class="graph-vertical" x1="400" y1="340" x2="400" y2="450"/>
+      <line class="graph-vertical" x1="700" y1="280" x2="700" y2="450"/>
+      <line class="graph-vertical" x1="1000" y1="180" x2="1000" y2="450"/>
+      
+      <!-- Area fill -->
+      <path class="graph-area" d="M-100,450 L-100,400 C0,395 50,380 100,370 C200,355 300,345 400,330 C550,310 600,270 700,240 C850,200 950,160 1100,120 C1250,80 1400,40 1600,0 L1600,450 Z"/>
+      
+      <!-- Main line - extends to right edge with fixed endpoint -->
+      <path class="graph-line graph-line-animated" d="M-100,400 C0,395 50,380 100,370 C200,355 300,345 400,330 C550,310 600,270 700,240 C850,200 950,160 1100,120 C1250,80 1400,40 1600,0"/>
+    </svg>
+    
+  </div>
+</body>
+</html>
