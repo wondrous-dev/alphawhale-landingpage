@@ -221,6 +221,38 @@
       transform: translateX(4px);
     }
 
+    /* Polymarket Builders Badge */
+    .polymarket-badge {
+      margin-top: 2rem;
+      margin-bottom: 3rem;
+      animation: slideIn 0.8s ease-out 0.7s backwards;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .polymarket-badge-label {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .polymarket-badge img {
+      height: 28px;
+      width: auto;
+      opacity: 0.8;
+      transition: opacity 0.2s ease;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+    }
+
+    .polymarket-badge img:hover {
+      opacity: 1;
+    }
+
     /* Animations */
     @keyframes slideIn {
       from {
@@ -250,8 +282,9 @@
     /* Social link */
     .social-link {
       position: fixed;
-      bottom: 2rem;
-      right: 3rem;
+      bottom: 0.5rem;
+      left: 50%;
+      transform: translateX(-50%);
       z-index: 20;
       animation: fadeIn 0.8s ease-out 0.8s backwards;
     }
@@ -638,6 +671,9 @@
         right: 50%;
         transform: translateX(50%);
       }
+      .polymarket-badge {
+        align-items: center;
+      }
     }
   </style>
   <script type="application/ld+json">
@@ -696,6 +732,11 @@
         <path d="M5 12h14M12 5l7 7-7 7"/>
       </svg>
     </a>
+    
+    <div class="polymarket-badge">
+      <span class="polymarket-badge-label">Official</span>
+      <img src="polymarket_builders_2x.png" alt="Polymarket Builders">
+    </div>
   </main>
 
   <!-- Social link -->
