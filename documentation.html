@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Guide | Alpha Whale</title>
+  <meta name="description" content="Complete user guide for Alpha Whale. Learn how to use copy trading, bonding strategies, alerts, and more to maximize your Polymarket returns.">
+  <meta name="robots" content="index, follow">
+  <meta name="keywords" content="Alpha Whale guide, Polymarket copy trading guide, prediction market tutorial, Alpha Whale documentation">
+  <link rel="canonical" href="https://alphawhale.trade/documentation">
+  
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Product Guide | Alpha Whale">
+  <meta property="og:description" content="Complete user guide for Alpha Whale prediction market trading platform.">
+  <meta property="og:image" content="https://alphawhale.trade/alphawhale_logowebsite.png">
+  <meta property="og:url" content="https://alphawhale.trade/documentation">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@alphawhaletrade">
+  <meta name="twitter:title" content="Product Guide | Alpha Whale">
+  <meta name="twitter:description" content="Complete user guide for Alpha Whale prediction market trading platform.">
+  <meta name="twitter:image" content="https://alphawhale.trade/alphawhale_logowebsite.png">
+  
+  <link rel="icon" href="alphawhale_logowebsite.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=Inter:wght@200;300;400&family=Manrope:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-deep: #0a0a0a;
+      --accent-primary: #00d4ff;
+      --accent-secondary: #0066ff;
+      --text-primary: #ffffff;
+      --text-muted: rgba(255, 255, 255, 0.5);
+      --text-muted-light: rgba(255, 255, 255, 0.7);
+      --border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    body {
+      font-family: 'Manrope', sans-serif;
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    .doc-header {
+      border-bottom: 1px solid var(--border-color);
+      padding: 1.5rem 0;
+      position: sticky;
+      top: 0;
+      background: var(--bg-deep);
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+
+    .doc-header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .doc-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .doc-logo img {
+      height: 32px;
+      width: auto;
+    }
+
+    .doc-nav {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .doc-nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s ease;
+    }
+
+    .doc-nav a:hover {
+      color: var(--text-primary);
+    }
+
+    .doc-nav .cta-button {
+      background: linear-gradient(135deg, #00d4ff 0%, #00b4e6 50%, #00d4ff 100%);
+      background-size: 200% 200%;
+      color: var(--bg-deep);
+      padding: 0.65rem 1.75rem;
+      border-radius: 8px;
+      font-weight: 700;
+      box-shadow: 
+        0 4px 15px rgba(0, 212, 255, 0.4),
+        0 0 30px rgba(0, 212, 255, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .doc-nav .cta-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .doc-nav .cta-button:hover {
+      color: var(--bg-deep);
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 
+        0 8px 25px rgba(0, 212, 255, 0.5),
+        0 0 40px rgba(0, 212, 255, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+      background-position: 100% 100%;
+    }
+
+    .doc-nav .cta-button:hover::before {
+      left: 100%;
+    }
+
+    .doc-nav .cta-button:active {
+      transform: translateY(0) scale(0.98);
+    }
+
+    /* Main Content */
+    .doc-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .doc-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      letter-spacing: 0.02em;
+      color: var(--text-primary);
+    }
+
+    .doc-subtitle {
+      font-size: clamp(1.125rem, 2vw, 1.5rem);
+      color: var(--text-muted-light);
+      margin-bottom: 4rem;
+      line-height: 1.6;
+    }
+
+    .doc-content {
+      font-size: clamp(1rem, 1.5vw, 1.125rem);
+      line-height: 1.9;
+      color: var(--text-muted-light);
+    }
+
+    .doc-content h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      color: var(--text-primary);
+      margin: 3rem 0 1.5rem;
+      letter-spacing: 0.02em;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .doc-content h2:first-of-type {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .doc-content h3 {
+      font-family: 'Manrope', sans-serif;
+      font-size: clamp(1.25rem, 2vw, 1.5rem);
+      color: var(--accent-primary);
+      margin: 2rem 0 1rem;
+      font-weight: 600;
+    }
+
+    .doc-content p {
+      margin-bottom: 1.5rem;
+    }
+
+    .doc-content ul,
+    .doc-content ol {
+      margin: 1.5rem 0;
+      padding-left: 2rem;
+    }
+
+    .doc-content li {
+      margin-bottom: 0.75rem;
+    }
+
+    .doc-content strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .doc-content .highlight {
+      color: var(--accent-primary);
+      font-weight: 600;
+    }
+
+    .doc-content .intro {
+      font-size: clamp(1.125rem, 2vw, 1.375rem);
+      color: var(--text-muted-light);
+      margin-bottom: 3rem;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.02);
+      border-left: 3px solid var(--accent-primary);
+      border-radius: 4px;
+    }
+
+    .doc-content .tips-section {
+      margin: 3rem 0;
+      padding: 2rem;
+      background: rgba(0, 212, 255, 0.05);
+      border: 1px solid rgba(0, 212, 255, 0.2);
+      border-radius: 8px;
+    }
+
+    .doc-content .tips-section h3 {
+      color: var(--accent-primary);
+      margin-top: 0;
+    }
+
+    /* Footer */
+    .footer {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 4rem;
+      margin-top: 4rem;
+    }
+
+    .footer-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .footer-logo {
+      height: 56px;
+      width: auto;
+      max-width: 250px;
+      object-fit: contain;
+      align-self: flex-start;
+    }
+
+    .footer-tagline {
+      font-family: 'Manrope', sans-serif;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.6;
+      max-width: 280px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+      margin-top: 1rem;
+    }
+
+    .footer-social-link {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.7);
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .footer-social-link:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+
+    .footer-column {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .footer-column-title {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-link {
+      font-family: 'Manrope', sans-serif;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-link:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      max-width: 1400px;
+      margin: 3rem auto 0;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copyright {
+      font-family: 'Manrope', sans-serif;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .footer-legal a {
+      font-family: 'Manrope', sans-serif;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.4);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-legal a:hover {
+      color: #fff;
+    }
+
+    @media (max-width: 900px) {
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+      }
+
+      .footer-brand {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .footer {
+        padding: 3rem 2rem;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .footer-brand {
+        grid-column: span 1;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      .footer-legal {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .doc-container {
+        padding: 3rem 1.5rem;
+      }
+
+      .doc-header-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .doc-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="doc-header">
+    <div class="doc-header-container">
+      <a href="home2.html" class="doc-logo">
+        <img src="alphawhale_logowebsite.png" alt="Alpha Whale">
+      </a>
+      <nav class="doc-nav">
+        <a href="home2.html">Home</a>
+        <a href="blog/index.html">Blog</a>
+        <a href="https://app.alphawhale.trade/" class="cta-button">Start Trading</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="doc-container">
+    <h1 class="doc-title">Alpha Whale - Product Guide</h1>
+    
+    <div class="doc-content">
+      <div class="intro">
+        <p><strong>What is Alpha Whale?</strong></p>
+        <p>Alpha Whale is a prediction market platform that lets you trade on real-world outcomes. Whether you want to manage your own positions, automatically copy successful traders, or set up automated bonding strategies, Alpha Whale gives you the tools to participate in prediction markets with confidence.</p>
+      </div>
+
+      <h2>Getting Started: Onboarding</h2>
+      <p>When you first arrive at Alpha Whale, you'll go through a quick onboarding process to set up your account:</p>
+      <ul>
+        <li><strong>Connect Your Wallet</strong> - Link your crypto wallet to access the platform</li>
+        <li><strong>Fund Your Account</strong> - Deposit funds to start trading</li>
+        <li><strong>Explore the Dashboard</strong> - Once onboarded, you'll land on your main dashboard where you can see your positions, track performance, and access all features</li>
+      </ul>
+
+      <h2>Core Features</h2>
+
+      <h3>My Positions</h3>
+      <p>Your Positions page is your portfolio command center. Here you can:</p>
+      
+      <h4>View Active Positions</h4>
+      <ul>
+        <li>See all your current trades at a glance</li>
+        <li>Each position shows the market, your stake, current value, and profit/loss (P&L)</li>
+        <li>The P&L chart at the top gives you a visual overview of your performance over time</li>
+      </ul>
+
+      <h4>Filter & Sort</h4>
+      <ul>
+        <li>Use the search bar to quickly find specific positions</li>
+        <li>Sort by:
+          <ul>
+            <li><strong>Top Gains</strong> - Your best performing positions first</li>
+            <li><strong>Top Losses</strong> - Positions that need attention</li>
+            <li><strong>Most Recent</strong> - Latest trades</li>
+            <li><strong>Oldest</strong> - Your longest-held positions</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h4>Manage Positions</h4>
+      <ul>
+        <li>Close individual positions when you're ready to exit</li>
+        <li>Use "Close All" to exit all positions at once</li>
+      </ul>
+
+      <h4>History Tab</h4>
+      <ul>
+        <li>Review all your past trades</li>
+        <li>See realized P&L from closed positions</li>
+        <li>Same sorting options to analyze your trading history</li>
+      </ul>
+
+      <h3>Markets</h3>
+      <p>The Markets page is where you discover trading opportunities:</p>
+      <ul>
+        <li>Browse all available prediction markets</li>
+        <li>See current odds and trading volume</li>
+        <li>Search for specific topics or events</li>
+        <li>Click into any market to view details and place trades</li>
+      </ul>
+
+      <h3>Copy Trading</h3>
+      <p>Don't want to pick every trade yourself? Copy Trading lets you automatically mirror the trades of successful traders.</p>
+
+      <h4>How It Works</h4>
+      <ul>
+        <li>Browse available traders and their performance stats</li>
+        <li>Click "Add Trader" to start copying someone</li>
+        <li>Set your allocation - how much capital to dedicate to copying this trader</li>
+        <li>Once active, every trade they make is automatically replicated in your account</li>
+      </ul>
+
+      <h4>Managing Copy Trades</h4>
+      <p>View all traders you're copying from the Copy Trades dashboard:</p>
+      <ul>
+        <li>See aggregate performance across all copied traders</li>
+        <li>Filter by:
+          <ul>
+            <li><strong>All</strong> - Every trader you've added</li>
+            <li><strong>Active</strong> - Currently copying</li>
+            <li><strong>Paused</strong> - Temporarily stopped</li>
+          </ul>
+        </li>
+        <li>Sort by:
+          <ul>
+            <li><strong>Top Earners</strong> - Best performing traders</li>
+            <li><strong>Top Losers</strong> - Underperforming traders</li>
+            <li><strong>Most Active</strong> - Traders making frequent trades</li>
+            <li><strong>Least Active</strong> - Traders trading less often</li>
+            <li><strong>Most Recent</strong> - Recently added</li>
+            <li><strong>Oldest</strong> - Longest relationships</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h4>Individual Trader View</h4>
+      <p>Click into any copied trader to:</p>
+      <ul>
+        <li>See their detailed performance and P&L</li>
+        <li>View their current positions</li>
+        <li>Toggle between Active and Disabled status</li>
+        <li>Edit your allocation settings</li>
+      </ul>
+
+      <h4>Disabling a Copy Trade</h4>
+      <p>When you disable a trader:</p>
+      <ul>
+        <li>No new trades will be executed from that trader</li>
+        <li>Your existing positions from their trades remain open</li>
+        <li>You can manually close those positions or let them resolve naturally</li>
+      </ul>
+
+      <h3>Bonding Strategies</h3>
+      <p>Bonding is Alpha Whale's automated trading system. Think of it as setting up trading rules that execute automatically based on predefined criteria.</p>
+
+      <h4>How Bonding Works</h4>
+      <ul>
+        <li>Create a bonding strategy with your parameters</li>
+        <li>Allocate capital to the strategy</li>
+        <li>The system automatically executes trades based on your strategy rules</li>
+        <li>Monitor performance and adjust as needed</li>
+      </ul>
+
+      <h4>The Bonding Dashboard</h4>
+      <ul>
+        <li><strong>Performance Chart</strong> - Visual P&L tracking over time (Daily, Weekly, Monthly views)</li>
+        <li><strong>Current Allocation</strong> - How much capital is deployed in bonding strategies</li>
+        <li><strong>Total P&L</strong> - Your returns from bonding activities</li>
+      </ul>
+
+      <h4>Managing Strategies</h4>
+      <ul>
+        <li>Filter by All, Active, or Paused strategies</li>
+        <li>Sort by:
+          <ul>
+            <li><strong>Top Earners</strong> - Best performing strategies</li>
+            <li><strong>Top Losers</strong> - Underperforming strategies</li>
+            <li><strong>Most Active</strong> - Strategies trading frequently</li>
+            <li><strong>Least Active</strong> - Lower activity strategies</li>
+            <li><strong>Most Recent</strong> - Newest strategies</li>
+            <li><strong>Oldest</strong> - Long-running strategies</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h4>Positions Tab</h4>
+      <p>View all open positions created by your bonding strategies:</p>
+      <ul>
+        <li>See which strategy created each position</li>
+        <li>Track individual position P&L</li>
+        <li>Sort by Top Gains, Top Losses, Most Recent, or Oldest</li>
+      </ul>
+
+      <h4>History Tab</h4>
+      <p>Review completed trades from your bonding strategies:</p>
+      <ul>
+        <li>Analyze which strategies are performing best</li>
+        <li>See realized gains and losses</li>
+        <li>Use sorting to identify patterns</li>
+      </ul>
+
+      <h4>Individual Strategy View</h4>
+      <p>Click into any strategy to:</p>
+      <ul>
+        <li>See detailed performance metrics</li>
+        <li>Toggle Active/Disabled status</li>
+        <li>Edit strategy parameters</li>
+        <li>View positions and history specific to that strategy</li>
+      </ul>
+
+      <h3>Trader Profiles</h3>
+      <p>Want to research a trader before copying them? Trader Profiles give you deep insight:</p>
+
+      <h4>Profile Overview</h4>
+      <ul>
+        <li>Trader's overall P&L and return percentage</li>
+        <li>Historical performance chart</li>
+        <li>Win rate and trade frequency</li>
+      </ul>
+
+      <h4>Positions Tab</h4>
+      <p>See what they're currently trading:</p>
+      <ul>
+        <li>Filter by Active or Closed positions</li>
+        <li>Sort by Highest Value, Lowest Value, Top Gains, or Top Losses</li>
+      </ul>
+
+      <h4>Activity Tab</h4>
+      <p>Review their recent trading activity and patterns</p>
+
+      <h4>Actions</h4>
+      <ul>
+        <li><strong>Watch</strong> - Add to your watchlist to monitor without copying</li>
+        <li><strong>Copy</strong> - Start copying their trades immediately</li>
+      </ul>
+
+      <h3>Alerts</h3>
+      <p>Stay informed with custom alerts:</p>
+      <ul>
+        <li>Create alerts for specific market conditions</li>
+        <li>Get notified when prices hit your targets</li>
+        <li>Never miss an opportunity</li>
+      </ul>
+
+      <h4>Setting Up Alerts</h4>
+      <ul>
+        <li>Click "New Alert" from the Alerts page</li>
+        <li>Select the market or condition to monitor</li>
+        <li>Set your trigger criteria</li>
+        <li>Save and wait for notifications</li>
+      </ul>
+
+      <h2>Understanding Your Performance</h2>
+      <p>Across the platform, you'll see consistent performance metrics:</p>
+
+      <h3>P&L (Profit & Loss)</h3>
+      <ul>
+        <li>Shown in dollar amounts (+$500, -$50)</li>
+        <li>Green indicates profit, red indicates loss</li>
+      </ul>
+
+      <h3>Return Percentage</h3>
+      <ul>
+        <li>Displayed below the dollar amount (+15.5%, -3.2%)</li>
+        <li>Shows your performance relative to invested capital</li>
+      </ul>
+
+      <h3>Time Periods</h3>
+      <ul>
+        <li>Toggle between Daily, Weekly, and Monthly views</li>
+        <li>Track how your performance changes over time</li>
+      </ul>
+
+      <h3>Charts</h3>
+      <ul>
+        <li>Visual representation of P&L over your selected time period</li>
+        <li>Gradient fill shows the trend direction</li>
+        <li>Hover for detailed data points</li>
+      </ul>
+
+      <div class="tips-section">
+        <h3>Tips for Success</h3>
+        <ul>
+          <li><strong>Start Small</strong> - Begin with smaller positions while you learn the platform</li>
+          <li><strong>Diversify</strong> - Don't put all your capital in one market or one copied trader</li>
+          <li><strong>Use Copy Trading Wisely</strong> - Research trader performance before copying</li>
+          <li><strong>Monitor Bonding Strategies</strong> - Automated doesn't mean hands-off; check in regularly</li>
+          <li><strong>Set Alerts</strong> - Let the platform notify you of important changes</li>
+          <li><strong>Review History</strong> - Learn from past trades to improve future decisions</li>
+        </ul>
+      </div>
+
+      <h2>Need Help?</h2>
+      <p>If you have questions or run into issues, our support team is here to help. Alpha Whale is designed to make prediction market trading accessible to everyone, whether you're actively managing trades or letting automation do the work.</p>
+      <p style="margin-top: 2rem; font-size: 1.25rem; color: var(--accent-primary);">Happy trading! 🚀</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Brand Column -->
+      <div class="footer-brand">
+        <img src="alphalogo_text.png" alt="Alpha Whale" class="footer-logo">
+        <p class="footer-tagline">Trade like the whales. Copy the smartest Polymarket traders and grow your portfolio.</p>
+        <div class="footer-social">
+          <a href="https://x.com/alphawhaletrade" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Follow us on X">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Product Column -->
+      <div class="footer-column">
+        <h4 class="footer-column-title">Product</h4>
+        <a href="https://app.alphawhale.trade/" class="footer-link">Start Trading</a>
+        <a href="documentation.html" class="footer-link">Product Guide</a>
+      </div>
+
+      <!-- Resources Column -->
+      <div class="footer-column">
+        <h4 class="footer-column-title">Resources</h4>
+        <a href="https://t.me/+zSSN2Ibk6NwxNWUx" target="_blank" rel="noopener noreferrer" class="footer-link">Join our community</a>
+        <a href="blog/index.html" class="footer-link">Blog</a>
+      </div>
+
+      <!-- Company Column -->
+      <div class="footer-column">
+        <h4 class="footer-column-title">Company</h4>
+        <a href="about.html" class="footer-link">About</a>
+        <a href="https://t.me/+zSSN2Ibk6NwxNWUx" target="_blank" rel="noopener noreferrer" class="footer-link">Contact</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copyright">&copy; 2026 Alpha Whale. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-service.html">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+

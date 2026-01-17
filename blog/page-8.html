@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Alpha Whale - Polymarket Trading Strategies & Guides</title>
+  <meta name="description" content="Learn how to trade on Polymarket, automate copy trading strategies, and maximize your prediction market returns. Expert guides and trading insights from Alpha Whale.">
+  <link rel="canonical" href="https://alphawhale.trade/blog/">
+  
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Blog | Alpha Whale - Polymarket Trading Strategies & Guides">
+  <meta property="og:description" content="Learn how to trade on Polymarket, automate copy trading strategies, and maximize your prediction market returns.">
+  <meta property="og:image" content="https://alphawhale.trade/alphawhale_logowebsite.png">
+  <meta property="og:url" content="https://alphawhale.trade/blog/">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@alphawhaletrade">
+  <meta name="twitter:title" content="Blog | Alpha Whale - Polymarket Trading Strategies & Guides">
+  <meta name="twitter:description" content="Learn how to trade on Polymarket, automate copy trading strategies, and maximize your prediction market returns.">
+  <meta name="twitter:image" content="https://alphawhale.trade/alphawhale_logowebsite.png">
+  
+  <link rel="icon" href="../alphawhale_logowebsite.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=Inter:wght@200;300;400&family=Manrope:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Alpha Whale Blog",
+    "description": "Polymarket trading strategies, copy trading guides, and prediction market insights",
+    "url": "https://alphawhale.trade/blog/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Alpha Whale",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://alphawhale.trade/alphawhale_logowebsite.png"
+      }
+    }
+  }
+  </script>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-deep: #0a0a0a;
+      --accent-primary: #00d4ff;
+      --accent-secondary: #0066ff;
+      --text-primary: #ffffff;
+      --text-muted: rgba(255, 255, 255, 0.5);
+      --text-muted-light: rgba(255, 255, 255, 0.7);
+      --border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    body {
+      font-family: 'Manrope', sans-serif;
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    .blog-header {
+      border-bottom: 1px solid var(--border-color);
+      padding: 1.5rem 0;
+      position: sticky;
+      top: 0;
+      background: var(--bg-deep);
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+
+    .blog-header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .blog-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .blog-logo img {
+      height: 32px;
+      width: auto;
+    }
+
+    .blog-nav {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .blog-nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s ease;
+    }
+
+    .blog-nav a:hover {
+      color: var(--text-primary);
+    }
+
+    .blog-nav .cta-button {
+      background: linear-gradient(135deg, #00d4ff 0%, #00b4e6 50%, #00d4ff 100%);
+      background-size: 200% 200%;
+      color: var(--bg-deep);
+      padding: 0.65rem 1.75rem;
+      border-radius: 8px;
+      font-weight: 700;
+      box-shadow: 
+        0 4px 15px rgba(0, 212, 255, 0.4),
+        0 0 30px rgba(0, 212, 255, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .blog-nav .cta-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .blog-nav .cta-button:hover {
+      color: var(--bg-deep);
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 
+        0 8px 25px rgba(0, 212, 255, 0.5),
+        0 0 40px rgba(0, 212, 255, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+      background-position: 100% 100%;
+    }
+
+    .blog-nav .cta-button:hover::before {
+      left: 100%;
+    }
+
+    .blog-nav .cta-button:active {
+      transform: translateY(0) scale(0.98);
+    }
+
+    /* Hero Section */
+    .blog-hero {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem 2rem;
+      text-align: center;
+    }
+
+    .blog-hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 8vw, 5rem);
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .blog-hero p {
+      font-size: 1.25rem;
+      color: var(--text-muted-light);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Category Filters */
+    .blog-filters {
+      max-width: 1200px;
+      margin: 2rem auto 0;
+      padding: 0 2rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .filter-btn {
+      background: transparent;
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 0.5rem 1.5rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: 'Manrope', sans-serif;
+      font-size: 14px;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--accent-primary);
+      color: var(--text-primary);
+    }
+
+    .filter-btn.active {
+      background: var(--accent-primary);
+      border-color: var(--accent-primary);
+      color: var(--bg-deep);
+    }
+
+    /* Main Content */
+    .blog-container {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 3rem;
+    }
+
+    /* Post Grid */
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .post-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .post-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-primary);
+      box-shadow: 0 8px 24px rgba(0, 212, 255, 0.1);
+    }
+
+    .post-card a {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .post-card-image {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 102, 255, 0.1));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+    }
+
+    .post-card-content {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .post-card-category {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+
+    .post-card-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--text-primary);
+      line-height: 1.4;
+    }
+
+    .post-card-excerpt {
+      font-size: 14px;
+      color: var(--text-muted-light);
+      margin-bottom: 1rem;
+      flex: 1;
+      line-height: 1.6;
+    }
+
+    .post-card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    /* Sidebar */
+    .blog-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .sidebar-section {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .sidebar-section h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .featured-post {
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .featured-post:last-child {
+      border-bottom: none;
+    }
+
+    .featured-post a {
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .featured-post-title {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      transition: color 0.2s ease;
+    }
+
+    .featured-post-title:hover {
+      color: var(--accent-primary);
+    }
+
+    .featured-post-date {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .newsletter-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .newsletter-form input {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 0.75rem;
+      color: var(--text-primary);
+      font-family: 'Manrope', sans-serif;
+      font-size: 14px;
+    }
+
+    .newsletter-form input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .newsletter-form button {
+      background: var(--accent-primary);
+      color: var(--bg-deep);
+      border: none;
+      border-radius: 6px;
+      padding: 0.75rem;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+    }
+
+    .newsletter-form button:hover {
+      opacity: 0.9;
+    }
+
+    .newsletter-form p {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* Empty State */
+    .empty-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 4rem 2rem;
+      color: var(--text-muted);
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      border-top: 1px solid var(--border-color);
+      padding: 4rem;
+      margin-top: 4rem;
+    }
+
+    .footer-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .footer-logo {
+      height: 56px;
+      width: auto;
+      max-width: 250px;
+      object-fit: contain;
+      align-self: flex-start;
+    }
+
+    .footer-tagline {
+      font-family: 'Manrope', sans-serif;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.6;
+      max-width: 280px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+      margin-top: 1rem;
+    }
+
+    .footer-social-link {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.7);
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .footer-social-link:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+
+    .footer-column {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .footer-column-title {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-link {
+      font-family: 'Manrope', sans-serif;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-link:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      max-width: 1400px;
+      margin: 3rem auto 0;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copyright {
+      font-family: 'Manrope', sans-serif;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .footer-legal a {
+      font-family: 'Manrope', sans-serif;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.4);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-legal a:hover {
+      color: #fff;
+    }
+
+    @media (max-width: 900px) {
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+      }
+
+      .footer-brand {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .footer {
+        padding: 3rem 2rem;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .footer-brand {
+        grid-column: span 1;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      .footer-legal {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 968px) {
+      .blog-container {
+        grid-template-columns: 1fr;
+      }
+
+      .posts-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .blog-header-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .blog-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .blog-hero {
+        padding: 2rem 1rem;
+      }
+
+      .blog-filters {
+        padding: 0 1rem;
+      }
+    }
+
+    /* Pagination */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 3rem;
+      padding: 2rem 0;
+      grid-column: 1 / -1;
+    }
+
+    .pagination-btn {
+      padding: 0.75rem 1.5rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      transition: all 0.2s ease;
+    }
+
+    .pagination-btn:hover:not(.disabled) {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+
+    .pagination-btn.disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    .pagination-numbers {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .pagination-num {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      transition: all 0.2s ease;
+    }
+
+    .pagination-num:hover:not(.active) {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+
+    .pagination-num.active {
+      background: var(--accent-primary);
+      color: var(--bg-deep);
+      border-color: var(--accent-primary);
+    }
+
+    @media (max-width: 600px) {
+      .pagination {
+        flex-wrap: wrap;
+      }
+      
+      .pagination-numbers {
+        order: -1;
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="blog-header">
+    <div class="blog-header-container">
+      <a href="../home2.html" class="blog-logo">
+        <img src="../alphawhale_logowebsite.png" alt="Alpha Whale">
+      </a>
+      <nav class="blog-nav">
+        <a href="../home2.html">Home</a>
+        <a href="#features">Features</a>
+        <a href="https://app.alphawhale.trade/" class="cta-button">Start Trading</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="blog-hero">
+    <h1>Alpha Whale Blog</h1>
+    <p>Expert guides on Polymarket trading, copy trading strategies, and prediction market automation</p>
+  </section>
+
+  <!-- Category Filters -->
+  <div class="blog-filters">
+    <button class="filter-btn active" data-category="all">All Posts</button>
+    <button class="filter-btn" data-category="how-to">How-To</button>
+    <button class="filter-btn" data-category="strategy">Strategy</button>
+    <button class="filter-btn" data-category="copy-trading">Copy Trading</button>
+    <button class="filter-btn" data-category="markets">Markets</button>
+  </div>
+
+  <!-- Main Content -->
+  <div class="blog-container">
+    <!-- Posts Grid -->
+    <div class="posts-grid" id="posts-grid">
+      
+    <article class="post-card" data-category="brand">
+      <a href="posts/alpha-whale-copy-trading.html">
+        <div class="post-card-image">📈</div>
+        <div class="post-card-content">
+          <span class="post-card-category">Brand</span>
+          <h2 class="post-card-title">Alpha Whale Copy Trading: Automate Your Polymarket Success</h2>
+          <p class="post-card-excerpt">Learn how Alpha Whale copy trading works for Polymarket. Understand the features, benefits, and how to get started with ...</p>
+          <div class="post-card-meta">
+            <span>Dec 25, 2025</span>
+            <span>10 min</span>
+          </div>
+        </div>
+      </a>
+    </article>
+  
+    <article class="post-card" data-category="brand">
+      <a href="posts/alpha-whale-polymarket.html">
+        <div class="post-card-image">📈</div>
+        <div class="post-card-content">
+          <span class="post-card-category">Brand</span>
+          <h2 class="post-card-title">Alpha Whale for Polymarket: The Ultimate Copy Trading Solution</h2>
+          <p class="post-card-excerpt">Discover how Alpha Whale enhances your Polymarket experience. The leading copy trading platform for prediction market au...</p>
+          <div class="post-card-meta">
+            <span>Dec 25, 2025</span>
+            <span>9 min</span>
+          </div>
+        </div>
+      </a>
+    </article>
+  
+    <article class="post-card" data-category="brand">
+      <a href="posts/best-polymarket-copy-trading.html">
+        <div class="post-card-image">📈</div>
+        <div class="post-card-content">
+          <span class="post-card-category">Brand</span>
+          <h2 class="post-card-title">Best Polymarket Copy Trading: Why Alpha Whale Leads</h2>
+          <p class="post-card-excerpt">Find the best copy trading for Polymarket. Compare options and learn why Alpha Whale is the top choice for prediction ma...</p>
+          <div class="post-card-meta">
+            <span>Dec 25, 2025</span>
+            <span>10 min</span>
+          </div>
+        </div>
+      </a>
+    </article>
+  
+    <article class="post-card" data-category="copy-trading">
+      <a href="posts/automated-copy-trading.html">
+        <div class="post-card-image">📈</div>
+        <div class="post-card-content">
+          <span class="post-card-category">Copy Trading</span>
+          <h2 class="post-card-title">Automated Copy Trading: How It Works and Why It Matters</h2>
+          <p class="post-card-excerpt">Understand automated copy trading systems. Learn how automation improves copy trading execution and what to consider whe...</p>
+          <div class="post-card-meta">
+            <span>Dec 25, 2025</span>
+            <span>9 min</span>
+          </div>
+        </div>
+      </a>
+    </article>
+  
+    <article class="post-card" data-category="brand">
+      <a href="posts/polymarket-alerts-service.html">
+        <div class="post-card-image">📈</div>
+        <div class="post-card-content">
+          <span class="post-card-category">Brand</span>
+          <h2 class="post-card-title">Polymarket Alerts Service: Never Miss a Trading Opportunity</h2>
+          <p class="post-card-excerpt">Get Polymarket alerts through Alpha Whale copy trading. How automated alerts and execution help you capture every predic...</p>
+          <div class="post-card-meta">
+            <span>Dec 24, 2025</span>
+            <span>8 min</span>
+          </div>
+        </div>
+      </a>
+    </article>
+  
+    <article class="post-card" data-category="brand">
+      <a href="posts/polymarket-signal-service.html">
+        <div class="post-card-image">📈</div>
+        <div class="post-card-content">
+          <span class="post-card-category">Brand</span>
+          <h2 class="post-card-title">Polymarket Signal Service: Alpha Whale's Automated Trading Signals</h2>
+          <p class="post-card-excerpt">Learn about Polymarket trading signals through Alpha Whale. How automated signals from successful traders can improve yo...</p>
+          <div class="post-card-meta">
+            <span>Dec 24, 2025</span>
+            <span>9 min</span>
+          </div>
+        </div>
+      </a>
+    </article>
+  
+    <article class="post-card" data-category="brand">
+      <a href="posts/polymarket-trading-signals.html">
+        <div class="post-card-image">📈</div>
+        <div class="post-card-content">
+          <span class="post-card-category">Brand</span>
+          <h2 class="post-card-title">Polymarket Trading Signals: Follow the Smart Money</h2>
+          <p class="post-card-excerpt">Access Polymarket trading signals through Alpha Whale. Learn how to leverage successful trader signals for better predic...</p>
+          <div class="post-card-meta">
+            <span>Dec 24, 2025</span>
+            <span>8 min</span>
+          </div>
+        </div>
+      </a>
+    </article>
+  
+    <article class="post-card" data-category="copy-trading">
+      <a href="posts/copy-trading-vs-manual-trading.html">
+        <div class="post-card-image">📈</div>
+        <div class="post-card-content">
+          <span class="post-card-category">Copy Trading</span>
+          <h2 class="post-card-title">Copy Trading vs Manual Trading: Which Is Right for You?</h2>
+          <p class="post-card-excerpt">Compare copy trading with manual trading. Understand the tradeoffs to decide which approach fits your situation, skills,...</p>
+          <div class="post-card-meta">
+            <span>Dec 24, 2025</span>
+            <span>10 min</span>
+          </div>
+        </div>
+      </a>
+    </article>
+  
+    <article class="post-card" data-category="brand">
+      <a href="posts/join-polymarket-trading.html">
+        <div class="post-card-image">📈</div>
+        <div class="post-card-content">
+          <span class="post-card-category">Brand</span>
+          <h2 class="post-card-title">Join Polymarket Trading: Start Your Prediction Market Journey Today</h2>
+          <p class="post-card-excerpt">Ready to join Polymarket trading? Learn how to get started with Alpha Whale copy trading for the easiest path to predict...</p>
+          <div class="post-card-meta">
+            <span>Dec 23, 2025</span>
+            <span>8 min</span>
+          </div>
+        </div>
+      </a>
+    </article>
+  
+    <article class="post-card" data-category="brand">
+      <a href="posts/polymarket-trade-alerts.html">
+        <div class="post-card-image">📈</div>
+        <div class="post-card-content">
+          <span class="post-card-category">Brand</span>
+          <h2 class="post-card-title">Polymarket Trade Alerts: Instant Notification and Execution</h2>
+          <p class="post-card-excerpt">Receive Polymarket trade alerts with automatic execution through Alpha Whale. How successful trader alerts can transform...</p>
+          <div class="post-card-meta">
+            <span>Dec 23, 2025</span>
+            <span>8 min</span>
+          </div>
+        </div>
+      </a>
+    </article>
+  
+    <article class="post-card" data-category="brand">
+      <a href="posts/polymarket-trading-community.html">
+        <div class="post-card-image">📈</div>
+        <div class="post-card-content">
+          <span class="post-card-category">Brand</span>
+          <h2 class="post-card-title">Polymarket Trading Community: Join the Alpha Whale Network</h2>
+          <p class="post-card-excerpt">Join the Alpha Whale Polymarket trading community. Connect with successful traders, share insights, and improve your pre...</p>
+          <div class="post-card-meta">
+            <span>Dec 23, 2025</span>
+            <span>9 min</span>
+          </div>
+        </div>
+      </a>
+    </article>
+  
+    <article class="post-card" data-category="copy-trading">
+      <a href="posts/best-copy-trading-strategies.html">
+        <div class="post-card-image">📈</div>
+        <div class="post-card-content">
+          <span class="post-card-category">Copy Trading</span>
+          <h2 class="post-card-title">Best Copy Trading Strategies: Maximizing Returns from Following Traders</h2>
+          <p class="post-card-excerpt">Learn proven copy trading strategies for selecting traders, managing allocations, and optimizing your copy trading resul...</p>
+          <div class="post-card-meta">
+            <span>Dec 23, 2025</span>
+            <span>11 min</span>
+          </div>
+        </div>
+      </a>
+    </article>
+  <div class="pagination"><a href="page-7.html" class="pagination-btn">← Previous</a><div class="pagination-numbers"><a href="index.html" class="pagination-num">1</a><a href="page-2.html" class="pagination-num">2</a><a href="page-3.html" class="pagination-num">3</a><a href="page-4.html" class="pagination-num">4</a><a href="page-5.html" class="pagination-num">5</a><a href="page-6.html" class="pagination-num">6</a><a href="page-7.html" class="pagination-num">7</a><span class="pagination-num active">8</span><a href="page-9.html" class="pagination-num">9</a></div><a href="page-9.html" class="pagination-btn">Next →</a></div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="blog-sidebar">
+      <div class="sidebar-section">
+        <h3>Featured Posts</h3>
+        <div id="featured-posts">
+          
+      <div class="featured-post">
+        <a href="posts/polymarket-copy-trading-guide.html">
+          <div class="featured-post-title">What is Copy Trading? Automate Your Polymarket Strategy</div>
+          <div class="featured-post-date">Jan 15</div>
+        </a>
+      </div>
+    
+      <div class="featured-post">
+        <a href="posts/how-to-trade-on-polymarket.html">
+          <div class="featured-post-title">How to Trade on Polymarket: Complete 2026 Guide</div>
+          <div class="featured-post-date">Jan 15</div>
+        </a>
+      </div>
+    
+      <div class="featured-post">
+        <a href="posts/polymarket-trading-bot.html">
+          <div class="featured-post-title">Polymarket Trading Bot: How Automated Strategies Actually Work</div>
+          <div class="featured-post-date">Jan 15</div>
+        </a>
+      </div>
+    
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3>Stay Updated</h3>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Newsletter signup coming soon!');">
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit">Subscribe</button>
+          <p>Get the latest Polymarket trading strategies delivered to your inbox.</p>
+        </form>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Brand Column -->
+      <div class="footer-brand">
+        <img src="../alphalogo_text.png" alt="Alpha Whale" class="footer-logo">
+        <p class="footer-tagline">Trade like the whales. Copy the smartest Polymarket traders and grow your portfolio.</p>
+        <div class="footer-social">
+          <a href="https://x.com/alphawhaletrade" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Follow us on X">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Product Column -->
+      <div class="footer-column">
+        <h4 class="footer-column-title">Product</h4>
+        <a href="https://app.alphawhale.trade/" class="footer-link">Start Trading</a>
+        <a href="../documentation.html" class="footer-link">Product Guide</a>
+      </div>
+
+      <!-- Resources Column -->
+      <div class="footer-column">
+        <h4 class="footer-column-title">Resources</h4>
+        <a href="https://t.me/+zSSN2Ibk6NwxNWUx" target="_blank" rel="noopener noreferrer" class="footer-link">Join our community</a>
+        <a href="index.html" class="footer-link">Blog</a>
+      </div>
+
+      <!-- Company Column -->
+      <div class="footer-column">
+        <h4 class="footer-column-title">Company</h4>
+        <a href="../about.html" class="footer-link">About</a>
+        <a href="https://t.me/+zSSN2Ibk6NwxNWUx" target="_blank" rel="noopener noreferrer" class="footer-link">Contact</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copyright">&copy; 2026 Alpha Whale. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="../privacy-policy.html">Privacy Policy</a>
+        <a href="../terms-of-service.html">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Category filter functionality
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        const category = btn.dataset.category;
+        const posts = document.querySelectorAll('.post-card');
+        
+        posts.forEach(post => {
+          if (category === 'all' || post.dataset.category === category) {
+            post.style.display = 'flex';
+          } else {
+            post.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+

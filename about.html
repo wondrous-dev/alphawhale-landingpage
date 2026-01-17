@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Alpha Whale</title>
+  <meta name="description" content="Our philosophy: We want to give you an unfair advantage in prediction market trading. Learn what drives Alpha Whale.">
+  <meta name="robots" content="index, follow">
+  <meta name="keywords" content="Alpha Whale, prediction markets, Polymarket, trading philosophy, about Alpha Whale">
+  <link rel="canonical" href="https://alphawhale.trade/about">
+  
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="About | Alpha Whale">
+  <meta property="og:description" content="Our philosophy: We want to give you an unfair advantage in prediction market trading.">
+  <meta property="og:image" content="https://alphawhale.trade/alphawhale_logowebsite.png">
+  <meta property="og:url" content="https://alphawhale.trade/about">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@alphawhaletrade">
+  <meta name="twitter:title" content="About | Alpha Whale">
+  <meta name="twitter:description" content="Our philosophy: We want to give you an unfair advantage in prediction market trading.">
+  <meta name="twitter:image" content="https://alphawhale.trade/alphawhale_logowebsite.png">
+  
+  <link rel="icon" href="alphawhale_logowebsite.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=Inter:wght@200;300;400&family=Manrope:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-deep: #0a0a0a;
+      --accent-primary: #00d4ff;
+      --accent-secondary: #0066ff;
+      --text-primary: #ffffff;
+      --text-muted: rgba(255, 255, 255, 0.5);
+      --text-muted-light: rgba(255, 255, 255, 0.7);
+      --border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    body {
+      font-family: 'Manrope', sans-serif;
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    .about-header {
+      border-bottom: 1px solid var(--border-color);
+      padding: 1.5rem 0;
+      position: sticky;
+      top: 0;
+      background: var(--bg-deep);
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+
+    .about-header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .about-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .about-logo img {
+      height: 32px;
+      width: auto;
+    }
+
+    .about-nav {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .about-nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s ease;
+    }
+
+    .about-nav a:hover {
+      color: var(--text-primary);
+    }
+
+    .about-nav .cta-button {
+      background: linear-gradient(135deg, #00d4ff 0%, #00b4e6 50%, #00d4ff 100%);
+      background-size: 200% 200%;
+      color: var(--bg-deep);
+      padding: 0.65rem 1.75rem;
+      border-radius: 8px;
+      font-weight: 700;
+      box-shadow: 
+        0 4px 15px rgba(0, 212, 255, 0.4),
+        0 0 30px rgba(0, 212, 255, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-nav .cta-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .about-nav .cta-button:hover {
+      color: var(--bg-deep);
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 
+        0 8px 25px rgba(0, 212, 255, 0.5),
+        0 0 40px rgba(0, 212, 255, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+      background-position: 100% 100%;
+    }
+
+    .about-nav .cta-button:hover::before {
+      left: 100%;
+    }
+
+    .about-nav .cta-button:active {
+      transform: translateY(0) scale(0.98);
+    }
+
+    /* Main Content */
+    .about-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 6rem 2rem;
+    }
+
+    .philosophy-heading {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(4rem, 10vw, 7rem);
+      line-height: 1;
+      margin-bottom: 4rem;
+      letter-spacing: 0.02em;
+    }
+
+    .philosophy-heading .our {
+      color: var(--text-primary);
+    }
+
+    .philosophy-heading .philosophy {
+      color: var(--accent-primary);
+      font-style: italic;
+      font-family: 'Instrument Serif', serif;
+    }
+
+    .philosophy-content {
+      font-size: clamp(1.125rem, 2vw, 1.5rem);
+      line-height: 1.9;
+      color: var(--text-muted-light);
+    }
+
+    .philosophy-content p {
+      margin-bottom: 2rem;
+    }
+
+    .philosophy-content .highlight {
+      color: var(--accent-primary);
+      font-weight: 600;
+    }
+
+    .philosophy-content .question {
+      font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+      color: var(--text-primary);
+      margin: 3rem 0 2rem;
+      font-weight: 500;
+    }
+
+    .philosophy-content .tagline {
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      color: var(--text-primary);
+      margin: 4rem 0 2rem;
+      font-weight: 600;
+    }
+
+    .philosophy-content .closing {
+      font-size: clamp(1.75rem, 4vw, 3rem);
+      color: var(--accent-primary);
+      font-weight: 700;
+      margin-top: 4rem;
+      text-align: center;
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 0.05em;
+    }
+
+    /* Footer */
+    .about-footer {
+      border-top: 1px solid var(--border-color);
+      margin-top: 6rem;
+      padding: 2rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .about-footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .about-footer a:hover {
+      color: var(--text-primary);
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 4rem;
+      margin-top: 4rem;
+    }
+
+    .footer-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .footer-logo {
+      height: 56px;
+      width: auto;
+      max-width: 250px;
+      object-fit: contain;
+      align-self: flex-start;
+    }
+
+    .footer-tagline {
+      font-family: 'Manrope', sans-serif;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.6;
+      max-width: 280px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+      margin-top: 1rem;
+    }
+
+    .footer-social-link {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.7);
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .footer-social-link:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+
+    .footer-column {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .footer-column-title {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-link {
+      font-family: 'Manrope', sans-serif;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-link:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      max-width: 1400px;
+      margin: 3rem auto 0;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copyright {
+      font-family: 'Manrope', sans-serif;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .footer-legal a {
+      font-family: 'Manrope', sans-serif;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.4);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-legal a:hover {
+      color: #fff;
+    }
+
+    @media (max-width: 900px) {
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+      }
+
+      .footer-brand {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .footer {
+        padding: 3rem 2rem;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .footer-brand {
+        grid-column: span 1;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      .footer-legal {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .about-container {
+        padding: 4rem 1.5rem;
+      }
+
+      .about-header-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .about-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .philosophy-content {
+        font-size: 1.125rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="about-header">
+    <div class="about-header-container">
+      <a href="home2.html" class="about-logo">
+        <img src="alphawhale_logowebsite.png" alt="Alpha Whale">
+      </a>
+      <nav class="about-nav">
+        <a href="home2.html">Home</a>
+        <a href="blog/index.html">Blog</a>
+        <a href="https://app.alphawhale.trade/" class="cta-button">Start Trading</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="about-container">
+    <h1 class="philosophy-heading">
+      <span class="our">Our</span> <span class="philosophy">philosophy</span>
+    </h1>
+
+    <div class="philosophy-content">
+      <p>
+        We want to give you an <span class="highlight">unfair advantage</span>.
+      </p>
+
+      <p>
+        Maybe you're a trader watching the whales move markets while you're stuck analyzing charts.
+      </p>
+
+      <p>
+        Or you're a crypto enthusiast who knows prediction markets are the future, but you don't have time to research every position.
+      </p>
+
+      <p>
+        Or you're building a portfolio and want to mirror the strategies that actually work—not the ones that look good on paper.
+      </p>
+
+      <p>
+        We want to be the <span class="highlight">superpower in your back pocket</span>.
+      </p>
+
+      <p class="question">
+        Every day we are asking ourselves
+      </p>
+
+      <p class="question">
+        How can we help you trade like the whales in 1/10th the time?
+      </p>
+
+      <p>
+        So you can focus on what matters—whether that's building your next project, spending time with family, or just living your life without staring at charts all day.
+      </p>
+
+      <p class="tagline">
+        Alpha Whale is founded to help you win.
+      </p>
+
+      <p>
+        We want you to become a better trader. To make smarter decisions. To take calculated risks. To build the portfolio you've always envisioned.
+      </p>
+
+      <p>
+        We know trading is not easy.
+      </p>
+
+      <p>
+        Success takes discipline, patience, and it doesn't happen overnight. There is no magic wand you can wave.
+      </p>
+
+      <p>
+        But if there was one, it would be Alpha Whale.
+      </p>
+
+      <p class="closing">
+        Never stop growing.
+      </p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Brand Column -->
+      <div class="footer-brand">
+        <img src="alphalogo_text.png" alt="Alpha Whale" class="footer-logo">
+        <p class="footer-tagline">Trade like the whales. Copy the smartest Polymarket traders and grow your portfolio.</p>
+        <div class="footer-social">
+          <a href="https://x.com/alphawhaletrade" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Follow us on X">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Product Column -->
+      <div class="footer-column">
+        <h4 class="footer-column-title">Product</h4>
+        <a href="https://app.alphawhale.trade/" class="footer-link">Start Trading</a>
+        <a href="documentation.html" class="footer-link">Product Guide</a>
+      </div>
+
+      <!-- Resources Column -->
+      <div class="footer-column">
+        <h4 class="footer-column-title">Resources</h4>
+        <a href="https://t.me/+zSSN2Ibk6NwxNWUx" target="_blank" rel="noopener noreferrer" class="footer-link">Join our community</a>
+        <a href="blog/index.html" class="footer-link">Blog</a>
+      </div>
+
+      <!-- Company Column -->
+      <div class="footer-column">
+        <h4 class="footer-column-title">Company</h4>
+        <a href="about.html" class="footer-link">About</a>
+        <a href="https://t.me/+zSSN2Ibk6NwxNWUx" target="_blank" rel="noopener noreferrer" class="footer-link">Contact</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copyright">&copy; 2026 Alpha Whale. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-service.html">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+

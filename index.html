@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alpha Whale | Prediction Market Trading Platform</title>
+  <title>Alpha Whale | Polymarket Copy Trading & Prediction Market Automation</title>
   <meta name="description" content="Copy trade the most profitable Polymarket wallets in minutes. Track whale movements, mirror winning strategies, and maximize your prediction market returns with Alpha Whale.">
   <meta name="robots" content="index, follow">
+  <meta name="keywords" content="Polymarket, copy trading, prediction markets, Alpha Whale, automated trading, Polymarket bot, trading automation">
   <link rel="canonical" href="https://alphawhale.trade/">
   
   <!-- Open Graph Tags -->
@@ -25,7 +26,45 @@
   <link rel="icon" href="alphawhale_logowebsite.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=Inter:wght@200;300;400&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=Inter:wght@200;300;400&family=Manrope:wght@400;500;600&family=Permanent+Marker&display=swap" rel="stylesheet">
+  
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Alpha Whale",
+    "applicationCategory": "FinanceApplication",
+    "description": "Copy trade the most profitable Polymarket wallets. Track whale movements and mirror winning prediction market strategies.",
+    "url": "https://alphawhale.trade",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Alpha Whale",
+      "url": "https://alphawhale.trade",
+      "logo": "https://alphawhale.trade/alphawhale_logowebsite.png"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Alpha Whale",
+    "url": "https://alphawhale.trade",
+    "logo": "https://alphawhale.trade/alphawhale_logowebsite.png",
+    "sameAs": [
+      "https://x.com/alphawhaletrade",
+      "https://t.me/+zSSN2Ibk6NwxNWUx"
+    ]
+  }
+  </script>
+  
   <style>
     * {
       margin: 0;
@@ -52,11 +91,10 @@
       background: var(--bg-deep);
       color: var(--text-primary);
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
       position: relative;
       min-height: 100vh;
-      padding-bottom: 2rem;
     }
 
     /* Grungy noise texture overlay */
@@ -84,9 +122,13 @@
       position: relative;
       z-index: 10;
       text-align: left;
-      padding: 2rem 4rem;
+      padding: 5rem 4rem 2rem;
       max-width: 1400px;
       width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     /* Logo */
@@ -193,8 +235,12 @@
     .cta-button {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
+      align-self: flex-start;
       gap: 12px;
       padding: 1rem 2rem;
+      width: fit-content;
+      white-space: nowrap;
       font-family: 'Bebas Neue', sans-serif;
       font-size: 1.4rem;
       letter-spacing: 0.1em;
@@ -282,43 +328,9 @@
     }
 
     /* Social link */
-    .social-link {
-      position: fixed;
-      bottom: 0.5rem;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 20;
-      animation: fadeIn 0.8s ease-out 0.8s backwards;
-    }
-
-    .social-link a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 44px;
-      height: 44px;
-      background: transparent;
-      border: 2px solid var(--text-muted);
-      color: var(--text-muted);
-      transition: all 0.2s ease;
-    }
-
-    .social-link a:hover {
-      border-color: var(--accent-primary);
-      color: var(--accent-primary);
-      transform: translate(-2px, -2px);
-      box-shadow: 4px 4px 0 var(--accent-primary);
-    }
-
-    .social-link svg {
-      width: 18px;
-      height: 18px;
-      fill: currentColor;
-    }
-
     /* Animated Graph */
     .graph-container {
-      position: fixed;
+      position: absolute;
       bottom: 0;
       left: 0;
       right: 0;
@@ -326,6 +338,16 @@
       z-index: 5;
       pointer-events: none;
       overflow: hidden;
+    }
+
+    /* Hero wrapper to contain graph */
+    .hero-wrapper {
+      position: relative;
+      min-height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .graph-svg {
@@ -413,7 +435,7 @@
 
     /* Big background text */
     .bg-text {
-      position: fixed;
+      position: absolute;
       bottom: -5%;
       right: -2%;
       font-size: clamp(15rem, 35vw, 40rem);
@@ -427,7 +449,7 @@
 
     /* 3D iPhone Mockup */
     .phone-container {
-      position: fixed;
+      position: absolute;
       right: 8%;
       top: 50%;
       transform: translateY(-50%);
@@ -659,22 +681,1703 @@
       .hero {
         padding: 2rem;
         text-align: center;
+        align-items: center;
       }
       .headline {
         text-align: center;
       }
       .hero-description {
         margin: 2rem auto;
+        text-align: center;
+      }
+      .hero .cta-button {
+        align-self: center;
       }
       .x-mark { display: none; }
       .scratch { display: none; }
       .bg-text { display: none; }
-      .social-link {
-        right: 50%;
-        transform: translateX(50%);
-      }
       .polymarket-badge {
         align-items: center;
+      }
+    }
+
+    /* ===== FEATURES SECTION ===== */
+    .features-section {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 1400px;
+      padding: 6rem 4rem 3rem;
+    }
+
+    .features-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .features-title {
+      font-family: 'Manrope', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 400;
+      color: var(--text-primary);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    .features-title .serif {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic;
+    }
+
+    .features-subtitle {
+      font-family: 'Manrope', sans-serif;
+      font-size: clamp(1rem, 1.5vw, 1.5rem);
+      font-weight: 400;
+      color: #71717a;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .feature-card {
+      position: relative;
+      height: 380px;
+      border-radius: 20px;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      background: linear-gradient(180deg, #0d1520 0%, #0a0f18 100%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 
+        0 0 0 1px rgba(0, 180, 216, 0.05),
+        0 4px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .feature-card.fade-in-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .feature-card-1 { transition-delay: 0s; }
+    .feature-card-2 { transition-delay: 0.15s; }
+    .feature-card-3 { transition-delay: 0.3s; }
+
+    .feature-card-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      display: none;
+    }
+
+    .feature-card-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .feature-card-gradient {
+      display: none;
+    }
+
+    .feature-card-content {
+      position: absolute;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+      z-index: 3;
+    }
+
+    .feature-card-title {
+      font-family: 'Manrope', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-card-description {
+      font-family: 'Manrope', sans-serif;
+      font-size: 1rem;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.5;
+      max-width: 320px;
+    }
+
+    .feature-card-overlay {
+      position: absolute;
+      left: 20px;
+      right: 20px;
+      top: 20px;
+      bottom: 90px;
+      transform: none;
+      border-radius: 12px;
+      background: transparent;
+      z-index: 2;
+      overflow: hidden;
+    }
+
+    .feature-card-overlay img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    /* Shimmer effect */
+    .feature-card-overlay::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        105deg,
+        transparent 20%,
+        rgba(255, 255, 255, 0.08) 35%,
+        rgba(255, 255, 255, 0.15) 50%,
+        rgba(255, 255, 255, 0.08) 65%,
+        transparent 80%
+      );
+      transform: translateX(-100%);
+      animation: shimmer 4s ease-in-out infinite;
+      animation-delay: 1s;
+      pointer-events: none;
+      border-radius: 16px;
+    }
+
+    @keyframes shimmer {
+      0% {
+        transform: translateX(-100%);
+      }
+      50%, 100% {
+        transform: translateX(100%);
+      }
+    }
+
+    /* Stagger the shimmer on different cards */
+    .feature-card-2 .feature-card-overlay::after {
+      animation-delay: 2.5s;
+    }
+
+    .feature-card-3 .feature-card-overlay::after {
+      animation-delay: 4s;
+    }
+
+    /* Card 1: Copy Trade */
+    .feature-card-1 .feature-card-overlay {
+      left: 20px;
+      right: 20px;
+      top: 20px;
+      bottom: 90px;
+    }
+
+    /* Card 2: Bonding */
+    .feature-card-2 .feature-card-overlay {
+      left: 20px;
+      right: 20px;
+      top: 20px;
+      bottom: 90px;
+    }
+
+    .bonding-card-inner {
+      background: linear-gradient(135deg, rgba(0, 102, 204, 0.4) 0%, rgba(0, 51, 102, 0.6) 100%);
+      border-radius: 12px;
+      padding: 16px;
+      width: 100%;
+      min-height: 120px;
+      position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .bonding-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .bonding-card-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      color: #fff;
+    }
+
+    .bonding-card-status {
+      width: 10px;
+      height: 10px;
+      background: #22c55e;
+      border-radius: 50%;
+    }
+
+    .bonding-card-manage {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .bonding-card-profit {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      color: #22c55e;
+      margin-bottom: 8px;
+    }
+
+    .bonding-card-stats {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Copy Trade Card Styles */
+    .copytrade-card-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+      max-width: 350px;
+    }
+
+    .copytrade-trader {
+      background: #0f0f11;
+      border: 1px solid #1f1f23;
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .copytrade-trader-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .copytrade-trader-name {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      color: #fff;
+    }
+
+    .copytrade-trader-stats {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      color: #71717a;
+    }
+
+    .copytrade-trader-stats span {
+      color: rgba(113, 113, 122, 0.5);
+    }
+
+    .copytrade-trader-profit {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 2px;
+    }
+
+    .copytrade-trader-amount {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      color: #22c55e;
+    }
+
+    .copytrade-trader-percent {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      color: #22c55e;
+    }
+
+    /* Card 3: Alerts */
+    .feature-card-3 .feature-card-overlay {
+      left: 20px;
+      right: 20px;
+      top: 20px;
+      bottom: 90px;
+      overflow-y: auto;
+    }
+
+    /* Alerts Position Cards */
+    .alerts-card-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+
+    .alert-position {
+      background: #111114;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      min-height: 86px;
+    }
+
+    .alert-position-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .alert-position-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .alert-position-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .alert-position-name {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      color: #fff;
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: 4px;
+    }
+
+    .alert-position-status {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      color: #71717a;
+    }
+
+    .alert-position-value {
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .alert-position-amount {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+
+    .alert-position-profit {
+      display: flex;
+      justify-content: flex-end;
+      gap: 4px;
+      margin-bottom: 2px;
+    }
+
+    .alert-position-profit .profit-amount,
+    .alert-position-profit .profit-percent {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      color: #22c55e;
+    }
+
+    .alert-position-price {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      color: #71717a;
+    }
+
+    @media (max-width: 1200px) {
+      .features-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .feature-card {
+        height: 360px;
+      }
+
+      .feature-card-overlay {
+        width: auto !important;
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .features-section {
+        padding: 4rem 1.5rem 2rem;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .feature-card {
+        height: auto;
+        min-height: auto;
+        padding-bottom: 0;
+      }
+
+      .feature-card-overlay {
+        position: relative;
+        left: auto;
+        right: auto;
+        top: auto;
+        bottom: auto;
+        margin: 16px;
+        height: auto;
+        min-height: auto;
+      }
+
+      .feature-card-1 .feature-card-overlay,
+      .feature-card-3 .feature-card-overlay {
+        position: relative;
+        left: auto;
+        right: auto;
+        top: auto;
+        bottom: auto;
+        margin: 16px;
+        height: auto;
+        min-height: auto;
+      }
+
+      .feature-card-2 .feature-card-overlay {
+        position: relative;
+        left: auto;
+        right: auto;
+        top: auto;
+        bottom: auto;
+        margin: 16px;
+        height: auto;
+        min-height: auto;
+      }
+
+      .feature-card-content {
+        position: relative;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        padding: 0 16px 16px;
+      }
+
+      .feature-card-title {
+        font-size: 20px;
+      }
+
+      .feature-card-description {
+        font-size: 14px;
+      }
+
+      /* Copy trade cards on mobile */
+      .copy-trade-card {
+        padding: 12px 14px;
+        min-height: 52px;
+      }
+
+      .copy-trade-name {
+        font-size: 14px;
+      }
+
+      .copy-trade-stats {
+        font-size: 11px;
+      }
+
+      .copy-trade-profit {
+        font-size: 14px;
+      }
+
+      .copy-trade-percent {
+        font-size: 11px;
+      }
+
+      /* Bonding card on mobile */
+      .bonding-card-inner {
+        padding: 14px;
+        min-height: 100px;
+      }
+
+      .bonding-title {
+        font-size: 16px;
+      }
+
+      .bonding-profit {
+        font-size: 20px;
+      }
+
+      .bonding-stats {
+        font-size: 11px;
+      }
+
+      /* Alert cards on mobile */
+      .alert-position {
+        padding: 10px;
+        min-height: 60px;
+        gap: 10px;
+      }
+
+      .alert-position-icon {
+        width: 32px;
+        height: 32px;
+      }
+
+      .alert-market-name {
+        font-size: 12px;
+        -webkit-line-clamp: 1;
+      }
+
+      .alert-status {
+        font-size: 10px;
+      }
+
+      .alert-value {
+        font-size: 14px;
+      }
+
+      .alert-profit-amount,
+      .alert-profit-percent {
+        font-size: 11px;
+      }
+
+      .alert-entry-price {
+        font-size: 10px;
+      }
+    }
+
+    /* ===== INSIGHTS SECTION ===== */
+    .insights-section {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 1400px;
+      padding: 0 4rem 8rem;
+    }
+
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .insights-container {
+      width: 100%;
+    }
+
+    .insight-box {
+      position: relative;
+      min-height: 843px;
+      border-radius: 16px;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .insight-box.fade-in-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .insight-box-1 { transition-delay: 0s; }
+    .insight-box-2 { transition-delay: 0.15s; }
+
+    .insight-box-2 {
+      min-height: auto;
+      padding-bottom: 60px;
+    }
+
+    /* Full width insight box */
+    .insight-box-full {
+      min-height: auto;
+      padding-bottom: 60px;
+      background: 
+        radial-gradient(ellipse 60% 50% at 100% 50%, rgba(0, 102, 255, 0.5) 0%, transparent 50%),
+        radial-gradient(ellipse 80% 80% at 0% 100%, rgba(0, 179, 221, 0.3) 0%, transparent 50%),
+        linear-gradient(180deg, #1a3a6e 0%, #0a1a2e 50%, #0a0f1a 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .insight-box-full .insight-box-content {
+      max-width: 900px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .insight-box-full .insight-box-title,
+    .insight-box-full .insight-box-description {
+      text-align: center;
+    }
+
+    .insight-box-full .portfolio-card-embed {
+      max-width: 100%;
+    }
+
+    .insight-box-full .insight-cta {
+      margin-top: 32px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--accent-primary);
+      color: var(--bg-deep);
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-family: 'Manrope', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
+      transition: all 0.2s ease;
+    }
+
+    .insight-box-full .insight-cta:hover {
+      background: #fff;
+      box-shadow: 0 0 40px rgba(0, 212, 255, 0.5);
+      transform: translateY(-2px);
+    }
+
+    .insight-box-full .insight-cta svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Whale CTA Section */
+    .whale-cta-section {
+      position: relative;
+      width: 100%;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 24px;
+    }
+
+    .whale-cta-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .whale-cta-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .whale-cta-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .whale-cta-content {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 60px 40px;
+      max-width: 700px;
+    }
+
+    .whale-cta-content .insight-box-title {
+      margin-bottom: 16px;
+    }
+
+    .whale-cta-content .insight-box-description {
+      margin-bottom: 32px;
+    }
+
+    .whale-cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent-primary);
+      color: var(--bg-deep);
+      padding: 16px 48px;
+      border-radius: 8px;
+      font-family: 'Manrope', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
+      transition: all 0.2s ease;
+    }
+
+    .whale-cta-button:hover {
+      background: #fff;
+      box-shadow: 0 0 40px rgba(0, 212, 255, 0.5);
+      transform: translateY(-2px);
+    }
+
+    /* Box 1: See instant insights - Blue gradient */
+    .insight-box-1 {
+      background: 
+        radial-gradient(ellipse 80% 60% at 80% 100%, rgba(0, 179, 221, 0.5) 0%, transparent 50%),
+        radial-gradient(ellipse 100% 80% at 0% 20%, rgba(0, 102, 255, 0.5) 0%, transparent 50%),
+        radial-gradient(ellipse 60% 60% at 100% 0%, rgba(0, 150, 200, 0.3) 0%, transparent 50%),
+        linear-gradient(180deg, #0a1a2e 0%, #0a0f1a 100%);
+    }
+
+    .insight-box-1::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('insights-bg.png') center/cover no-repeat;
+      opacity: 0.3;
+      mix-blend-mode: overlay;
+    }
+
+    /* Box 2: Unlock deep recaps - Dark blue gradient */
+    .insight-box-2 {
+      background: 
+        radial-gradient(ellipse 60% 50% at 100% 50%, rgba(0, 102, 255, 0.5) 0%, transparent 50%),
+        radial-gradient(ellipse 80% 80% at 0% 100%, rgba(0, 179, 221, 0.3) 0%, transparent 50%),
+        linear-gradient(180deg, #1a3a6e 0%, #0a1a2e 50%, #0a0f1a 100%);
+    }
+
+    .insight-box-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 90px 40px;
+      height: 100%;
+    }
+
+    .insight-box-title {
+      font-family: 'Georgia', serif;
+      font-size: 33px;
+      font-weight: 400;
+      color: #f5f5f7;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .insight-box-title .italic {
+      font-style: italic;
+    }
+
+    .insight-box-description {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.6);
+      text-align: center;
+      line-height: 1.5;
+      max-width: 400px;
+      margin-bottom: 40px;
+    }
+
+    /* Insight card (frosted glass) */
+    .insight-card {
+      position: relative;
+      width: 100%;
+      max-width: 360px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 16px;
+      padding: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .insight-card-icon {
+      width: 24px;
+      height: 24px;
+      margin-bottom: 16px;
+      color: #a5b4fc;
+    }
+
+    .insight-card-heading {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .insight-card-text {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.6;
+    }
+
+    /* Stats Card - Glassmorphism with glow */
+    .stats-card {
+      position: relative;
+      width: 100%;
+      max-width: 320px;
+      background: linear-gradient(
+        180deg,
+        rgba(30, 41, 70, 0.9) 0%,
+        rgba(20, 30, 55, 0.95) 50%,
+        rgba(15, 25, 50, 0.98) 100%
+      );
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-radius: 20px;
+      padding: 24px;
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      overflow: hidden;
+      box-shadow: 
+        0 0 60px rgba(59, 130, 246, 0.15),
+        0 25px 50px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    }
+
+    /* Bottom glow effect */
+    .stats-card-glow {
+      position: absolute;
+      bottom: -20px;
+      left: 10%;
+      right: 10%;
+      height: 80px;
+      background: radial-gradient(
+        ellipse 100% 100% at 50% 100%,
+        rgba(59, 130, 246, 0.5) 0%,
+        rgba(96, 165, 250, 0.3) 30%,
+        transparent 70%
+      );
+      filter: blur(20px);
+      pointer-events: none;
+    }
+
+    /* Grid background */
+    .stats-card-grid {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(59, 130, 246, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59, 130, 246, 0.08) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      opacity: 0.6;
+    }
+
+    .stats-card-header {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .stats-card-updated {
+      font-family: 'Manrope', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .stats-card-dropdown {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Manrope', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.1);
+      padding: 8px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .stats-card-dropdown:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .stats-card-chart {
+      position: relative;
+      z-index: 2;
+      height: 100px;
+      margin-bottom: 24px;
+    }
+
+    .stats-card-chart svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .stats-chart-line {
+      stroke-dasharray: 500;
+      stroke-dashoffset: 500;
+      animation: drawStatsLine 2s ease-out forwards;
+    }
+
+    @keyframes drawStatsLine {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    .stats-chart-dot {
+      opacity: 0;
+      animation: pulseDot 2s ease-out 1.5s forwards;
+      filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+    }
+
+    @keyframes pulseDot {
+      0% {
+        opacity: 0;
+        transform: scale(0);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .stats-card-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .stats-card-label {
+      display: block;
+      font-family: 'Manrope', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 8px;
+    }
+
+    .stats-card-value {
+      display: block;
+      font-family: 'Manrope', sans-serif;
+      font-size: 56px;
+      font-weight: 300;
+      color: #fff;
+      letter-spacing: -2px;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stats-card-subtitle {
+      display: block;
+      font-family: 'Manrope', sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* Weekly recap modal */
+    .recap-modal {
+      position: relative;
+      width: 100%;
+      max-width: 280px;
+      background: rgba(15, 16, 17, 0.9);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 16px;
+      padding: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .recap-modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+
+    .recap-modal-tabs {
+      display: flex;
+      gap: 8px;
+    }
+
+    .recap-modal-tab {
+      width: 24px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 2px;
+    }
+
+    .recap-modal-tab.active {
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    .recap-modal-close {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .recap-modal-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .recap-modal-icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 16px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .recap-modal-title {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .recap-modal-date {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Embedded portfolio card in insight box */
+    .portfolio-card-embed {
+      background: #1e1e1e;
+      border-radius: 16px;
+      padding: 24px;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    @media (max-width: 1024px) {
+      .insights-grid {
+        grid-template-columns: 1fr;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .insight-box {
+        height: 700px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .insights-section {
+        padding: 0 2rem 6rem;
+      }
+
+      .insight-box {
+        height: 600px;
+      }
+
+      .insight-box-content {
+        padding: 60px 24px;
+      }
+
+      .insight-box-title {
+        font-size: 28px;
+      }
+    }
+
+    /* ===== PORTFOLIO CARD SECTION ===== */
+    .portfolio-section {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 1400px;
+      padding: 0 4rem 8rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .portfolio-card {
+      background: #1e1e1e;
+      border-radius: 16px;
+      padding: 20px;
+      width: 100%;
+      max-width: 640px;
+    }
+
+    .portfolio-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .portfolio-username {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      color: #fff;
+    }
+
+    .portfolio-stats {
+      text-align: right;
+    }
+
+    .portfolio-timeframe {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      color: #71717a;
+      margin-bottom: 4px;
+    }
+
+    .portfolio-profit {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 700;
+      font-size: 24px;
+      color: #22c55e;
+    }
+
+    .portfolio-percent {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      color: #71717a;
+    }
+
+    .portfolio-tabs {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      padding: 16px 0;
+      margin-bottom: 16px;
+    }
+
+    .portfolio-tab {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      color: #71717a;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: color 0.2s ease;
+    }
+
+    .portfolio-tab:hover {
+      color: #a1a1aa;
+    }
+
+    .portfolio-tab.active {
+      background: #27272a;
+      color: #fff;
+      padding: 14px 6px;
+      border-radius: 9999px;
+    }
+
+    .portfolio-chart {
+      position: relative;
+      width: 100%;
+      height: 252px;
+      margin-bottom: 16px;
+    }
+
+    .portfolio-chart-svg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: calc(100% - 60px);
+      height: 100%;
+    }
+
+    .portfolio-chart-svg svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .chart-value-label {
+      position: absolute;
+      right: 0;
+      top: 10px;
+      background: #4ade80;
+      color: #000;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    .portfolio-chart-axis-labels {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 55px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding: 5px 0;
+    }
+
+    .portfolio-chart-axis-labels span {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.5);
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    .portfolio-chart-labels {
+      width: calc(100% - 60px);
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      padding-top: 8px;
+    }
+
+    .portfolio-chart-labels span {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.5);
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    .portfolio-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border-top: 1px solid #1f1f23;
+      padding-top: 16px;
+      gap: 16px 0;
+    }
+
+    .portfolio-metric {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 12px;
+    }
+
+    .portfolio-metric:nth-child(odd) {
+      border-right: 1px solid #1f1f23;
+      padding-left: 0;
+    }
+
+    .portfolio-metric:nth-child(even) {
+      padding-right: 0;
+    }
+
+    .portfolio-metric-label {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      color: #71717a;
+    }
+
+    .portfolio-metric-value {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      color: #fff;
+    }
+
+    .portfolio-metric-value.positive {
+      color: #22c55e;
+    }
+
+    .portfolio-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      margin-top: 20px;
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, #00d4ff 0%, #00b4e6 50%, #00d4ff 100%);
+      background-size: 200% 200%;
+      color: #0a0a0a;
+      font-family: 'Manrope', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 10px;
+      box-shadow: 
+        0 4px 20px rgba(0, 212, 255, 0.4),
+        0 0 40px rgba(0, 212, 255, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .portfolio-cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .portfolio-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 
+        0 8px 30px rgba(0, 212, 255, 0.5),
+        0 0 50px rgba(0, 212, 255, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+      background-position: 100% 100%;
+    }
+
+    .portfolio-cta:hover::before {
+      left: 100%;
+    }
+
+    .portfolio-cta:active {
+      transform: translateY(0);
+    }
+
+    .portfolio-cta svg {
+      width: 18px;
+      height: 18px;
+      transition: transform 0.2s ease;
+    }
+
+    .portfolio-cta:hover svg {
+      transform: translateX(4px);
+    }
+
+    @media (max-width: 768px) {
+      .portfolio-section {
+        padding: 0 2rem 6rem;
+      }
+
+      .portfolio-card {
+        padding: 16px;
+      }
+
+      .portfolio-tabs {
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .portfolio-metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .portfolio-metric {
+        border-right: none !important;
+        padding: 8px 0 !important;
+        border-bottom: 1px solid #1f1f23;
+      }
+
+      .portfolio-metric:last-child {
+        border-bottom: none;
+      }
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 4rem;
+      margin-top: 4rem;
+    }
+
+    .footer-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .footer-logo {
+      height: 56px;
+      width: auto;
+      max-width: 250px;
+      object-fit: contain;
+      align-self: flex-start;
+    }
+
+    .footer-tagline {
+      font-family: 'Manrope', sans-serif;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.6;
+      max-width: 280px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+      margin-top: 1rem;
+    }
+
+    .footer-social-link {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.7);
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .footer-social-link:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+
+    .footer-column {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .footer-column-title {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-link {
+      font-family: 'Manrope', sans-serif;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-link:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      max-width: 1400px;
+      margin: 3rem auto 0;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copyright {
+      font-family: 'Manrope', sans-serif;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .footer-legal a {
+      font-family: 'Manrope', sans-serif;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.4);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-legal a:hover {
+      color: #fff;
+    }
+
+    @media (max-width: 900px) {
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+      }
+
+      .footer-brand {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .footer {
+        padding: 3rem 2rem;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .footer-brand {
+        grid-column: span 1;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      .footer-legal {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+    }
+
+    /* ===== TOP NAVIGATION ===== */
+    .top-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1rem 0;
+      background: rgba(10, 10, 10, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transform: translateY(-100%);
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .top-header.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .top-header-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .top-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .top-logo img {
+      height: 32px;
+      width: auto;
+    }
+
+    .top-nav {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .top-nav a {
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      font-family: 'Manrope', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .top-nav a:hover {
+      color: #fff;
+    }
+
+    .top-nav .nav-login {
+      font-family: 'Manrope', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.8);
+      transition: color 0.2s ease;
+    }
+
+    .top-nav .nav-login:hover {
+      color: #fff;
+    }
+
+    .top-nav .cta-button {
+      width: auto;
+      background: var(--accent-primary);
+      color: var(--bg-deep);
+      padding: 0.5rem 1.25rem;
+      border-radius: 6px;
+      font-family: 'Manrope', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+      transition: all 0.2s ease;
+    }
+
+    .top-nav .cta-button:hover {
+      background: #33e0ff;
+      box-shadow: 0 0 24px rgba(0, 212, 255, 0.5);
+      transform: translateY(-1px);
+    }
+
+    .top-nav .cta-button:active {
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .top-header-container {
+        padding: 0 2rem;
+      }
+
+      .top-nav {
+        gap: 1rem;
+      }
+
+      .top-nav .nav-login {
+        display: inline;
+        font-size: 13px;
       }
     }
   </style>
@@ -692,31 +2395,42 @@
   <!-- Background -->
   <div class="color-wash"></div>
   <div class="noise"></div>
-  <div class="bg-text">ALPHA</div>
 
+  <!-- Top Navigation -->
+  <header class="top-header">
+    <div class="top-header-container">
+      <a href="/" class="top-logo">
+        <img src="alphawhale_logowebsite.png" alt="Alpha Whale">
+      </a>
+      <nav class="top-nav">
+        <a href="https://app.alphawhale.trade/" class="nav-login" target="_blank" rel="noopener noreferrer">Log in</a>
+        <a href="https://app.alphawhale.trade/" class="cta-button" target="_blank" rel="noopener noreferrer">Sign-up</a>
+      </nav>
+    </div>
+  </header>
 
-  <!-- 3D iPhone Mockup -->
-  <div class="phone-container">
-    <div class="phone">
-      <div class="phone-edge-left"></div>
-      <div class="phone-edge-bottom"></div>
-      <div class="phone-buttons"></div>
-      <div class="phone-screen">
-        <div class="phone-notch"></div>
-        <div class="screen-content">
-          <img src="phone3.png" alt="Alpha Whale App">
+  <!-- Hero Wrapper -->
+  <div class="hero-wrapper">
+    <div class="bg-text">ALPHA</div>
+
+    <!-- 3D iPhone Mockup -->
+    <div class="phone-container">
+      <div class="phone">
+        <div class="phone-edge-left"></div>
+        <div class="phone-edge-bottom"></div>
+        <div class="phone-buttons"></div>
+        <div class="phone-screen">
+          <div class="phone-notch"></div>
+          <div class="screen-content">
+            <img src="phone3.png" alt="Alpha Whale App">
+          </div>
         </div>
+        <div class="phone-reflection"></div>
       </div>
-      <div class="phone-reflection"></div>
-    </div>
-  </div>
-
-  <!-- Main content -->
-  <main class="hero">
-    <div class="brand">
-      <img src="alphawhale_logowebsite.png" alt="Alpha Whale" class="brand-logo">
     </div>
 
+    <!-- Main content -->
+    <main class="hero">
     <div class="headline">
       <span class="line line-1">Trade Like</span>
       <span class="line line-2">The Whales</span>
@@ -725,7 +2439,7 @@
     </div>
     
     <p class="hero-description">
-      Discover the top performing traders on Polymarket and deploy your custom copy trading strategy in 5 minutes or less.
+      Set up your winning prediction market strategy in under 5 minutes. Official Polymarket builder partner.
     </p>
     
     <a href="https://app.alphawhale.trade/" class="cta-button" target="_blank" rel="noopener noreferrer">
@@ -741,45 +2455,367 @@
     </div>
   </main>
 
-  <!-- Social link -->
-  <div class="social-link">
-    <a href="https://x.com/alphawhaletrade" target="_blank" rel="noopener noreferrer" aria-label="Follow us on X">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+    <!-- Animated Graph -->
+    <div class="graph-container">
+      <svg class="graph-svg" viewBox="0 0 1600 450" preserveAspectRatio="none">
+        <defs>
+          <!-- Line gradient -->
+          <linearGradient id="graphGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#0066ff;stop-opacity:1" />
+            <stop offset="50%" style="stop-color:#00d4ff;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#00d4ff;stop-opacity:1" />
+          </linearGradient>
+          <!-- Area fill gradient -->
+          <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0.3" />
+            <stop offset="100%" style="stop-color:#00d4ff;stop-opacity:0" />
+          </linearGradient>
+        </defs>
+        
+        <!-- Vertical dashed lines -->
+        <line class="graph-vertical" x1="100" y1="370" x2="100" y2="450"/>
+        <line class="graph-vertical" x1="400" y1="340" x2="400" y2="450"/>
+        <line class="graph-vertical" x1="700" y1="280" x2="700" y2="450"/>
+        <line class="graph-vertical" x1="1000" y1="180" x2="1000" y2="450"/>
+        
+        <!-- Area fill -->
+        <path class="graph-area" d="M-100,450 L-100,400 C0,395 50,380 100,370 C200,355 300,345 400,330 C550,310 600,270 700,240 C850,200 950,160 1100,120 C1250,80 1400,40 1600,0 L1600,450 Z"/>
+        
+        <!-- Main line - extends to right edge with fixed endpoint -->
+        <path class="graph-line graph-line-animated" d="M-100,400 C0,395 50,380 100,370 C200,355 300,345 400,330 C550,310 600,270 700,240 C850,200 950,160 1100,120 C1250,80 1400,40 1600,0"/>
       </svg>
-    </a>
-  </div>
+</div>
+    </div>
 
-  <!-- Animated Graph -->
-  <div class="graph-container">
-    <svg class="graph-svg" viewBox="0 0 1600 450" preserveAspectRatio="none">
-      <defs>
-        <!-- Line gradient -->
-        <linearGradient id="graphGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" style="stop-color:#0066ff;stop-opacity:1" />
-          <stop offset="50%" style="stop-color:#00d4ff;stop-opacity:1" />
-          <stop offset="100%" style="stop-color:#00d4ff;stop-opacity:1" />
-        </linearGradient>
-        <!-- Area fill gradient -->
-        <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0.3" />
-          <stop offset="100%" style="stop-color:#00d4ff;stop-opacity:0" />
-        </linearGradient>
-      </defs>
+  <!-- Features Section -->
+  <section id="features" class="features-section">
+    <div class="features-header">
+      <h2 class="features-title"><span class="serif">Simplify</span> your trading</h2>
+      <p class="features-subtitle">Connect all your trades in one place with powerful tools for copying, bonding, and tracking top performers.</p>
+    </div>
+
+    <div class="features-grid">
+      <!-- Feature Card 1: Copy Trade -->
+      <div class="feature-card feature-card-1">
+        <div class="feature-card-bg">
+          <img src="feature-bg-1.png" alt="" loading="lazy">
+        </div>
+        <div class="feature-card-gradient"></div>
+        <div class="feature-card-overlay">
+          <div class="copytrade-card-inner">
+            <div class="copytrade-trader">
+              <div class="copytrade-trader-info">
+                <div class="copytrade-trader-name">SeriouslySirius</div>
+                <div class="copytrade-trader-stats">569 trades <span>·</span> 66% win rate</div>
+              </div>
+              <div class="copytrade-trader-profit">
+                <div class="copytrade-trader-amount">+$123.43</div>
+                <div class="copytrade-trader-percent">+34.78%</div>
+              </div>
+            </div>
+            <div class="copytrade-trader">
+              <div class="copytrade-trader-info">
+                <div class="copytrade-trader-name">MichaelAng</div>
+                <div class="copytrade-trader-stats">202 trades <span>·</span> 71% win rate</div>
+              </div>
+              <div class="copytrade-trader-profit">
+                <div class="copytrade-trader-amount">+$53.43</div>
+                <div class="copytrade-trader-percent">+34.78%</div>
+              </div>
+            </div>
+            <div class="copytrade-trader">
+              <div class="copytrade-trader-info">
+                <div class="copytrade-trader-name">0xDAO29x294...</div>
+                <div class="copytrade-trader-stats">1359 trades <span>·</span> 59% win rate</div>
+              </div>
+              <div class="copytrade-trader-profit">
+                <div class="copytrade-trader-amount">+$1,203.43</div>
+                <div class="copytrade-trader-percent">+293.78%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="feature-card-content">
+          <h3 class="feature-card-title">Copy Trade</h3>
+          <p class="feature-card-description">Discover and copy trade top accounts. With stop losses, and a ton of customization</p>
+        </div>
+      </div>
+
+      <!-- Feature Card 2: Bonding -->
+      <div class="feature-card feature-card-2">
+        <div class="feature-card-bg">
+          <img src="feature-bg-2.png" alt="" loading="lazy">
+        </div>
+        <div class="feature-card-gradient"></div>
+        <div class="feature-card-overlay">
+          <div class="bonding-card-inner">
+            <div class="bonding-card-header">
+              <div class="bonding-card-title">
+                Auto-Bonding
+                <span class="bonding-card-status"></span>
+              </div>
+              <div class="bonding-card-manage">
+                Manage
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+            <div class="bonding-card-profit">+$12.24</div>
+            <div class="bonding-card-stats">144 trades · 1 open · 89% win rate</div>
+          </div>
+        </div>
+        <div class="feature-card-content">
+          <h3 class="feature-card-title">Bonding</h3>
+          <p class="feature-card-description">Set up high-yield bonding for constant returns</p>
+        </div>
+      </div>
+
+      <!-- Feature Card 3: Alerts -->
+      <div class="feature-card feature-card-3">
+        <div class="feature-card-bg">
+          <img src="feature-bg-3.png" alt="" loading="lazy">
+        </div>
+        <div class="feature-card-gradient"></div>
+        <div class="feature-card-overlay">
+          <div class="alerts-card-inner">
+            <!-- Position 1 -->
+            <div class="alert-position">
+              <div class="alert-position-icon">
+                <img src="https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fleague-bun.jpg&w=256&q=100" alt="SV Werder Bremen">
+              </div>
+              <div class="alert-position-info">
+                <div class="alert-position-name">Will SV Werder Bremen win on…</div>
+                <div class="alert-position-status">Active</div>
+              </div>
+              <div class="alert-position-value">
+                <div class="alert-position-amount">$73,435.99</div>
+                <div class="alert-position-profit">
+                  <span class="profit-amount">+$44,766.64</span>
+                  <span class="profit-percent">(+156.15%)</span>
+                </div>
+                <div class="alert-position-price">39¢ → 100¢</div>
+              </div>
+            </div>
+            <!-- Position 2 -->
+            <div class="alert-position">
+              <div class="alert-position-icon">
+                <img src="https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fleague-fl1.png&w=256&q=100" alt="AS Monaco FC">
+              </div>
+              <div class="alert-position-info">
+                <div class="alert-position-name">Will AS Monaco FC win on 2026-01-…</div>
+                <div class="alert-position-status">Active</div>
+              </div>
+              <div class="alert-position-value">
+                <div class="alert-position-amount">$63,807.44</div>
+                <div class="alert-position-profit">
+                  <span class="profit-amount">+$36,515.03</span>
+                  <span class="profit-percent">(+133.79%)</span>
+                </div>
+                <div class="alert-position-price">43¢ → 100¢</div>
+              </div>
+            </div>
+            <!-- Position 3 -->
+            <div class="alert-position">
+              <div class="alert-position-icon">
+                <img src="https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fleague-fl1.png&w=256&q=100" alt="FC Lorient">
+              </div>
+              <div class="alert-position-info">
+                <div class="alert-position-name">AS Monaco FC vs. FC Lorient: O/U 2.5</div>
+                <div class="alert-position-status">Active</div>
+              </div>
+              <div class="alert-position-value">
+                <div class="alert-position-amount">$33,342.42</div>
+                <div class="alert-position-profit">
+                  <span class="profit-amount">+$21,354.69</span>
+                  <span class="profit-percent">(+178.14%)</span>
+                </div>
+                <div class="alert-position-price">36¢ → 100¢</div>
+              </div>
+            </div>
+            <!-- Position 4 -->
+            <div class="alert-position">
+              <div class="alert-position-icon">
+                <img src="https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fcounter-strike-image-16c415c538.png&w=256&q=100" alt="Counter-Strike">
+              </div>
+              <div class="alert-position-info">
+                <div class="alert-position-name">Counter-Strike: paiN vs BetBoom Team…</div>
+                <div class="alert-position-status">Active</div>
+              </div>
+              <div class="alert-position-value">
+                <div class="alert-position-amount">$33,062.46</div>
+                <div class="alert-position-profit">
+                  <span class="profit-amount">+$4,608.17</span>
+                  <span class="profit-percent">(+16.19%)</span>
+                </div>
+                <div class="alert-position-price">86¢ → 100¢</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="feature-card-content">
+          <h3 class="feature-card-title">Alerts</h3>
+          <p class="feature-card-description">Set up alerts on top accounts and markets. Get insight into what's happening.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Insights Section -->
+  <section class="insights-section">
+    <div class="insights-container">
+      <!-- Unlock deep recaps - Whale GIF Background -->
+      <div class="whale-cta-section">
+        <div class="whale-cta-bg">
+          <img src="whalegif2.gif" alt="" loading="lazy">
+        </div>
+        <div class="whale-cta-overlay"></div>
+        <div class="whale-cta-content">
+          <h2 class="insight-box-title"><span class="italic">Become</span> a Whale</h2>
+          <p class="insight-box-description">Start trading on the best Polymarket trader tool because to become a whale, you have to trade like one.</p>
+          <a href="https://app.alphawhale.trade/" class="whale-cta-button" target="_blank" rel="noopener noreferrer">
+            Start Trading
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Brand Column -->
+      <div class="footer-brand">
+        <img src="alphalogo_text.png" alt="Alpha Whale" class="footer-logo">
+        <p class="footer-tagline">Trade like the whales. Copy the smartest Polymarket traders and grow your portfolio.</p>
+        <div class="footer-social">
+          <a href="https://x.com/alphawhaletrade" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Follow us on X">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Product Column -->
+      <div class="footer-column">
+        <h4 class="footer-column-title">Product</h4>
+        <a href="https://app.alphawhale.trade/" class="footer-link">Start Trading</a>
+        <a href="documentation.html" class="footer-link">Product Guide</a>
+      </div>
+
+      <!-- Resources Column -->
+      <div class="footer-column">
+        <h4 class="footer-column-title">Resources</h4>
+        <a href="https://t.me/+zSSN2Ibk6NwxNWUx" target="_blank" rel="noopener noreferrer" class="footer-link">Join our community</a>
+        <a href="blog/index.html" class="footer-link">Blog</a>
+      </div>
+
+      <!-- Company Column -->
+      <div class="footer-column">
+        <h4 class="footer-column-title">Company</h4>
+        <a href="about.html" class="footer-link">About</a>
+        <a href="https://t.me/+zSSN2Ibk6NwxNWUx" target="_blank" rel="noopener noreferrer" class="footer-link">Contact</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copyright">&copy; 2026 Alpha Whale. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="/privacy-policy.html">Privacy Policy</a>
+        <a href="/terms-of-service.html">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Force scroll to top on page load
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+
+    // Header scroll visibility
+    const header = document.querySelector('.top-header');
+    let lastScrollY = 0;
+    const scrollThreshold = 100; // Show header after scrolling 100px
+
+    function handleHeaderVisibility() {
+      const currentScrollY = window.scrollY;
       
-      <!-- Vertical dashed lines -->
-      <line class="graph-vertical" x1="100" y1="370" x2="100" y2="450"/>
-      <line class="graph-vertical" x1="400" y1="340" x2="400" y2="450"/>
-      <line class="graph-vertical" x1="700" y1="280" x2="700" y2="450"/>
-      <line class="graph-vertical" x1="1000" y1="180" x2="1000" y2="450"/>
+      if (currentScrollY > scrollThreshold) {
+        header.classList.add('visible');
+      } else {
+        header.classList.remove('visible');
+      }
       
-      <!-- Area fill -->
-      <path class="graph-area" d="M-100,450 L-100,400 C0,395 50,380 100,370 C200,355 300,345 400,330 C550,310 600,270 700,240 C850,200 950,160 1100,120 C1250,80 1400,40 1600,0 L1600,450 Z"/>
+      lastScrollY = currentScrollY;
+    }
+
+    window.addEventListener('scroll', handleHeaderVisibility, { passive: true });
+    // Initial check
+    handleHeaderVisibility();
+
+    // Count-up animation
+    function animateCount(element) {
+      const target = parseFloat(element.dataset.countTo);
+      const prefix = element.dataset.prefix || '';
+      const suffix = element.dataset.suffix || '';
+      const decimals = parseInt(element.dataset.decimals) || 0;
+      const duration = 2000;
+      const frameDuration = 1000 / 60;
+      const totalFrames = Math.round(duration / frameDuration);
+      const easeOutQuart = t => 1 - Math.pow(1 - t, 4);
       
-      <!-- Main line - extends to right edge with fixed endpoint -->
-      <path class="graph-line graph-line-animated" d="M-100,400 C0,395 50,380 100,370 C200,355 300,345 400,330 C550,310 600,270 700,240 C850,200 950,160 1100,120 C1250,80 1400,40 1600,0"/>
-    </svg>
-    
-  </div>
-</body>
+      let frame = 0;
+      const counter = setInterval(() => {
+        frame++;
+        const progress = easeOutQuart(frame / totalFrames);
+        const currentValue = target * progress;
+        
+        if (decimals > 0) {
+          element.textContent = prefix + currentValue.toFixed(decimals).replace(/\B(?=(\d{3})+(?!\d))/g, ',') + suffix;
+        } else {
+          element.textContent = prefix + Math.round(currentValue).toLocaleString() + suffix;
+        }
+        
+        if (frame === totalFrames) {
+          clearInterval(counter);
+          if (decimals > 0) {
+            element.textContent = prefix + target.toFixed(decimals).replace(/\B(?=(\d{3})+(?!\d))/g, ',') + suffix;
+          } else {
+            element.textContent = prefix + target.toLocaleString() + suffix;
+          }
+        }
+      }, frameDuration);
+    }
+
+    // Intersection Observer to trigger animation when visible
+    const countElements = document.querySelectorAll('[data-count-to]');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.dataset.counted) {
+          entry.target.dataset.counted = 'true';
+          animateCount(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    countElements.forEach(el => observer.observe(el));
+
+    // Fade-in animation for feature cards and insight boxes
+    const fadeElements = document.querySelectorAll('.feature-card, .insight-box');
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in-visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    fadeElements.forEach(el => fadeObserver.observe(el));
+  </script>
+
+  </body>
 </html>
+
