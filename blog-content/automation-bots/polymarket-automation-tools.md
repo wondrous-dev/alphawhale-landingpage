@@ -131,3 +131,4 @@ Improved data analysis, possibly incorporating machine learning, will help ident
 
 The core principle remains: automation tools help humans trade better by handling the mechanical aspects of execution and monitoring. They're most effective when paired with human judgment about strategy and risk.
 
+

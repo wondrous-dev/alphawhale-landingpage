@@ -235,3 +235,4 @@ Power user status comes from systematic, efficient approaches:
 
 The goal is freeing mental energy for what matters most: making good trading decisions. Copy trading through Alpha Whale can be part of this—providing returns while you develop power user capabilities.
 
+

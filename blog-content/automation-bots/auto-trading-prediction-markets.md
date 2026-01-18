@@ -169,3 +169,4 @@ The fastest path to auto trading prediction markets is copy trading through Alph
 
 Auto trading can meaningfully improve your prediction market results while reducing time commitment. Copy trading makes it accessible regardless of technical background.
 
+

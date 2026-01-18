@@ -229,3 +229,4 @@ Ready to apply these fundamentals?
 
 Solid fundamentals provide the foundation for everything else in prediction market trading.
 
+

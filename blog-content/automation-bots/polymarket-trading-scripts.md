@@ -178,3 +178,4 @@ Scripts make sense when you have specific needs that can't be met otherwise, whe
 
 For everyone else, Alpha Whale and similar platforms provide automation benefits without requiring you to become a developer.
 
+

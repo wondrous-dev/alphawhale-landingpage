@@ -180,3 +180,4 @@ The platform works best when you:
 
 For most Polymarket traders—especially those with limited time or expertise—Alpha Whale offers a compelling path to consistent, automated prediction market participation.
 
+

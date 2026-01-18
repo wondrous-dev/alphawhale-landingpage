@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Market Making on Polymarket: How to Provide Liquidity and Earn | Alpha Whale Blog</title>
+  <meta name="description" content="Learn how market making works on Polymarket. Understand liquidity provision, spread capture, and how to earn consistent returns by providing liquidity to prediction markets.">
+  <meta name="keywords" content="polymarket market making, liquidity provision, prediction market liquidity, polymarket spread, market maker strategies">
+  <link rel="canonical" href="https://alphawhale.trade/blog/posts/polymarket-market-making">
+  
+  <meta property="og:title" content="Market Making on Polymarket: How to Provide Liquidity and Earn | Alpha Whale Blog">
+  <meta property="og:description" content="Learn how market making works on Polymarket. Understand liquidity provision, spread capture, and how to earn consistent returns.">
+  <meta property="og:image" content="https://alphawhale.trade/alphawhale_logowebsite.png">
+  <meta property="og:url" content="https://alphawhale.trade/blog/posts/polymarket-market-making">
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2026-01-17T00:00:00.000Z">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@alphawhaletrade">
+  <meta name="twitter:title" content="Market Making on Polymarket">
+  <meta name="twitter:description" content="Learn how market making works on Polymarket. Provide liquidity and earn consistent returns.">
+  <meta name="twitter:image" content="https://alphawhale.trade/alphawhale_logowebsite.png">
+  
+  <link rel="icon" href="../../alphawhale_logowebsite.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=Inter:wght@200;300;400&family=Manrope:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Market Making on Polymarket: How to Provide Liquidity and Earn",
+    "description": "Learn how market making works on Polymarket. Understand liquidity provision, spread capture, and how to earn consistent returns.",
+    "image": "https://alphawhale.trade/alphawhale_logowebsite.png",
+    "datePublished": "2026-01-17T00:00:00.000Z",
+    "author": { "@type": "Organization", "name": "Alpha Whale Team" },
+    "publisher": { "@type": "Organization", "name": "Alpha Whale" }
+  }
+  </script>
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg-deep: #0a0a0a;
+      --accent-primary: #00d4ff;
+      --accent-secondary: #0066ff;
+      --text-primary: #ffffff;
+      --text-muted: rgba(255, 255, 255, 0.5);
+      --text-muted-light: rgba(255, 255, 255, 0.7);
+      --border-color: rgba(255, 255, 255, 0.1);
+    }
+    body { font-family: 'Manrope', sans-serif; background: var(--bg-deep); color: var(--text-primary); line-height: 1.7; min-height: 100vh; }
+    .post-header { border-bottom: 1px solid var(--border-color); padding: 1.5rem 0; position: sticky; top: 0; background: var(--bg-deep); z-index: 100; backdrop-filter: blur(10px); }
+    .post-header-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .post-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text-primary); }
+    .post-logo img { height: 32px; width: auto; }
+    .post-nav { display: flex; gap: 2rem; align-items: center; }
+    .post-nav a { color: var(--text-muted); text-decoration: none; font-size: 14px; transition: color 0.2s ease; }
+    .post-nav a:hover { color: var(--text-primary); }
+    .post-nav .cta-button { background: linear-gradient(135deg, #00d4ff 0%, #00b4e6 50%, #00d4ff 100%); color: var(--bg-deep); padding: 0.65rem 1.75rem; border-radius: 8px; font-weight: 700; box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4); transition: all 0.3s ease; }
+    .post-nav .cta-button:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0, 212, 255, 0.5); }
+    .article-container { max-width: 800px; margin: 0 auto; padding: 3rem 2rem; }
+    .article-header { margin-bottom: 3rem; }
+    .article-category { display: inline-block; font-size: 12px; font-weight: 600; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+    .article-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.1; margin-bottom: 1rem; letter-spacing: 0.02em; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 1.5rem; color: var(--text-muted); font-size: 14px; margin-bottom: 2rem; }
+    .article-meta span { display: flex; align-items: center; gap: 0.5rem; }
+    .toc { background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem; margin-bottom: 3rem; }
+    .toc h3 { font-size: 1rem; font-weight: 600; margin-bottom: 1rem; }
+    .toc ul { list-style: none; padding-left: 0; }
+    .toc li { margin-bottom: 0.5rem; }
+    .toc a { color: var(--text-muted-light); text-decoration: none; font-size: 14px; transition: color 0.2s ease; }
+    .toc a:hover { color: var(--accent-primary); }
+    .article-content { font-size: 18px; line-height: 1.8; color: var(--text-muted-light); }
+    .article-content h2 { font-size: 2rem; font-weight: 600; margin: 3rem 0 1.5rem; color: var(--text-primary); line-height: 1.3; }
+    .article-content h3 { font-size: 1.5rem; font-weight: 600; margin: 2.5rem 0 1rem; color: var(--text-primary); }
+    .article-content p { margin-bottom: 1.5rem; }
+    .article-content ul, .article-content ol { margin: 1.5rem 0; padding-left: 2rem; }
+    .article-content li { margin-bottom: 0.75rem; }
+    .article-content a { color: var(--accent-primary); text-decoration: underline; }
+    .article-content blockquote { border-left: 4px solid var(--accent-primary); padding-left: 1.5rem; margin: 2rem 0; font-style: italic; }
+    .article-cta { background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 102, 255, 0.1)); border: 1px solid var(--accent-primary); border-radius: 12px; padding: 2rem; margin: 3rem 0; text-align: center; }
+    .article-cta h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary); }
+    .article-cta p { color: var(--text-muted-light); margin-bottom: 1.5rem; }
+    .article-cta a { display: inline-block; background: var(--accent-primary); color: var(--bg-deep); padding: 0.75rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600; }
+    .article-share { display: flex; gap: 1rem; margin: 3rem 0; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+    .share-btn { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); border-radius: 6px; color: var(--text-muted-light); text-decoration: none; font-size: 14px; transition: all 0.2s ease; }
+    .share-btn:hover { background: rgba(255, 255, 255, 0.1); color: var(--text-primary); }
+    .article-author { display: flex; gap: 1rem; padding: 2rem; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: 12px; margin: 3rem 0; }
+    .author-avatar { width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; }
+    .author-info h4 { font-size: 1rem; margin-bottom: 0.25rem; }
+    .author-info p { font-size: 14px; color: var(--text-muted); margin: 0; }
+    .footer { border-top: 1px solid var(--border-color); padding: 4rem; margin-top: 4rem; }
+    .footer-container { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 4rem; }
+    .footer-brand { display: flex; flex-direction: column; gap: 1.5rem; }
+    .footer-logo { height: 56px; width: auto; max-width: 250px; object-fit: contain; align-self: flex-start; }
+    .footer-tagline { font-size: 14px; color: rgba(255, 255, 255, 0.6); line-height: 1.6; max-width: 280px; }
+    .footer-social { display: flex; gap: 12px; margin-top: 1rem; }
+    .footer-social-link { width: 44px; height: 44px; border-radius: 8px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); display: flex; align-items: center; justify-content: center; color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: all 0.2s ease; }
+    .footer-social-link:hover { background: rgba(255, 255, 255, 0.1); color: #fff; }
+    .footer-column { display: flex; flex-direction: column; gap: 1rem; }
+    .footer-column-title { font-weight: 600; font-size: 14px; color: #fff; margin-bottom: 0.5rem; }
+    .footer-link { font-size: 14px; color: rgba(255, 255, 255, 0.6); text-decoration: none; transition: color 0.2s ease; }
+    .footer-link:hover { color: #fff; }
+    .footer-bottom { max-width: 1400px; margin: 3rem auto 0; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); display: flex; justify-content: space-between; align-items: center; }
+    .footer-copyright { font-size: 13px; color: rgba(255, 255, 255, 0.4); }
+    .footer-legal { display: flex; gap: 2rem; }
+    .footer-legal a { font-size: 13px; color: rgba(255, 255, 255, 0.4); text-decoration: none; }
+    .footer-legal a:hover { color: #fff; }
+    @media (max-width: 900px) { .footer-container { grid-template-columns: 1fr 1fr; gap: 3rem; } .footer-brand { grid-column: span 2; } }
+    @media (max-width: 600px) { .article-container { padding: 2rem 1rem; } .article-content { font-size: 16px; } .article-share { flex-wrap: wrap; } .footer { padding: 3rem 2rem; } .footer-container { grid-template-columns: 1fr; } .footer-brand { grid-column: span 1; } .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; } }
+  </style>
+</head>
+<body>
+  <header class="post-header">
+    <div class="post-header-container">
+      <a href="/" class="post-logo">
+        <img src="../../alphawhale_logowebsite.png" alt="Alpha Whale">
+      </a>
+      <nav class="post-nav">
+        <a href="/">Home</a>
+        <a href="../index.html">Blog</a>
+        <a href="https://app.alphawhale.trade/" class="cta-button">Start Trading</a>
+      </nav>
+    </div>
+  </header>
+
+  <article class="article-container">
+    <header class="article-header">
+      <span class="article-category">Advanced</span>
+      <h1 class="article-title">Market Making on Polymarket: How to Provide Liquidity and Earn</h1>
+      <div class="article-meta">
+        <span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          Alpha Whale Team
+        </span>
+        <span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          January 17, 2026
+        </span>
+        <span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+          </svg>
+          11 min read
+        </span>
+      </div>
+    </header>
+
+    <div class="toc">
+      <h3>Table of Contents</h3>
+      <ul>
+        <li><a href="#what-is-market-making">What Is Market Making?</a></li>
+        <li><a href="#how-polymarket-markets-work">How Polymarket Markets Work</a></li>
+        <li><a href="#the-spread-and-profit">The Spread and Your Profit</a></li>
+        <li><a href="#market-making-strategies">Market Making Strategies</a></li>
+        <li><a href="#risks-of-market-making">Risks of Market Making</a></li>
+        <li><a href="#inventory-management">Inventory Management</a></li>
+        <li><a href="#tools-and-automation">Tools and Automation</a></li>
+        <li><a href="#when-to-market-make">When to Market Make</a></li>
+        <li><a href="#getting-started">Getting Started</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+    </div>
+
+    <div class="article-content">
+      <h2 id="what-is-market-making">What Is Market Making?</h2>
+
+      <p>Market making means providing liquidity by placing both buy and sell orders in a market. Instead of taking a directional view, market makers profit from the spread between bid and ask prices. When someone wants to buy, you sell to them; when someone wants to sell, you buy from them.</p>
+
+      <p>On Polymarket, market makers play a crucial role in keeping markets liquid and prices efficient. In return, they earn the spread on every transaction.</p>
+
+      <h2 id="how-polymarket-markets-work">How Polymarket Markets Work</h2>
+
+      <p>Understanding Polymarket's structure is essential for market making:</p>
+
+      <strong>Binary outcomes:</strong>
+      <p>Most Polymarket markets have Yes/No outcomes. Shares trade between $0 and $1, with the price representing the implied probability. If Yes trades at $0.60, the market implies a 60% probability of that outcome.</p>
+
+      <strong>Order book mechanics:</strong>
+      <p>Polymarket uses an order book model where limit orders sit until filled. As a market maker, you place limit orders on both sides, waiting for traders to take your liquidity.</p>
+
+      <strong>USDC settlement:</strong>
+      <p>All trades settle in USDC. Winning positions pay $1; losing positions pay $0. This creates clear profit calculations for market makers.</p>
+
+      <h2 id="the-spread-and-profit">The Spread and Your Profit</h2>
+
+      <p>The spread is the difference between bid and ask prices—and your potential profit:</p>
+
+      <strong>Example:</strong>
+      <p>If you're bidding $0.58 and offering at $0.62, your spread is 4 cents. When someone buys from you at $0.62 and later someone sells to you at $0.58, you've captured that $0.04 spread.</p>
+
+      <strong>Round-trip profit:</strong>
+      <p>Market making profit comes from completing round trips—buying low, selling high, or vice versa. Each round trip captures the spread.</p>
+
+      <strong>Volume matters:</strong>
+      <p>Small spreads compound through volume. A 2% spread on 100 trades generates significant returns even though each individual trade seems small.</p>
+
+      <h2 id="market-making-strategies">Market Making Strategies</h2>
+
+      <strong>Symmetric quoting:</strong>
+      <p>Place equal-sized orders on both sides at fixed distances from the mid-price. Simple and effective for stable markets.</p>
+
+      <strong>Dynamic spread adjustment:</strong>
+      <p>Widen spreads during volatile periods; tighten them in stable conditions. This balances opportunity with risk.</p>
+
+      <strong>Inventory-based quoting:</strong>
+      <p>Adjust your quotes based on inventory. If you've accumulated too much Yes position, lower your Yes bid and raise your offer to encourage selling back.</p>
+
+      <strong>Multi-market strategies:</strong>
+      <p>Market make across multiple related markets, hedging positions between them. This reduces directional risk while maintaining spread capture.</p>
+
+      <h2 id="risks-of-market-making">Risks of Market Making</h2>
+
+      <p>Market making isn't risk-free. Understanding these risks is essential:</p>
+
+      <strong>Adverse selection:</strong>
+      <p>Informed traders trade against you when they know something you don't. Before major news breaks, informed traders take your liquidity at stale prices, leaving you with losing positions.</p>
+
+      <strong>Inventory risk:</strong>
+      <p>Accumulating large positions exposes you to directional market moves. If the market moves against your inventory, spread profits may not cover losses.</p>
+
+      <strong>Resolution risk:</strong>
+      <p>Markets eventually resolve. If you're holding inventory when the market settles against you, those positions go to zero.</p>
+
+      <strong>Competition:</strong>
+      <p>Other market makers compete for the same spreads. In competitive markets, spreads compress, reducing profitability.</p>
+
+      <h2 id="inventory-management">Inventory Management</h2>
+
+      <p>Successful market makers obsess over inventory:</p>
+
+      <strong>Position limits:</strong>
+      <p>Set maximum inventory levels for each market. When you hit limits, stop quoting on that side until inventory normalizes.</p>
+
+      <strong>Hedging:</strong>
+      <p>In related markets, hedge positions to reduce directional exposure. If you're long Yes on one candidate, consider offsetting with No on another.</p>
+
+      <strong>Regular rebalancing:</strong>
+      <p>Periodically flatten positions, especially before major events or when inventory becomes one-sided.</p>
+
+      <strong>Exit strategies:</strong>
+      <p>Know when to exit markets entirely. As resolution approaches or volatility spikes, the market making environment changes.</p>
+
+      <h2 id="tools-and-automation">Tools and Automation</h2>
+
+      <p>Manual market making is difficult. Consider these tools:</p>
+
+      <strong>Price monitoring:</strong>
+      <p>Track real-time prices across markets. React quickly to changes that affect your quotes.</p>
+
+      <strong>Order management:</strong>
+      <p>Efficiently update orders as conditions change. Stale orders are vulnerable to adverse selection.</p>
+
+      <strong>API access:</strong>
+      <p>Polymarket's API enables programmatic trading. Automated strategies can react faster than manual trading.</p>
+
+      <strong>Alpha Whale bonding:</strong>
+      <p>Alpha Whale's bonding feature automates liquidity provision with built-in risk management. It's market making simplified for those who prefer not to build custom systems.</p>
+
+      <h2 id="when-to-market-make">When to Market Make</h2>
+
+      <p>Not all markets suit market making:</p>
+
+      <strong>Good candidates:</strong>
+      <ul>
+        <li>Stable markets with regular two-way flow</li>
+        <li>Markets with reasonable liquidity</li>
+        <li>Events far from resolution</li>
+        <li>Markets without dominant informed traders</li>
+      </ul>
+
+      <strong>Avoid:</strong>
+      <ul>
+        <li>Markets approaching resolution</li>
+        <li>Highly volatile or news-driven markets</li>
+        <li>Markets dominated by informed insiders</li>
+        <li>Very illiquid markets with no flow</li>
+      </ul>
+
+      <h2 id="getting-started">Getting Started</h2>
+
+      <p>Begin your market making journey:</p>
+
+      <ol>
+        <li><strong>Start small:</strong> Use minimal capital while learning market dynamics.</li>
+        <li><strong>Choose stable markets:</strong> Begin with well-established, less volatile markets.</li>
+        <li><strong>Track everything:</strong> Record all trades, spreads, and inventory levels.</li>
+        <li><strong>Adjust gradually:</strong> Refine your spreads and sizing based on experience.</li>
+        <li><strong>Consider automation:</strong> As you scale, tools become essential for efficiency.</li>
+      </ol>
+
+      <h2 id="conclusion">Conclusion</h2>
+
+      <p>Market making on Polymarket offers a different approach to prediction market trading. Instead of betting on outcomes, you profit from providing liquidity—earning spreads while managing inventory risk.</p>
+
+      <p>Success requires understanding market microstructure, managing risks carefully, and potentially automating your strategies. It's not for everyone, but for those with the right skills and tools, market making can generate consistent returns independent of market direction.</p>
+
+      <p>Whether you build custom systems or use platforms like Alpha Whale's bonding feature, market making represents an important strategy in the prediction market ecosystem.</p>
+    </div>
+
+    <div class="article-cta">
+      <h3>Automate Your Liquidity Provision</h3>
+      <p>Alpha Whale's bonding feature provides automated market making with built-in risk management.</p>
+      <a href="https://app.alphawhale.trade/">Start Earning →</a>
+    </div>
+
+    <div class="article-share">
+      <a href="https://twitter.com/intent/tweet?text=Market%20Making%20on%20Polymarket&url=https%3A%2F%2Falphawhale.trade%2Fblog%2Fposts%2Fpolymarket-market-making" target="_blank" class="share-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+        Share on X
+      </a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Falphawhale.trade%2Fblog%2Fposts%2Fpolymarket-market-making" target="_blank" class="share-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        </svg>
+        Share on LinkedIn
+      </a>
+    </div>
+
+    <div class="article-author">
+      <div class="author-avatar">AW</div>
+      <div class="author-info">
+        <h4>Alpha Whale Team</h4>
+        <p>Expert prediction market traders and analysts.</p>
+      </div>
+    </div>
+  </article>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <img src="../../alphalogo_text.png" alt="Alpha Whale" class="footer-logo">
+        <p class="footer-tagline">Trade like the whales. Copy the smartest Polymarket traders and grow your portfolio.</p>
+        <div class="footer-social">
+          <a href="https://x.com/alphawhaletrade" target="_blank" class="footer-social-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4 class="footer-column-title">Product</h4>
+        <a href="https://app.alphawhale.trade/" class="footer-link">Start Trading</a>
+        <a href="../../documentation.html" class="footer-link">Product Guide</a>
+      </div>
+      <div class="footer-column">
+        <h4 class="footer-column-title">Resources</h4>
+        <a href="https://t.me/+zSSN2Ibk6NwxNWUx" target="_blank" class="footer-link">Join our community</a>
+        <a href="../index.html" class="footer-link">Blog</a>
+      </div>
+      <div class="footer-column">
+        <h4 class="footer-column-title">Company</h4>
+        <a href="../../about.html" class="footer-link">About</a>
+        <a href="https://t.me/+zSSN2Ibk6NwxNWUx" target="_blank" class="footer-link">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">&copy; 2026 Alpha Whale. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="../../privacy-policy.html">Privacy Policy</a>
+        <a href="../../terms-of-service.html">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+

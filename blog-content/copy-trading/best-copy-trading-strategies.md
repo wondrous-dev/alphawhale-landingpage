@@ -229,3 +229,4 @@ Platforms like Alpha Whale for prediction market copy trading provide the infras
 
 Start with simple strategies and add sophistication as you gain experience. Track results carefully to learn what works in your situation. The goal is a sustainable, repeatable approach that produces consistent results over time.
 
+

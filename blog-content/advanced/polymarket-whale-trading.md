@@ -204,3 +204,4 @@ For most traders, the relevant takeaways are:
 
 Whether you're trading at whale scale or learning from those who do, understanding large-scale dynamics improves your prediction market trading.
 
+

@@ -188,3 +188,4 @@ However, this power comes with responsibility. Bugs in trading bots can lose mon
 
 If API trading sounds too complex, consider starting with copy trading instead. Platforms like Alpha Whale offer automation without requiring you to build and maintain custom systems. You can always explore API trading later as your needs and skills evolve.
 
+

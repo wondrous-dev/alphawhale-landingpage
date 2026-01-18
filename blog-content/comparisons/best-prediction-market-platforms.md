@@ -202,3 +202,4 @@ Exceptions exist—US traders prioritizing regulation might prefer Kalshi, decen
 
 Start with Polymarket. Use Alpha Whale for copy trading. Add other platforms only if you have specific needs they address.
 
+

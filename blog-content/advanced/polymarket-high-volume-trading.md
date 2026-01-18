@@ -229,3 +229,4 @@ For most traders, high-volume approaches are more demanding than beneficial. Con
 
 Copy trading through Alpha Whale provides an alternative path—access to sophisticated trading without the demands of constant active management.
 
+

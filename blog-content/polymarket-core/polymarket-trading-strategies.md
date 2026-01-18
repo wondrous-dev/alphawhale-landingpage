@@ -145,3 +145,4 @@ The key is matching your strategy to your actual situation. Honest assessment of
 
 Start with what you know. Build systems for tracking and improvement. Adapt as you learn and as markets evolve. This foundation supports long-term success regardless of which specific strategies you employ.
 
+

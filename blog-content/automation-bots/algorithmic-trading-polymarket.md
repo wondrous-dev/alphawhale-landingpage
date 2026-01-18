@@ -186,3 +186,4 @@ Alpha Whale lets you follow traders who may use algorithmic approaches. You bene
 
 As you learn more about prediction markets and potentially develop technical skills, you can explore more sophisticated approaches. But copy trading provides immediate automation benefits accessible to anyone.
 
+

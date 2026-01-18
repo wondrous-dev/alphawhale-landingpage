@@ -179,3 +179,4 @@ Whether copy trading is right for you depends on your situation. For those with 
 
 The key is approaching copy trading systematically rather than randomly following whoever has the best recent numbers.
 
+

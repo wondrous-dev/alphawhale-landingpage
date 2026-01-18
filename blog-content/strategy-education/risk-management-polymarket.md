@@ -206,3 +206,4 @@ The best risk management requires minimal in-the-moment decisions.
 
 Risk management isn't glamorous, but it's what keeps you trading through inevitable losses and allows long-term success.
 
+

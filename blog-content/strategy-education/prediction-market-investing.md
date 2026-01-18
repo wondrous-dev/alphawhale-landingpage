@@ -183,3 +183,4 @@ Ready to take an investment approach to prediction markets?
 
 Prediction market investing offers unique opportunities, but requires appropriate expectations and disciplined execution. Take the long view, manage risk carefully, and you can make prediction markets a valuable part of your investment strategy.
 
+

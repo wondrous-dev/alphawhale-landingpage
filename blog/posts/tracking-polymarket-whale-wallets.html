@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tracking Polymarket Whale Wallets: Following Smart Money | Alpha Whale Blog</title>
+  <meta name="description" content="Learn how to track whale wallets on Polymarket. Discover tools and strategies for following large traders and using their positions to inform your own trading decisions.">
+  <meta name="keywords" content="polymarket whales, whale tracking, smart money, polymarket wallets, large traders, prediction market whales">
+  <link rel="canonical" href="https://alphawhale.trade/blog/posts/tracking-polymarket-whale-wallets">
+  
+  <meta property="og:title" content="Tracking Polymarket Whale Wallets: Following Smart Money | Alpha Whale Blog">
+  <meta property="og:description" content="Learn how to track whale wallets on Polymarket. Discover tools and strategies for following large traders.">
+  <meta property="og:image" content="https://alphawhale.trade/alphawhale_logowebsite.png">
+  <meta property="og:url" content="https://alphawhale.trade/blog/posts/tracking-polymarket-whale-wallets">
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2026-01-17T00:00:00.000Z">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@alphawhaletrade">
+  <meta name="twitter:title" content="Tracking Polymarket Whale Wallets">
+  <meta name="twitter:description" content="Learn how to track whale wallets on Polymarket. Follow smart money for better trades.">
+  <meta name="twitter:image" content="https://alphawhale.trade/alphawhale_logowebsite.png">
+  
+  <link rel="icon" href="../../alphawhale_logowebsite.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=Inter:wght@200;300;400&family=Manrope:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Tracking Polymarket Whale Wallets: Following Smart Money",
+    "description": "Learn how to track whale wallets on Polymarket. Discover tools and strategies for following large traders.",
+    "image": "https://alphawhale.trade/alphawhale_logowebsite.png",
+    "datePublished": "2026-01-17T00:00:00.000Z",
+    "author": { "@type": "Organization", "name": "Alpha Whale Team" },
+    "publisher": { "@type": "Organization", "name": "Alpha Whale" }
+  }
+  </script>
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg-deep: #0a0a0a;
+      --accent-primary: #00d4ff;
+      --accent-secondary: #0066ff;
+      --text-primary: #ffffff;
+      --text-muted: rgba(255, 255, 255, 0.5);
+      --text-muted-light: rgba(255, 255, 255, 0.7);
+      --border-color: rgba(255, 255, 255, 0.1);
+    }
+    body { font-family: 'Manrope', sans-serif; background: var(--bg-deep); color: var(--text-primary); line-height: 1.7; min-height: 100vh; }
+    .post-header { border-bottom: 1px solid var(--border-color); padding: 1.5rem 0; position: sticky; top: 0; background: var(--bg-deep); z-index: 100; backdrop-filter: blur(10px); }
+    .post-header-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .post-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text-primary); }
+    .post-logo img { height: 32px; width: auto; }
+    .post-nav { display: flex; gap: 2rem; align-items: center; }
+    .post-nav a { color: var(--text-muted); text-decoration: none; font-size: 14px; transition: color 0.2s ease; }
+    .post-nav a:hover { color: var(--text-primary); }
+    .post-nav .cta-button { background: linear-gradient(135deg, #00d4ff 0%, #00b4e6 50%, #00d4ff 100%); color: var(--bg-deep); padding: 0.65rem 1.75rem; border-radius: 8px; font-weight: 700; box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4); transition: all 0.3s ease; }
+    .post-nav .cta-button:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0, 212, 255, 0.5); }
+    .article-container { max-width: 800px; margin: 0 auto; padding: 3rem 2rem; }
+    .article-header { margin-bottom: 3rem; }
+    .article-category { display: inline-block; font-size: 12px; font-weight: 600; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+    .article-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.1; margin-bottom: 1rem; letter-spacing: 0.02em; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 1.5rem; color: var(--text-muted); font-size: 14px; margin-bottom: 2rem; }
+    .article-meta span { display: flex; align-items: center; gap: 0.5rem; }
+    .toc { background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem; margin-bottom: 3rem; }
+    .toc h3 { font-size: 1rem; font-weight: 600; margin-bottom: 1rem; }
+    .toc ul { list-style: none; padding-left: 0; }
+    .toc li { margin-bottom: 0.5rem; }
+    .toc a { color: var(--text-muted-light); text-decoration: none; font-size: 14px; transition: color 0.2s ease; }
+    .toc a:hover { color: var(--accent-primary); }
+    .article-content { font-size: 18px; line-height: 1.8; color: var(--text-muted-light); }
+    .article-content h2 { font-size: 2rem; font-weight: 600; margin: 3rem 0 1.5rem; color: var(--text-primary); line-height: 1.3; }
+    .article-content h3 { font-size: 1.5rem; font-weight: 600; margin: 2.5rem 0 1rem; color: var(--text-primary); }
+    .article-content p { margin-bottom: 1.5rem; }
+    .article-content ul, .article-content ol { margin: 1.5rem 0; padding-left: 2rem; }
+    .article-content li { margin-bottom: 0.75rem; }
+    .article-content a { color: var(--accent-primary); text-decoration: underline; }
+    .article-content blockquote { border-left: 4px solid var(--accent-primary); padding-left: 1.5rem; margin: 2rem 0; font-style: italic; }
+    .article-cta { background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 102, 255, 0.1)); border: 1px solid var(--accent-primary); border-radius: 12px; padding: 2rem; margin: 3rem 0; text-align: center; }
+    .article-cta h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary); }
+    .article-cta p { color: var(--text-muted-light); margin-bottom: 1.5rem; }
+    .article-cta a { display: inline-block; background: var(--accent-primary); color: var(--bg-deep); padding: 0.75rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600; }
+    .article-share { display: flex; gap: 1rem; margin: 3rem 0; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+    .share-btn { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); border-radius: 6px; color: var(--text-muted-light); text-decoration: none; font-size: 14px; transition: all 0.2s ease; }
+    .share-btn:hover { background: rgba(255, 255, 255, 0.1); color: var(--text-primary); }
+    .article-author { display: flex; gap: 1rem; padding: 2rem; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: 12px; margin: 3rem 0; }
+    .author-avatar { width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; }
+    .author-info h4 { font-size: 1rem; margin-bottom: 0.25rem; }
+    .author-info p { font-size: 14px; color: var(--text-muted); margin: 0; }
+    .footer { border-top: 1px solid var(--border-color); padding: 4rem; margin-top: 4rem; }
+    .footer-container { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 4rem; }
+    .footer-brand { display: flex; flex-direction: column; gap: 1.5rem; }
+    .footer-logo { height: 56px; width: auto; max-width: 250px; object-fit: contain; align-self: flex-start; }
+    .footer-tagline { font-size: 14px; color: rgba(255, 255, 255, 0.6); line-height: 1.6; max-width: 280px; }
+    .footer-social { display: flex; gap: 12px; margin-top: 1rem; }
+    .footer-social-link { width: 44px; height: 44px; border-radius: 8px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); display: flex; align-items: center; justify-content: center; color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: all 0.2s ease; }
+    .footer-social-link:hover { background: rgba(255, 255, 255, 0.1); color: #fff; }
+    .footer-column { display: flex; flex-direction: column; gap: 1rem; }
+    .footer-column-title { font-weight: 600; font-size: 14px; color: #fff; margin-bottom: 0.5rem; }
+    .footer-link { font-size: 14px; color: rgba(255, 255, 255, 0.6); text-decoration: none; transition: color 0.2s ease; }
+    .footer-link:hover { color: #fff; }
+    .footer-bottom { max-width: 1400px; margin: 3rem auto 0; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); display: flex; justify-content: space-between; align-items: center; }
+    .footer-copyright { font-size: 13px; color: rgba(255, 255, 255, 0.4); }
+    .footer-legal { display: flex; gap: 2rem; }
+    .footer-legal a { font-size: 13px; color: rgba(255, 255, 255, 0.4); text-decoration: none; }
+    .footer-legal a:hover { color: #fff; }
+    @media (max-width: 900px) { .footer-container { grid-template-columns: 1fr 1fr; gap: 3rem; } .footer-brand { grid-column: span 2; } }
+    @media (max-width: 600px) { .article-container { padding: 2rem 1rem; } .article-content { font-size: 16px; } .article-share { flex-wrap: wrap; } .footer { padding: 3rem 2rem; } .footer-container { grid-template-columns: 1fr; } .footer-brand { grid-column: span 1; } .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; } }
+  </style>
+</head>
+<body>
+  <header class="post-header">
+    <div class="post-header-container">
+      <a href="/" class="post-logo">
+        <img src="../../alphawhale_logowebsite.png" alt="Alpha Whale">
+      </a>
+      <nav class="post-nav">
+        <a href="/">Home</a>
+        <a href="../index.html">Blog</a>
+        <a href="https://app.alphawhale.trade/" class="cta-button">Start Trading</a>
+      </nav>
+    </div>
+  </header>
+
+  <article class="article-container">
+    <header class="article-header">
+      <span class="article-category">Research</span>
+      <h1 class="article-title">Tracking Polymarket Whale Wallets: Following Smart Money</h1>
+      <div class="article-meta">
+        <span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          Alpha Whale Team
+        </span>
+        <span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          January 17, 2026
+        </span>
+        <span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+          </svg>
+          10 min read
+        </span>
+      </div>
+    </header>
+
+    <div class="toc">
+      <h3>Table of Contents</h3>
+      <ul>
+        <li><a href="#why-follow-whales">Why Follow Whales?</a></li>
+        <li><a href="#identifying-whale-wallets">Identifying Whale Wallets</a></li>
+        <li><a href="#what-makes-a-whale">What Makes a Whale?</a></li>
+        <li><a href="#tracking-methods">Tracking Methods</a></li>
+        <li><a href="#interpreting-whale-activity">Interpreting Whale Activity</a></li>
+        <li><a href="#common-whale-patterns">Common Whale Patterns</a></li>
+        <li><a href="#when-not-to-follow">When Not to Follow</a></li>
+        <li><a href="#building-your-watchlist">Building Your Watchlist</a></li>
+        <li><a href="#using-alpha-whale">Using Alpha Whale for Tracking</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+    </div>
+
+    <div class="article-content">
+      <h2 id="why-follow-whales">Why Follow Whales?</h2>
+
+      <p>On Polymarket, whale traders—those with large capital and often superior information—can move markets. Their trades signal conviction, research, and sometimes inside knowledge that retail traders lack. Tracking whale activity gives you a window into where smart money flows.</p>
+
+      <p>But following whales isn't about blindly copying trades. It's about understanding why they trade, what their patterns reveal, and how to incorporate their signals into your own decision-making.</p>
+
+      <h2 id="identifying-whale-wallets">Identifying Whale Wallets</h2>
+
+      <p>Finding whale wallets requires research and tools:</p>
+
+      <strong>On-chain analysis:</strong>
+      <p>Polymarket operates on Polygon, making all transactions publicly visible. Large transactions, frequent winning trades, and significant positions identify potential whales.</p>
+
+      <strong>Leaderboard monitoring:</strong>
+      <p>Top performers on Polymarket's leaderboards reveal successful traders. Track these addresses over time to understand their strategies.</p>
+
+      <strong>Trade size patterns:</strong>
+      <p>Look for wallets consistently placing trades 10x or 100x larger than average. Size signals conviction and capital.</p>
+
+      <strong>Win rate analysis:</strong>
+      <p>Sustained high win rates over many trades indicate skill, not luck. These are the whales worth following.</p>
+
+      <h2 id="what-makes-a-whale">What Makes a Whale?</h2>
+
+      <p>Not all large traders are worth following:</p>
+
+      <strong>True whales:</strong>
+      <ul>
+        <li>Consistent profitability across many markets</li>
+        <li>Diverse market participation showing broad knowledge</li>
+        <li>Strategic entry timing suggesting research or edge</li>
+        <li>Reasonable position sizing relative to account</li>
+      </ul>
+
+      <strong>Lucky gamblers:</strong>
+      <ul>
+        <li>Concentrated bets on few markets</li>
+        <li>Inconsistent results with high variance</li>
+        <li>No clear pattern in timing or sizing</li>
+        <li>Boom-and-bust cycles</li>
+      </ul>
+
+      <p>Distinguish between skill and luck by examining long-term track records, not recent results.</p>
+
+      <h2 id="tracking-methods">Tracking Methods</h2>
+
+      <strong>Manual tracking:</strong>
+      <p>Monitor specific wallet addresses on block explorers. Time-consuming but free. Best for following a small number of key wallets.</p>
+
+      <strong>Alert services:</strong>
+      <p>Set up notifications for large transactions or specific wallet activity. Tools like Alpha Whale automate this process.</p>
+
+      <strong>Social monitoring:</strong>
+      <p>Some whales share trades on social media or have known public personas. Following these channels provides real-time insight.</p>
+
+      <strong>API integration:</strong>
+      <p>For systematic tracking, connect to Polymarket and blockchain APIs to monitor whale activity programmatically.</p>
+
+      <h2 id="interpreting-whale-activity">Interpreting Whale Activity</h2>
+
+      <p>Raw data means nothing without interpretation:</p>
+
+      <strong>Position size matters:</strong>
+      <p>A whale's $100k position means more than their $1k trade. Focus on their largest, most convicted bets.</p>
+
+      <strong>Timing is crucial:</strong>
+      <p>Early positions before market moves suggest foresight. Late positions may just be following momentum.</p>
+
+      <strong>Multiple whale convergence:</strong>
+      <p>When several independent whales take similar positions, the signal strengthens significantly.</p>
+
+      <strong>Exit as important as entry:</strong>
+      <p>Watch when whales sell, not just when they buy. Early exits may signal changing conditions.</p>
+
+      <h2 id="common-whale-patterns">Common Whale Patterns</h2>
+
+      <strong>Accumulation:</strong>
+      <p>Gradual position building over time, often before expected catalysts. Whales avoid moving markets with single large orders.</p>
+
+      <strong>Front-running news:</strong>
+      <p>Sudden large positions before announcements may indicate information edge. These moves often happen fast.</p>
+
+      <strong>Contrarian positioning:</strong>
+      <p>Whales often fade extreme market movements, buying when others panic and selling into euphoria.</p>
+
+      <strong>Multi-market plays:</strong>
+      <p>Sophisticated whales trade related markets simultaneously. Watch for correlated positions that suggest hedged strategies.</p>
+
+      <h2 id="when-not-to-follow">When Not to Follow</h2>
+
+      <p>Whale following has limits:</p>
+
+      <strong>After prices move:</strong>
+      <p>If whale activity has already moved the market, you're buying at worse prices. The edge may be gone.</p>
+
+      <strong>Unknown whale motivations:</strong>
+      <p>Whales may hedge, test strategies, or have private information you can't access. Their trade may not mean what you think.</p>
+
+      <strong>Different time horizons:</strong>
+      <p>A whale holding for months has different needs than a day trader. Ensure your timeline aligns.</p>
+
+      <strong>Crowded trades:</strong>
+      <p>When everyone follows the same whales, the trade becomes crowded. Exit liquidity dries up if things go wrong.</p>
+
+      <h2 id="building-your-watchlist">Building Your Watchlist</h2>
+
+      <p>Create a curated list of whale wallets:</p>
+
+      <ol>
+        <li><strong>Start with proven performers:</strong> Begin with top leaderboard addresses with long track records.</li>
+        <li><strong>Verify consistency:</strong> Check performance across multiple market types and time periods.</li>
+        <li><strong>Categorize by style:</strong> Some whales specialize in politics, others in sports, others in crypto events.</li>
+        <li><strong>Update regularly:</strong> Remove whales whose performance declines; add new consistent performers.</li>
+        <li><strong>Keep it manageable:</strong> 10-20 quality whales beats hundreds of unvetted addresses.</li>
+      </ol>
+
+      <h2 id="using-alpha-whale">Using Alpha Whale for Tracking</h2>
+
+      <p>Alpha Whale simplifies whale tracking:</p>
+
+      <strong>Curated whale lists:</strong>
+      <p>Pre-vetted successful traders with verified track records.</p>
+
+      <strong>Real-time alerts:</strong>
+      <p>Notifications when tracked whales make significant moves.</p>
+
+      <strong>Automated copy trading:</strong>
+      <p>Optionally mirror whale trades automatically with customizable parameters.</p>
+
+      <strong>Performance analytics:</strong>
+      <p>Track which whales perform best over time to refine your watchlist.</p>
+
+      <h2 id="conclusion">Conclusion</h2>
+
+      <p>Whale tracking offers valuable market intelligence for prediction market traders. By identifying skilled traders, monitoring their activity, and thoughtfully incorporating their signals, you can augment your own research and timing.</p>
+
+      <p>Remember: whales are a tool, not a strategy. Use their activity to inform your decisions, not replace them. The best traders combine whale signals with their own analysis, creating an edge that neither could achieve alone.</p>
+
+      <p>Start building your whale watchlist today, and add a powerful dimension to your Polymarket trading.</p>
+    </div>
+
+    <div class="article-cta">
+      <h3>Track Whales Automatically with Alpha Whale</h3>
+      <p>Get alerts when top traders move. Copy their trades or use their signals for your own analysis.</p>
+      <a href="https://app.alphawhale.trade/">Start Tracking →</a>
+    </div>
+
+    <div class="article-share">
+      <a href="https://twitter.com/intent/tweet?text=Tracking%20Polymarket%20Whale%20Wallets&url=https%3A%2F%2Falphawhale.trade%2Fblog%2Fposts%2Ftracking-polymarket-whale-wallets" target="_blank" class="share-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+        Share on X
+      </a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Falphawhale.trade%2Fblog%2Fposts%2Ftracking-polymarket-whale-wallets" target="_blank" class="share-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        </svg>
+        Share on LinkedIn
+      </a>
+    </div>
+
+    <div class="article-author">
+      <div class="author-avatar">AW</div>
+      <div class="author-info">
+        <h4>Alpha Whale Team</h4>
+        <p>Expert prediction market traders and analysts.</p>
+      </div>
+    </div>
+  </article>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <img src="../../alphalogo_text.png" alt="Alpha Whale" class="footer-logo">
+        <p class="footer-tagline">Trade like the whales. Copy the smartest Polymarket traders and grow your portfolio.</p>
+        <div class="footer-social">
+          <a href="https://x.com/alphawhaletrade" target="_blank" class="footer-social-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4 class="footer-column-title">Product</h4>
+        <a href="https://app.alphawhale.trade/" class="footer-link">Start Trading</a>
+        <a href="../../documentation.html" class="footer-link">Product Guide</a>
+      </div>
+      <div class="footer-column">
+        <h4 class="footer-column-title">Resources</h4>
+        <a href="https://t.me/+zSSN2Ibk6NwxNWUx" target="_blank" class="footer-link">Join our community</a>
+        <a href="../index.html" class="footer-link">Blog</a>
+      </div>
+      <div class="footer-column">
+        <h4 class="footer-column-title">Company</h4>
+        <a href="../../about.html" class="footer-link">About</a>
+        <a href="https://t.me/+zSSN2Ibk6NwxNWUx" target="_blank" class="footer-link">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">&copy; 2026 Alpha Whale. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="../../privacy-policy.html">Privacy Policy</a>
+        <a href="../../terms-of-service.html">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+

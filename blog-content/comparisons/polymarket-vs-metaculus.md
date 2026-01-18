@@ -186,3 +186,4 @@ Most people interested in prediction markets for financial benefit should focus 
 
 Those purely interested in forecasting as an intellectual pursuit might prefer Metaculus, but they can't turn accurate predictions into financial returns.
 
+

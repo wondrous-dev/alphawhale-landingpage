@@ -160,3 +160,4 @@ But it is not passive investing. Selecting traders, managing allocations, and mo
 
 For those with limited time or trading expertise, copy trading through platforms like Alpha Whale provides a viable path to market participation. Approach it systematically, diversify appropriately, and maintain realistic expectations about both opportunities and risks.
 
+

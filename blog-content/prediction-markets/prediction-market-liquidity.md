@@ -171,3 +171,4 @@ Adjust your approach based on liquidity conditions. Use limit orders in thin mar
 
 For traders who want to avoid liquidity complications, copy trading through platforms like Alpha Whale delegates these concerns to experienced traders who handle execution details.
 
+

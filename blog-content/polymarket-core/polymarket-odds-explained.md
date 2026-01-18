@@ -143,3 +143,4 @@ Expected value calculations determine whether trades make mathematical sense. Bu
 
 Whether you trade based on your own probability assessments or follow others through copy trading, understanding how odds work helps you make better decisions and avoid common mistakes.
 
+

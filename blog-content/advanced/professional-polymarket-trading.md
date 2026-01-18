@@ -248,3 +248,4 @@ Key elements for professional practice:
 
 Copy trading through Alpha Whale can be an effective component of professional practice, providing stable base returns while you focus personal effort on developing unique edge.
 
+

@@ -175,3 +175,4 @@ Platforms like Alpha Whale provide specialized copy trading bots designed for pr
 
 Understanding how bots work helps you use them effectively, recognize when they are not performing correctly, and choose platforms with quality automation infrastructure. This knowledge supports better copy trading outcomes.
 
+
