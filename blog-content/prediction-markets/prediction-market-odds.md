@@ -162,3 +162,4 @@ The challenge is accurate probability estimation. Cognitive biases lead to syste
 Whether trading directly or copy trading through platforms like Alpha Whale, understanding odds is foundational for prediction market participation.
 
 
+

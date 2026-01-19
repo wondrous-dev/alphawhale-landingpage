@@ -193,3 +193,4 @@ For those with genuine edge, time to dedicate, and emotional discipline, manual 
 Consider starting with copy trading and gradually incorporating manual elements as you develop skills and confidence.
 
 
+

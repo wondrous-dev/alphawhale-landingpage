@@ -146,3 +146,4 @@ For traders with limited time or specific knowledge gaps, copy trading provides 
 The key is understanding what you are doing and why. Copy trading is a tool, not a solution. Used thoughtfully, it can enhance your prediction market results. Used carelessly, it simply transfers risk from one form to another.
 
 
+

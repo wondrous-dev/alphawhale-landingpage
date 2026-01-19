@@ -214,3 +214,4 @@ For most issues:
 Set appropriate expectations for a crypto-based platform. Many issues resolve through self-service and community help. Official support exists but operates differently from traditional customer service models.
 
 
+

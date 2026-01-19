@@ -192,3 +192,4 @@ Managing large Polymarket positions requires additional discipline:
 Copy trading through Alpha Whale can help manage larger capital by providing built-in diversification across traders and strategies, reducing the concentration risks that come with large individual positions.
 
 
+

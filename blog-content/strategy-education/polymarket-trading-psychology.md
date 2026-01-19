@@ -207,3 +207,4 @@ If trading is causing significant psychological distress, consider:
 Trading should be intellectually stimulating, not psychologically damaging. If the mental burden is too high, adjust your approach until it's sustainable.
 
 
+

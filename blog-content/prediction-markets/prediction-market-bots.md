@@ -186,3 +186,4 @@ For those without technical skills or time for development, copy trading through
 Whatever approach you choose, understand that bots execute your strategies. The quality of results depends on the quality of those strategies. Automation is a means to better execution, not a substitute for sound trading logic.
 
 
+

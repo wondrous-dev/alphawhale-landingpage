@@ -187,3 +187,4 @@ Start small, confirm your experience matches claims, and make informed decisions
 Polymarket is a legitimate prediction market platform. Trade wisely, understanding that legitimacy doesn't eliminate risk.
 
 
+

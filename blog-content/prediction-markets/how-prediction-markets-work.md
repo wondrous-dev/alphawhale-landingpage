@@ -160,3 +160,4 @@ The mechanics are straightforward. The challenge is using them profitably. This 
 Understanding how these markets work is the foundation for everything else. Master the basics before developing sophisticated strategies.
 
 
+
