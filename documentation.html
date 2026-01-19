@@ -35,6 +35,11 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
     :root {
       --bg-deep: #0a0a0a;
       --accent-primary: #00d4ff;
@@ -148,11 +153,77 @@
       transform: translateY(0) scale(0.98);
     }
 
+    /* Main Layout */
+    .doc-main {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      max-width: 1400px;
+      margin: 0 auto;
+      gap: 4rem;
+    }
+
+    /* Table of Contents */
+    .doc-toc {
+      position: sticky;
+      top: 100px;
+      height: fit-content;
+      padding: 2rem 0 2rem 2rem;
+    }
+
+    .toc-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.15em;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+
+    .toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .toc-item {
+      margin-bottom: 0.5rem;
+    }
+
+    .toc-link {
+      display: block;
+      padding: 0.5rem 0;
+      padding-left: 1rem;
+      border-left: 2px solid transparent;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      transition: all 0.2s ease;
+    }
+
+    .toc-link:hover {
+      color: var(--text-primary);
+      border-left-color: var(--accent-primary);
+    }
+
+    .toc-link.active {
+      color: var(--accent-primary);
+      border-left-color: var(--accent-primary);
+    }
+
+    .toc-link--sub {
+      font-size: 13px;
+      padding-left: 2rem;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .toc-link--sub:hover {
+      color: var(--text-muted-light);
+    }
+
     /* Main Content */
     .doc-container {
       max-width: 1000px;
-      margin: 0 auto;
-      padding: 4rem 2rem;
+      padding: 4rem 2rem 4rem 0;
     }
 
     .doc-title {
@@ -410,9 +481,34 @@
     }
 
     /* Responsive */
-    @media (max-width: 600px) {
+    @media (max-width: 1024px) {
+      .doc-main {
+        grid-template-columns: 1fr;
+      }
+
+      .doc-toc {
+        position: relative;
+        top: 0;
+        padding: 2rem;
+        background: rgba(255, 255, 255, 0.02);
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+        margin: 2rem;
+      }
+
       .doc-container {
-        padding: 3rem 1.5rem;
+        padding: 2rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .doc-toc {
+        margin: 1.5rem;
+        padding: 1.5rem;
+      }
+
+      .doc-container {
+        padding: 2rem 1.5rem;
       }
 
       .doc-header-container {
@@ -443,16 +539,35 @@
   </header>
 
   <!-- Main Content -->
-  <main class="doc-container">
-    <h1 class="doc-title">Alpha Whale - Product Guide</h1>
-    
-    <div class="doc-content">
-      <div class="intro">
-        <p><strong>What is Alpha Whale?</strong></p>
-        <p>Alpha Whale is a prediction market platform that lets you trade on real-world outcomes. Whether you want to manage your own positions, automatically copy successful traders, or set up automated bonding strategies, Alpha Whale gives you the tools to participate in prediction markets with confidence.</p>
-      </div>
+  <div class="doc-main">
+    <!-- Table of Contents -->
+    <aside class="doc-toc">
+      <h2 class="toc-title">Contents</h2>
+      <ul class="toc-list">
+        <li class="toc-item"><a href="#getting-started" class="toc-link">Getting Started</a></li>
+        <li class="toc-item"><a href="#core-features" class="toc-link">Core Features</a></li>
+        <li class="toc-item"><a href="#my-positions" class="toc-link toc-link--sub">My Positions</a></li>
+        <li class="toc-item"><a href="#markets" class="toc-link toc-link--sub">Markets</a></li>
+        <li class="toc-item"><a href="#copy-trading" class="toc-link toc-link--sub">Copy Trading</a></li>
+        <li class="toc-item"><a href="#bonding-strategies" class="toc-link toc-link--sub">Bonding Strategies</a></li>
+        <li class="toc-item"><a href="#trader-profiles" class="toc-link toc-link--sub">Trader Profiles</a></li>
+        <li class="toc-item"><a href="#alerts" class="toc-link toc-link--sub">Alerts</a></li>
+        <li class="toc-item"><a href="#performance" class="toc-link">Understanding Performance</a></li>
+        <li class="toc-item"><a href="#tips" class="toc-link">Tips for Success</a></li>
+        <li class="toc-item"><a href="#need-help" class="toc-link">Need Help?</a></li>
+      </ul>
+    </aside>
 
-      <h2>Getting Started: Onboarding</h2>
+    <main class="doc-container">
+      <h1 class="doc-title">Alpha Whale - Product Guide</h1>
+      
+      <div class="doc-content">
+        <div class="intro">
+          <p><strong>What is Alpha Whale?</strong></p>
+          <p>Alpha Whale is a prediction market platform that lets you trade on real-world outcomes. Whether you want to manage your own positions, automatically copy successful traders, or set up automated bonding strategies, Alpha Whale gives you the tools to participate in prediction markets with confidence.</p>
+        </div>
+
+        <h2 id="getting-started">Getting Started: Onboarding</h2>
       <p>When you first arrive at Alpha Whale, you'll go through a quick onboarding process to set up your account:</p>
       <ul>
         <li><strong>Connect Your Wallet</strong> - Link your crypto wallet to access the platform</li>
@@ -460,9 +575,9 @@
         <li><strong>Explore the Dashboard</strong> - Once onboarded, you'll land on your main dashboard where you can see your positions, track performance, and access all features</li>
       </ul>
 
-      <h2>Core Features</h2>
+      <h2 id="core-features">Core Features</h2>
 
-      <h3>My Positions</h3>
+      <h3 id="my-positions">My Positions</h3>
       <p>Your Positions page is your portfolio command center. Here you can:</p>
       
       <h4>View Active Positions</h4>
@@ -498,7 +613,7 @@
         <li>Same sorting options to analyze your trading history</li>
       </ul>
 
-      <h3>Markets</h3>
+      <h3 id="markets">Markets</h3>
       <p>The Markets page is where you discover trading opportunities:</p>
       <ul>
         <li>Browse all available prediction markets</li>
@@ -507,7 +622,7 @@
         <li>Click into any market to view details and place trades</li>
       </ul>
 
-      <h3>Copy Trading</h3>
+      <h3 id="copy-trading">Copy Trading</h3>
       <p>Don't want to pick every trade yourself? Copy Trading lets you automatically mirror the trades of successful traders.</p>
 
       <h4>How It Works</h4>
@@ -558,7 +673,7 @@
         <li>You can manually close those positions or let them resolve naturally</li>
       </ul>
 
-      <h3>Bonding Strategies</h3>
+      <h3 id="bonding-strategies">Bonding Strategies</h3>
       <p>Bonding is Alpha Whale's automated trading system. Think of it as setting up trading rules that execute automatically based on predefined criteria.</p>
 
       <h4>How Bonding Works</h4>
@@ -616,7 +731,7 @@
         <li>View positions and history specific to that strategy</li>
       </ul>
 
-      <h3>Trader Profiles</h3>
+      <h3 id="trader-profiles">Trader Profiles</h3>
       <p>Want to research a trader before copying them? Trader Profiles give you deep insight:</p>
 
       <h4>Profile Overview</h4>
@@ -642,7 +757,7 @@
         <li><strong>Copy</strong> - Start copying their trades immediately</li>
       </ul>
 
-      <h3>Alerts</h3>
+      <h3 id="alerts">Alerts</h3>
       <p>Stay informed with custom alerts:</p>
       <ul>
         <li>Create alerts for specific market conditions</li>
@@ -658,7 +773,7 @@
         <li>Save and wait for notifications</li>
       </ul>
 
-      <h2>Understanding Your Performance</h2>
+      <h2 id="performance">Understanding Your Performance</h2>
       <p>Across the platform, you'll see consistent performance metrics:</p>
 
       <h3>P&L (Profit & Loss)</h3>
@@ -686,7 +801,7 @@
         <li>Hover for detailed data points</li>
       </ul>
 
-      <div class="tips-section">
+      <div id="tips" class="tips-section">
         <h3>Tips for Success</h3>
         <ul>
           <li><strong>Start Small</strong> - Begin with smaller positions while you learn the platform</li>
@@ -698,11 +813,12 @@
         </ul>
       </div>
 
-      <h2>Need Help?</h2>
+      <h2 id="need-help">Need Help?</h2>
       <p>If you have questions or run into issues, our support team is here to help. Alpha Whale is designed to make prediction market trading accessible to everyone, whether you're actively managing trades or letting automation do the work.</p>
       <p style="margin-top: 2rem; font-size: 1.25rem; color: var(--accent-primary);">Happy trading! 🚀</p>
-    </div>
-  </main>
+      </div>
+    </main>
+  </div>
 
   <!-- Footer -->
   <footer class="footer">
