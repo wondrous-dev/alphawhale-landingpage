@@ -527,7 +527,16 @@ function generateSitemap(posts, outputPath) {
   </url>`;
 
   // Add individual blog posts (no pagination pages in sitemap)
+  // Deduplicate by slug to prevent duplicate entries from files with the same slug
+  const seenSlugs = new Set();
+  let duplicateCount = 0;
   posts.forEach(post => {
+    if (seenSlugs.has(post.slug)) {
+      console.warn(`  ⚠️  Duplicate slug skipped in sitemap: ${post.slug}`);
+      duplicateCount++;
+      return;
+    }
+    seenSlugs.add(post.slug);
     const postDate = new Date(post.date).toISOString().split('T')[0];
     sitemap += `
   <url>
@@ -538,11 +547,16 @@ function generateSitemap(posts, outputPath) {
   </url>`;
   });
 
+  if (duplicateCount > 0) {
+    console.warn(`  ⚠️  ${duplicateCount} duplicate slug(s) found — check blog-content/ for files with the same slug`);
+  }
+
   sitemap += `
 </urlset>`;
 
+  const uniquePostCount = seenSlugs.size;
   fs.writeFileSync(outputPath, sitemap, 'utf-8');
-  console.log(`📋 Generated sitemap.xml with ${posts.length + 6} URLs`);
+  console.log(`📋 Generated sitemap.xml with ${uniquePostCount + 6} URLs`);
 }
 
 // Main build function
@@ -587,6 +601,23 @@ function build() {
     }
   });
   console.log(`Collected metadata for ${allPostsMeta.length} posts`);
+
+  // Validate description lengths (Google truncates at ~160 chars)
+  const DESC_MAX = 160;
+  let descWarnings = 0;
+  allPostsMeta.forEach(meta => {
+    const desc = meta.description || '';
+    if (desc.length > DESC_MAX) {
+      console.warn(`  ⚠️  Description too long (${desc.length}/${DESC_MAX} chars): ${meta.slug}`);
+      console.warn(`      "${desc.substring(0, 80)}..."`);
+      descWarnings++;
+    }
+  });
+  if (descWarnings > 0) {
+    console.warn(`\n⚠️  ${descWarnings} post(s) have descriptions over ${DESC_MAX} characters. Trim them for better SEO.\n`);
+  } else {
+    console.log(`✅ All descriptions are within ${DESC_MAX} characters`);
+  }
 
   // Pass 2: Build all posts with cross-links
   console.log('Pass 2: Building posts with cross-links...');
