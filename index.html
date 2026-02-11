@@ -34,7 +34,7 @@
   
   <link rel="icon" href="alphawhale_logowebsite.png" type="image/png">
   <link rel="preload" href="alphawhale_logowebsite.png" as="image">
-  <link rel="preload" href="phone3.png" as="image">
+  <link rel="preload" href="phone3.webp" as="image" type="image/webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=Inter:wght@200;300;400&family=Manrope:wght@400;500;600&family=Permanent+Marker&display=swap" rel="stylesheet">
@@ -807,6 +807,7 @@
       display: none;
     }
 
+    .feature-card-bg picture,
     .feature-card-bg img {
       width: 100%;
       height: 100%;
@@ -1417,6 +1418,7 @@
       z-index: 1;
     }
 
+    .whale-cta-bg picture,
     .whale-cta-bg img {
       width: 100%;
       height: 100%;
@@ -1484,7 +1486,8 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: url('insights-bg.png') center/cover no-repeat;
+      background: url('insights-bg.webp') center/cover no-repeat;
+      background: image-set(url('insights-bg.webp') type('image/webp'), url('insights-bg.png') type('image/png')) center/cover no-repeat;
       opacity: 0.3;
       mix-blend-mode: overlay;
     }
@@ -2573,7 +2576,10 @@
         <div class="phone-screen">
           <div class="phone-notch"></div>
           <div class="screen-content">
-            <img src="phone3.png" alt="Alpha Whale App">
+            <picture>
+              <source srcset="phone3.webp" type="image/webp">
+              <img src="phone3.png" alt="Alpha Whale App">
+            </picture>
           </div>
         </div>
         <div class="phone-reflection"></div>
@@ -2651,7 +2657,10 @@
       <!-- Feature Card 1: Copy Trade -->
       <div class="feature-card feature-card-1">
         <div class="feature-card-bg">
-          <img src="feature-bg-1.png" alt="Copy trading dashboard showing top Polymarket traders" loading="lazy">
+          <picture>
+            <source srcset="feature-bg-1.webp" type="image/webp">
+            <img src="feature-bg-1.png" alt="Copy trading dashboard showing top Polymarket traders" loading="lazy">
+          </picture>
         </div>
         <div class="feature-card-gradient"></div>
         <div class="feature-card-overlay">
@@ -2697,7 +2706,10 @@
       <!-- Feature Card 2: Bonding -->
       <div class="feature-card feature-card-2">
         <div class="feature-card-bg">
-          <img src="feature-bg-2.png" alt="Polymarket bonding pool interface for prediction markets" loading="lazy">
+          <picture>
+            <source srcset="feature-bg-2.webp" type="image/webp">
+            <img src="feature-bg-2.png" alt="Polymarket bonding pool interface for prediction markets" loading="lazy">
+          </picture>
         </div>
         <div class="feature-card-gradient"></div>
         <div class="feature-card-overlay">
@@ -2727,7 +2739,10 @@
       <!-- Feature Card 3: Alerts -->
       <div class="feature-card feature-card-3">
         <div class="feature-card-bg">
-          <img src="feature-bg-3.png" alt="Alpha Whale real-time trading alerts and notifications" loading="lazy">
+          <picture>
+            <source srcset="feature-bg-3.webp" type="image/webp">
+            <img src="feature-bg-3.png" alt="Alpha Whale real-time trading alerts and notifications" loading="lazy">
+          </picture>
         </div>
         <div class="feature-card-gradient"></div>
         <div class="feature-card-overlay">
@@ -2820,7 +2835,10 @@
       <!-- Unlock deep recaps - Whale GIF Background -->
       <div class="whale-cta-section">
         <div class="whale-cta-bg">
-          <img src="whalegif2.gif" alt="Whale animation - become a top prediction market trader" loading="lazy">
+          <picture>
+            <source srcset="whalegif2.webp" type="image/webp">
+            <img src="whalegif2.gif" alt="Whale animation - become a top prediction market trader" loading="lazy">
+          </picture>
         </div>
         <div class="whale-cta-overlay"></div>
         <div class="whale-cta-content">
