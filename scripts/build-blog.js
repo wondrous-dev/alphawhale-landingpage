@@ -3,7 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const POSTS_PER_PAGE = 12;
+const POSTS_PER_PAGE = Infinity; // Show all posts on single page (no pagination)
 
 // Simple Markdown parser (basic implementation)
 function parseMarkdown(markdown) {
@@ -526,19 +526,7 @@ function generateSitemap(posts, outputPath) {
     <lastmod>${today}</lastmod>
   </url>`;
 
-  // Add blog index pages (skip page 1 since it's already added above)
-  const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);
-  for (let page = 2; page <= totalPages; page++) {
-    sitemap += `
-  <url>
-    <loc>${baseUrl}/blog/page-${page}.html</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-    <lastmod>${today}</lastmod>
-  </url>`;
-  }
-
-  // Add individual blog posts
+  // Add individual blog posts (no pagination pages in sitemap)
   posts.forEach(post => {
     const postDate = new Date(post.date).toISOString().split('T')[0];
     sitemap += `
@@ -554,7 +542,7 @@ function generateSitemap(posts, outputPath) {
 </urlset>`;
 
   fs.writeFileSync(outputPath, sitemap, 'utf-8');
-  console.log(`📋 Generated sitemap.xml with ${posts.length + 5 + totalPages} URLs`);
+  console.log(`📋 Generated sitemap.xml with ${posts.length + 6} URLs`);
 }
 
 // Main build function
@@ -613,9 +601,18 @@ function build() {
     }
   });
   
-  // Build index with pagination
-  console.log('Building index pages...');
+  // Build index (single page, no pagination)
+  console.log('Building blog index...');
   const totalPages = buildIndex(posts, actualIndexTemplate, blogOutputDir);
+
+  // Clean up old pagination files
+  for (let i = 2; i <= 20; i++) {
+    const oldPage = path.join(blogOutputDir, `page-${i}.html`);
+    if (fs.existsSync(oldPage)) {
+      fs.unlinkSync(oldPage);
+      console.log(`  Removed old pagination file: page-${i}.html`);
+    }
+  }
   
   // Generate sitemap
   console.log('Generating sitemap...');
