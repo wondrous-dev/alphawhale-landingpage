@@ -161,11 +161,143 @@ function findMarkdownFiles(dir, fileList = []) {
   return fileList;
 }
 
-// Build a single post
-function buildPost(markdownFile, templatePath, outputDir) {
+// Calculate relevance score between two posts based on category and keyword overlap
+function getRelevanceScore(postA, postB) {
+  let score = 0;
+
+  // Same category = strong signal
+  if (postA.category && postB.category && postA.category === postB.category) {
+    score += 3;
+  }
+
+  // Keyword overlap
+  const keywordsA = Array.isArray(postA.keywords) ? postA.keywords : (postA.keywords || '').split(',').map(k => k.trim());
+  const keywordsB = Array.isArray(postB.keywords) ? postB.keywords : (postB.keywords || '').split(',').map(k => k.trim());
+
+  // Check individual keyword word overlap (more granular than exact match)
+  const wordsA = new Set(keywordsA.join(' ').toLowerCase().split(/\s+/));
+  const wordsB = new Set(keywordsB.join(' ').toLowerCase().split(/\s+/));
+  const stopWords = new Set(['the', 'a', 'an', 'and', 'or', 'for', 'to', 'in', 'on', 'of', 'is', 'how', 'what', 'vs']);
+  
+  for (const word of wordsA) {
+    if (!stopWords.has(word) && wordsB.has(word)) {
+      score += 1;
+    }
+  }
+
+  // Title word overlap
+  const titleWordsA = new Set((postA.title || '').toLowerCase().split(/\s+/));
+  const titleWordsB = new Set((postB.title || '').toLowerCase().split(/\s+/));
+  for (const word of titleWordsA) {
+    if (word.length > 3 && !stopWords.has(word) && titleWordsB.has(word)) {
+      score += 0.5;
+    }
+  }
+
+  return score;
+}
+
+// Find the top N related posts for a given post
+function findRelatedPosts(currentPost, allPosts, count = 3) {
+  const scored = allPosts
+    .filter(p => p.slug !== currentPost.slug)
+    .map(p => ({ post: p, score: getRelevanceScore(currentPost, p) }))
+    .sort((a, b) => b.score - a.score);
+
+  return scored.slice(0, count).map(s => s.post);
+}
+
+// Generate related posts HTML section
+function generateRelatedPostsHTML(relatedPosts) {
+  if (relatedPosts.length === 0) return '';
+
+  let html = '<div class="related-posts"><h3>Related Articles</h3><div class="related-posts-grid">';
+
+  relatedPosts.forEach(post => {
+    const excerpt = (post.description || '').substring(0, 100);
+    html += `
+      <div class="related-post-card">
+        <a href="${post.slug}.html">
+          <h4>${post.title}</h4>
+          <p>${excerpt}${excerpt.length >= 100 ? '...' : ''}</p>
+        </a>
+      </div>`;
+  });
+
+  html += '</div></div>';
+  return html;
+}
+
+// Generate contextual inline links to insert into article content
+function generateInlineLinks(currentPost, allPosts) {
+  // Find top 5 related posts (we'll try to link up to 3 within the content)
+  const candidates = findRelatedPosts(currentPost, allPosts, 5);
+  
+  // Build a map of anchor text -> link for insertion
+  // We use the post title as potential anchor text triggers, and also short phrases
+  const linkMap = [];
+  candidates.forEach(post => {
+    // Create natural anchor phrases from the post title
+    const title = post.title || '';
+    linkMap.push({
+      slug: post.slug,
+      title: title,
+      href: `${post.slug}.html`
+    });
+  });
+
+  return linkMap;
+}
+
+// Insert contextual links into HTML content (up to maxLinks)
+function insertContextualLinks(htmlContent, linkMap, maxLinks = 3) {
+  let linksInserted = 0;
+  let modifiedContent = htmlContent;
+
+  for (const link of linkMap) {
+    if (linksInserted >= maxLinks) break;
+
+    // Look for a good paragraph to append a "Related reading" link after
+    // Strategy: find the first <h2> section boundary after the first section,
+    // and insert a contextual link before it
+    const h2Matches = [...modifiedContent.matchAll(/<h2\s[^>]*id="([^"]*)"[^>]*>/g)];
+    
+    if (h2Matches.length > linksInserted + 1) {
+      // Insert before the (linksInserted + 1)th h2 (skip first h2, space links out)
+      const targetH2 = h2Matches[linksInserted + 1];
+      const insertPos = targetH2.index;
+      
+      const linkHTML = `<p class="contextual-link"><strong>Related:</strong> <a href="${link.href}">${link.title}</a></p>\n\n`;
+      modifiedContent = modifiedContent.slice(0, insertPos) + linkHTML + modifiedContent.slice(insertPos);
+      linksInserted++;
+    }
+  }
+
+  return modifiedContent;
+}
+
+// Build a single post (first pass - collect metadata only)
+function collectPostMetadata(markdownFile) {
+  const content = fs.readFileSync(markdownFile, 'utf-8');
+  const { frontmatter } = parseFrontmatter(content);
+  
+  return {
+    ...frontmatter,
+    slug: frontmatter.slug || path.basename(markdownFile, '.md'),
+    date: frontmatter.date || new Date().toISOString(),
+    readTime: frontmatter.readTime || '5 min',
+    _markdownFile: markdownFile
+  };
+}
+
+// Build a single post (second pass - generate HTML with cross-links)
+function buildPost(markdownFile, templatePath, outputDir, allPosts) {
   const content = fs.readFileSync(markdownFile, 'utf-8');
   const { frontmatter, body } = parseFrontmatter(content);
   
+  const currentSlug = frontmatter.slug || path.basename(markdownFile, '.md');
+  const currentPost = allPosts.find(p => p.slug === currentSlug) || frontmatter;
+
   // Extract headings before parsing
   const headings = extractHeadings(body);
   
@@ -177,6 +309,14 @@ function buildPost(markdownFile, templatePath, outputDir) {
   
   // Add IDs to headings in HTML
   htmlContent = addHeadingIds(htmlContent, headings);
+
+  // Insert contextual inline links to related posts
+  const linkMap = generateInlineLinks(currentPost, allPosts);
+  htmlContent = insertContextualLinks(htmlContent, linkMap, 3);
+
+  // Generate related posts section
+  const relatedPosts = findRelatedPosts(currentPost, allPosts, 3);
+  const relatedPostsHTML = generateRelatedPostsHTML(relatedPosts);
   
   // Read template
   let template = fs.readFileSync(templatePath, 'utf-8');
@@ -185,7 +325,7 @@ function buildPost(markdownFile, templatePath, outputDir) {
   const replacements = {
     TITLE: frontmatter.title || 'Untitled',
     DESCRIPTION: frontmatter.description || '',
-    SLUG: frontmatter.slug || path.basename(markdownFile, '.md'),
+    SLUG: currentSlug,
     CATEGORY: frontmatter.category || 'general',
     AUTHOR: frontmatter.author || 'Alpha Whale Team',
     DATE: new Date(frontmatter.date || Date.now()).toLocaleDateString('en-US', { 
@@ -207,9 +347,9 @@ function buildPost(markdownFile, templatePath, outputDir) {
         <a href="https://app.alphawhale.trade/">Start Trading →</a>
       </div>
     `,
-    RELATED_POSTS: '', // Will be populated later
+    RELATED_POSTS: relatedPostsHTML,
     TITLE_ENCODED: encodeURIComponent(frontmatter.title || ''),
-    URL_ENCODED: encodeURIComponent(`https://alphawhale.trade/blog/${frontmatter.slug || path.basename(markdownFile, '.md')}`)
+    URL_ENCODED: encodeURIComponent(`https://alphawhale.trade/blog/${currentSlug}`)
   };
   
   Object.keys(replacements).forEach(key => {
@@ -217,12 +357,12 @@ function buildPost(markdownFile, templatePath, outputDir) {
   });
   
   // Write output
-  const outputFile = path.join(outputDir, `${frontmatter.slug || path.basename(markdownFile, '.md')}.html`);
+  const outputFile = path.join(outputDir, `${currentSlug}.html`);
   fs.writeFileSync(outputFile, template, 'utf-8');
   
   return {
     ...frontmatter,
-    slug: frontmatter.slug || path.basename(markdownFile, '.md'),
+    slug: currentSlug,
     date: frontmatter.date || new Date().toISOString(),
     readTime: frontmatter.readTime || '5 min'
   };
@@ -447,12 +587,26 @@ function build() {
   
   console.log(`Found ${markdownFiles.length} markdown file(s)`);
   
-  // Build all posts
+  // Pass 1: Collect all post metadata for cross-linking
+  console.log('Pass 1: Collecting post metadata...');
+  const allPostsMeta = [];
+  markdownFiles.forEach(file => {
+    try {
+      const meta = collectPostMetadata(file);
+      allPostsMeta.push(meta);
+    } catch (error) {
+      console.error(`Error reading metadata from ${file}:`, error.message);
+    }
+  });
+  console.log(`Collected metadata for ${allPostsMeta.length} posts`);
+
+  // Pass 2: Build all posts with cross-links
+  console.log('Pass 2: Building posts with cross-links...');
   const posts = [];
   markdownFiles.forEach(file => {
     try {
       console.log(`Building: ${path.relative(blogContentDir, file)}`);
-      const post = buildPost(file, templatePath, postsOutputDir);
+      const post = buildPost(file, templatePath, postsOutputDir, allPostsMeta);
       posts.push(post);
     } catch (error) {
       console.error(`Error building ${file}:`, error.message);

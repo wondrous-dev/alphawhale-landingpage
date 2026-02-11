@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WVSND04495"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WVSND04495');
+  </script>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Position Sizing on Polymarket: How Much to Bet on Each Trade | Alpha Whale Blog</title>
+  <meta name="description" content="Master position sizing for Polymarket trading. Learn proven methods to determine how much capital to risk on each prediction market trade.">
+  <meta name="keywords" content="polymarket position sizing, bet sizing, position sizing strategies, how much to bet">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://alphawhale.trade/blog/posts/polymarket-position-sizing.html">
+  
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Position Sizing on Polymarket: How Much to Bet on Each Trade | Alpha Whale Blog">
+  <meta property="og:description" content="Master position sizing for Polymarket trading. Learn proven methods to determine how much capital to risk on each prediction market trade.">
+  <meta property="og:image" content="https://alphawhale.trade/alphawhale_logowebsite.png">
+  <meta property="og:url" content="https://alphawhale.trade/blog/posts/polymarket-position-sizing.html">
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2026-01-15T00:00:00.000Z">
+  <meta property="article:author" content="Alpha Whale Team">
+  
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@alphawhaletrade">
+  <meta name="twitter:title" content="Position Sizing on Polymarket: How Much to Bet on Each Trade">
+  <meta name="twitter:description" content="Master position sizing for Polymarket trading. Learn proven methods to determine how much capital to risk on each prediction market trade.">
+  <meta name="twitter:image" content="https://alphawhale.trade/alphawhale_logowebsite.png">
+  
+  <link rel="icon" href="../../alphawhale_logowebsite.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=Inter:wght@200;300;400&family=Manrope:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Position Sizing on Polymarket: How Much to Bet on Each Trade",
+    "description": "Master position sizing for Polymarket trading. Learn proven methods to determine how much capital to risk on each prediction market trade.",
+    "image": "https://alphawhale.trade/alphawhale_logowebsite.png",
+    "datePublished": "2026-01-15T00:00:00.000Z",
+    "dateModified": "2026-01-15T00:00:00.000Z",
+    "author": {
+      "@type": "Organization",
+      "name": "Alpha Whale Team"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Alpha Whale",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://alphawhale.trade/alphawhale_logowebsite.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://alphawhale.trade/blog/posts/polymarket-position-sizing.html"
+    }
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://alphawhale.trade/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://alphawhale.trade/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Position Sizing on Polymarket: How Much to Bet on Each Trade",
+        "item": "https://alphawhale.trade/blog/posts/polymarket-position-sizing.html"
+      }
+    ]
+  }
+  </script>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-deep: #0a0a0a;
+      --accent-primary: #00d4ff;
+      --accent-secondary: #0066ff;
+      --text-primary: #ffffff;
+      --text-muted: rgba(255, 255, 255, 0.5);
+      --text-muted-light: rgba(255, 255, 255, 0.7);
+      --border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    body {
+      font-family: 'Manrope', sans-serif;
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    .post-header {
+      border-bottom: 1px solid var(--border-color);
+      padding: 1.5rem 0;
+      position: sticky;
+      top: 0;
+      background: var(--bg-deep);
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+
+    .post-header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .post-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .post-logo img {
+      height: 32px;
+      width: auto;
+    }
+
+    .post-nav {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .post-nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s ease;
+    }
+
+    .post-nav a:hover {
+      color: var(--text-primary);
+    }
+
+    .post-nav .cta-button {
+      background: linear-gradient(135deg, #00d4ff 0%, #00b4e6 50%, #00d4ff 100%);
+      background-size: 200% 200%;
+      color: var(--bg-deep);
+      padding: 0.65rem 1.75rem;
+      border-radius: 8px;
+      font-weight: 700;
+      box-shadow: 
+        0 4px 15px rgba(0, 212, 255, 0.4),
+        0 0 30px rgba(0, 212, 255, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .post-nav .cta-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .post-nav .cta-button:hover {
+      color: var(--bg-deep);
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 
+        0 8px 25px rgba(0, 212, 255, 0.5),
+        0 0 40px rgba(0, 212, 255, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+      background-position: 100% 100%;
+    }
+
+    .post-nav .cta-button:hover::before {
+      left: 100%;
+    }
+
+    .post-nav .cta-button:active {
+      transform: translateY(0) scale(0.98);
+    }
+
+    /* Article Container */
+    .article-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    /* Article Header */
+    .article-header {
+      margin-bottom: 3rem;
+    }
+
+    .article-category {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+
+    .article-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      letter-spacing: 0.02em;
+    }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-bottom: 2rem;
+    }
+
+    .article-meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Table of Contents */
+    .toc {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .toc h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .toc ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .toc li {
+      margin-bottom: 0.5rem;
+    }
+
+    .toc a {
+      color: var(--text-muted-light);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s ease;
+    }
+
+    .toc a:hover {
+      color: var(--accent-primary);
+    }
+
+    /* Article Content */
+    .article-content {
+      font-size: 18px;
+      line-height: 1.8;
+      color: var(--text-muted-light);
+    }
+
+    .article-content h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin: 3rem 0 1.5rem;
+      color: var(--text-primary);
+      line-height: 1.3;
+    }
+
+    .article-content h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 2.5rem 0 1rem;
+      color: var(--text-primary);
+      line-height: 1.3;
+    }
+
+    .article-content h4 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 2rem 0 1rem;
+      color: var(--text-primary);
+    }
+
+    .article-content p {
+      margin-bottom: 1.5rem;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      margin: 1.5rem 0;
+      padding-left: 2rem;
+    }
+
+    .article-content li {
+      margin-bottom: 0.75rem;
+    }
+
+    .article-content a {
+      color: var(--accent-primary);
+      text-decoration: underline;
+      transition: opacity 0.2s ease;
+    }
+
+    .article-content a:hover {
+      opacity: 0.8;
+    }
+
+    .article-content .contextual-link {
+      background: rgba(0, 212, 255, 0.05);
+      border-left: 3px solid var(--accent-primary);
+      padding: 0.75rem 1rem;
+      border-radius: 0 6px 6px 0;
+      margin: 1.5rem 0;
+      font-size: 0.95em;
+    }
+
+    .article-content .contextual-link a {
+      color: var(--accent-primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .article-content .contextual-link a:hover {
+      text-decoration: underline;
+      opacity: 1;
+    }
+
+    .article-content code {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.9em;
+      font-family: 'Courier New', monospace;
+    }
+
+    .article-content pre {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1.5rem;
+      overflow-x: auto;
+      margin: 2rem 0;
+    }
+
+    .article-content pre code {
+      background: none;
+      padding: 0;
+    }
+
+    .article-content blockquote {
+      border-left: 4px solid var(--accent-primary);
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+      color: var(--text-muted-light);
+      font-style: italic;
+    }
+
+    .article-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+
+    /* CTA Banner */
+    .article-cta {
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 102, 255, 0.1));
+      border: 1px solid var(--accent-primary);
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 3rem 0;
+      text-align: center;
+    }
+
+    .article-cta h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .article-cta p {
+      color: var(--text-muted-light);
+      margin-bottom: 1.5rem;
+    }
+
+    .article-cta a {
+      display: inline-block;
+      background: var(--accent-primary);
+      color: var(--bg-deep);
+      padding: 0.75rem 2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: opacity 0.2s ease;
+    }
+
+    .article-cta a:hover {
+      opacity: 0.9;
+    }
+
+    /* Share Buttons */
+    .article-share {
+      display: flex;
+      gap: 1rem;
+      margin: 3rem 0;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .share-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      color: var(--text-muted-light);
+      text-decoration: none;
+      font-size: 14px;
+      transition: all 0.2s ease;
+    }
+
+    .share-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text-primary);
+    }
+
+    /* Author Info */
+    .article-author {
+      display: flex;
+      gap: 1rem;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      margin: 3rem 0;
+    }
+
+    .author-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .author-info h4 {
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .author-info p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    /* Related Posts */
+    .related-posts {
+      margin: 4rem 0;
+    }
+
+    .related-posts h3 {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .related-posts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .related-post-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: all 0.2s ease;
+    }
+
+    .related-post-card:hover {
+      border-color: var(--accent-primary);
+      transform: translateY(-2px);
+    }
+
+    .related-post-card a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .related-post-card h4 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .related-post-card p {
+      font-size: 14px;
+      color: var(--text-muted-light);
+      margin: 0;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      border-top: 1px solid var(--border-color);
+      padding: 4rem;
+      margin-top: 4rem;
+    }
+
+    .footer-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .footer-logo {
+      height: 56px;
+      width: auto;
+      max-width: 250px;
+      object-fit: contain;
+      align-self: flex-start;
+    }
+
+    .footer-tagline {
+      font-family: 'Manrope', sans-serif;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.6;
+      max-width: 280px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+      margin-top: 1rem;
+    }
+
+    .footer-social-link {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.7);
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .footer-social-link:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+
+    .footer-column {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .footer-column-title {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-link {
+      font-family: 'Manrope', sans-serif;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-link:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      max-width: 1400px;
+      margin: 3rem auto 0;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copyright {
+      font-family: 'Manrope', sans-serif;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .footer-legal a {
+      font-family: 'Manrope', sans-serif;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.4);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-legal a:hover {
+      color: #fff;
+    }
+
+    @media (max-width: 900px) {
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+      }
+
+      .footer-brand {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .footer {
+        padding: 3rem 2rem;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .footer-brand {
+        grid-column: span 1;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      .footer-legal {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .article-container {
+        padding: 2rem 1rem;
+      }
+
+      .article-content {
+        font-size: 16px;
+      }
+
+      .article-share {
+        flex-wrap: wrap;
+      }
+
+      .related-posts-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="post-header">
+    <div class="post-header-container">
+      <a href="/" class="post-logo">
+        <img src="../../alphawhale_logowebsite.png" alt="Alpha Whale">
+      </a>
+      <nav class="post-nav">
+        <a href="https://app.alphawhale.trade/">Log in</a>
+        <a href="https://app.alphawhale.trade/" class="cta-button">Sign-up</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Article -->
+  <article class="article-container">
+    <header class="article-header">
+      <span class="article-category">strategy</span>
+      <h1 class="article-title">Position Sizing on Polymarket: How Much to Bet on Each Trade</h1>
+      <div class="article-meta">
+        <span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          Alpha Whale Team
+        </span>
+        <span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          January 14, 2026
+        </span>
+        <span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+          12 min
+        </span>
+      </div>
+    </header>
+
+    <div class="toc"><h3>Table of Contents</h3><ul><li><a href="#why-position-sizing-matters">Why Position Sizing Matters</a></li><li><a href="#the-mathematics-of-position-sizing">The Mathematics of Position Sizing</a></li><li><a href="#fixed-percentage-method">Fixed Percentage Method</a></li><li><a href="#fixed-dollar-amount">Fixed Dollar Amount</a></li><li><a href="#kelly-criterion">Kelly Criterion</a></li><li><a href="#variable-sizing-based-on-conviction">Variable Sizing Based on Conviction</a></li><li><a href="#volatility-based-sizing">Volatility-Based Sizing</a></li><li><a href="#maximum-position-limits">Maximum Position Limits</a></li><li><a href="#correlation-adjusted-sizing">Correlation-Adjusted Sizing</a></li><li><a href="#time-horizon-considerations">Time Horizon Considerations</a></li><li><a href="#account-size-considerations">Account Size Considerations</a></li><li><a href="#common-position-sizing-mistakes">Common Position Sizing Mistakes</a></li><li><a href="#building-your-position-sizing-system">Building Your Position Sizing System</a></li><li><a href="#position-sizing-examples">Position Sizing Examples</a></li><li><a href="#advanced-techniques">Advanced Techniques</a></li><li><a href="#tracking-and-optimization">Tracking and Optimization</a></li><li><a href="#psychology-of-position-sizing">Psychology of Position Sizing</a></li></ul></div>
+
+    <div class="article-content">
+      <h2 id="why-position-sizing-matters">Why Position Sizing Matters</h2>
+
+<p>Position sizing is one of the most important decisions in trading, yet it's often overlooked. How much you bet on each trade determines your risk, return potential, and ability to survive losing streaks.</p>
+
+<p>Two traders can have identical win rates and still have vastly different results based solely on position sizing.</p>
+
+<p class="contextual-link"><strong>Related:</strong> <a href="how-to-win-on-polymarket.html">How to Win on Polymarket: Practical Tips from Profitable Traders</a></p>
+
+<h2 id="the-mathematics-of-position-sizing">The Mathematics of Position Sizing</h2>
+
+<p>The math is clear: position sizing dramatically affects outcomes.</p>
+
+<strong>Example:</strong> Trader A risks 10% per trade, Trader B risks 2% per trade. After 10 consecutive losses:
+<ul>
+<li>Trader A: Down 65% (needs 186% gain to recover)</li>
+<li>Trader B: Down 18% (needs 22% gain to recover)</li>
+
+</ul>
+Small differences in position size compound over time, especially during losing streaks.
+
+<p class="contextual-link"><strong>Related:</strong> <a href="polymarket-market-making.html">Market Making on Polymarket: Strategies and Techniques</a></p>
+
+<h2 id="fixed-percentage-method">Fixed Percentage Method</h2>
+
+<p>The simplest approach: risk the same percentage on every trade.</p>
+
+<strong>How it works:</strong> If you have $1,000 and use 5% sizing, you risk $50 per trade.
+
+<strong>Advantages:</strong> Simple, consistent, automatically adjusts as capital changes.
+
+<strong>Disadvantages:</strong> Doesn't account for trade quality or conviction level.
+
+<strong>Best for:</strong> Beginners and traders who want simplicity.
+
+<strong>Typical range:</strong> 1-5% per trade for most traders.
+
+<p class="contextual-link"><strong>Related:</strong> <a href="polymarket-news-trading.html">News Trading on Polymarket: Strategies for Event-Driven Profits</a></p>
+
+<h2 id="fixed-dollar-amount">Fixed Dollar Amount</h2>
+
+<p>Risk the same dollar amount regardless of account size.</p>
+
+<strong>How it works:</strong> Always risk $50 per trade, whether you have $1,000 or $10,000.
+
+<strong>Advantages:</strong> Simple, predictable dollar risk.
+
+<strong>Disadvantages:</strong> Doesn't scale with account growth, can become too conservative or aggressive.
+
+<strong>Best for:</strong> Very small accounts or specific risk budgets.
+
+<strong>Typical range:</strong> $25-$100 for most retail traders.
+
+<h2 id="kelly-criterion">Kelly Criterion</h2>
+
+<p>A mathematical formula for optimal bet sizing based on edge and odds.</p>
+
+<strong>Formula:</strong> f = (bp - q) / b
+<ul>
+<li>f = fraction of capital to bet</li>
+<li>b = odds received (decimal)</li>
+<li>p = probability of winning</li>
+<li>q = probability of losing (1 - p)</li>
+
+</ul>
+<strong>Example:</strong> If you have 60% edge on a market trading at 0.50:
+<ul>
+<li>f = (1 × 0.60 - 0.40) / 1 = 0.20 (20% of capital)</li>
+
+</ul>
+<strong>Advantages:</strong> Mathematically optimal for maximizing long-term growth.
+
+<strong>Disadvantages:</strong> Very aggressive, assumes perfect probability estimates, can lead to large drawdowns.
+
+<strong>Best for:</strong> Experienced traders with well-calibrated probability estimates.
+
+<strong>Common modification:</strong> Use "half Kelly" or "quarter Kelly" to reduce volatility.
+
+<h2 id="variable-sizing-based-on-conviction">Variable Sizing Based on Conviction</h2>
+
+<p>Size positions based on how confident you are.</p>
+
+<strong>How it works:</strong> Create conviction tiers (high, medium, low) with corresponding position sizes.
+
+<strong>Example:</strong>
+<ul>
+<li>High conviction: 5% of capital</li>
+<li>Medium conviction: 3% of capital</li>
+<li>Low conviction: 1% of capital</li>
+
+</ul>
+<strong>Advantages:</strong> Allocates more capital to best opportunities.
+
+<strong>Disadvantages:</strong> Requires honest self-assessment of conviction, can lead to overtrading low-conviction ideas.
+
+<strong>Best for:</strong> Traders with clear conviction frameworks.
+
+<h2 id="volatility-based-sizing">Volatility-Based Sizing</h2>
+
+<p>Adjust position size based on market volatility.</p>
+
+<strong>How it works:</strong> Smaller positions in volatile markets, larger in stable markets.
+
+<strong>Advantages:</strong> Maintains consistent risk levels across different market conditions.
+
+<strong>Disadvantages:</strong> Requires volatility measurement, more complex.
+
+<strong>Best for:</strong> Traders active across diverse market types.
+
+<strong>Implementation:</strong> Use historical volatility or implied volatility measures.
+
+<h2 id="maximum-position-limits">Maximum Position Limits</h2>
+
+<p>Set absolute caps regardless of other sizing methods.</p>
+
+<strong>Why it matters:</strong> Even with Kelly or high conviction, you need limits.
+
+<strong>Typical limits:</strong> 
+<ul>
+<li>Single position: 10-20% maximum</li>
+<li>Related positions: 25-30% maximum</li>
+<li>Total exposure: 50-70% maximum</li>
+
+</ul>
+<strong>Advantages:</strong> Prevents overconcentration and catastrophic losses.
+
+<strong>Disadvantages:</strong> Might limit optimal sizing in rare high-edge situations.
+
+<strong>Best for:</strong> All traders—this is essential risk management.
+
+<h2 id="correlation-adjusted-sizing">Correlation-Adjusted Sizing</h2>
+
+<p>Account for correlation between positions.</p>
+
+<strong>The problem:</strong> Multiple positions that move together aren't truly diversified.
+
+<strong>Solution:</strong> Reduce individual position sizes when positions are correlated.
+
+<strong>Example:</strong> If you have 3 correlated positions at 5% each, treat as 15% exposure, not 15% diversified.
+
+<strong>Advantages:</strong> More accurate risk assessment.
+
+<strong>Disadvantages:</strong> Requires understanding correlations, more complex.
+
+<strong>Best for:</strong> Traders with multiple positions in related markets.
+
+<h2 id="time-horizon-considerations">Time Horizon Considerations</h2>
+
+<p>Match position size to holding period.</p>
+
+<strong>Short-term trades:</strong> Can use larger sizes since capital isn't tied up long.
+
+<strong>Long-term positions:</strong> Use smaller sizes to maintain flexibility and avoid overcommitment.
+
+<strong>Locked capital:</strong> Markets that tie up capital for months should be sized smaller.
+
+<strong>Advantages:</strong> Better capital efficiency and flexibility.
+
+<strong>Disadvantages:</strong> Requires planning and discipline.
+
+<strong>Best for:</strong> Traders with mixed time horizons.
+
+<h2 id="account-size-considerations">Account Size Considerations</h2>
+
+<p>Position sizing should scale with account size.</p>
+
+<strong>Small accounts ($100-$1,000):</strong> 
+<ul>
+<li>Need larger percentages to make meaningful profits</li>
+<li>But still cap at 5-10% per trade</li>
+<li>Focus on high-probability, high-edge trades</li>
+
+</ul>
+<strong>Medium accounts ($1,000-$10,000):</strong>
+<ul>
+<li>Can use 2-5% per trade comfortably</li>
+<li>More room for diversification</li>
+<li>Can afford to be more selective</li>
+
+</ul>
+<strong>Large accounts ($10,000+):</strong>
+<ul>
+<li>Can use smaller percentages (1-3%)</li>
+<li>Focus on consistency over individual trade size</li>
+<li>More emphasis on portfolio management</li>
+
+</ul>
+<h2 id="common-position-sizing-mistakes">Common Position Sizing Mistakes</h2>
+
+<p>Avoid these errors:</p>
+
+<strong>Sizing too large:</strong> The most common mistake. Greed leads to oversized positions.
+
+<strong>Sizing too small:</strong> Being overly conservative limits profit potential.
+
+<strong>Inconsistent sizing:</strong> Random position sizes make it impossible to track what works.
+
+<strong>Ignoring correlation:</strong> Treating correlated positions as independent.
+
+<strong>Not adjusting for account changes:</strong> Forgetting to recalculate after wins or losses.
+
+<strong>Emotional sizing:</strong> Letting recent wins or losses affect position sizes.
+
+<strong>No maximum limits:</strong> Allowing positions to grow too large.
+
+<h2 id="building-your-position-sizing-system">Building Your Position Sizing System</h2>
+
+<p>Create a systematic approach:</p>
+
+<strong>Choose a base method:</strong> Fixed percentage, Kelly, or variable sizing.
+
+<strong>Set maximum limits:</strong> Absolute caps for single positions and total exposure.
+
+<strong>Account for correlation:</strong> Adjust for related positions.
+
+<strong>Consider time horizon:</strong> Match size to holding period.
+
+<strong>Review regularly:</strong> Adjust as account size and experience change.
+
+<strong>Document your rules:</strong> Write down your sizing methodology and stick to it.
+
+<h2 id="position-sizing-examples">Position Sizing Examples</h2>
+
+<p>Real-world scenarios:</p>
+
+<strong>Conservative trader:</strong> 1-2% per trade, 5% maximum single position, 30% total exposure.
+
+<strong>Moderate trader:</strong> 2-5% per trade, 10% maximum single position, 50% total exposure.
+
+<strong>Aggressive trader:</strong> 3-7% per trade, 15% maximum single position, 70% total exposure (not recommended for most).
+
+<strong>Kelly user:</strong> Half-Kelly sizing with 10% maximum cap, 50% total exposure.
+
+<h2 id="advanced-techniques">Advanced Techniques</h2>
+
+<p>For experienced traders:</p>
+
+<strong>Dynamic sizing:</strong> Adjust sizes based on recent performance and market conditions.
+
+<strong>Portfolio heat:</strong> Measure total risk across all positions and adjust accordingly.
+
+<strong>Risk parity:</strong> Size positions to equalize risk contribution rather than capital allocation.
+
+<strong>Optimal f:</strong> Use Ralph Vince's optimal f method for position sizing.
+
+<strong>Monte Carlo simulation:</strong> Test sizing strategies with historical data.
+
+<h2 id="tracking-and-optimization">Tracking and Optimization</h2>
+
+<p>Measure what works:</p>
+
+<strong>Track position sizes:</strong> Record the size of every trade.
+
+<strong>Calculate returns by size:</strong> See if larger or smaller positions perform better.
+
+<strong>Review drawdowns:</strong> Analyze how position sizing affected losing streaks.
+
+<strong>Test alternatives:</strong> Paper trade different sizing methods to compare.
+
+<strong>Adjust based on data:</strong> Let performance data guide sizing decisions.
+
+<h2 id="psychology-of-position-sizing">Psychology of Position Sizing</h2>
+
+<p>Mental aspects matter:</p>
+
+<strong>Comfort level:</strong> Size positions you can sleep with. If you're anxious, you're sized too large.
+
+<strong>Confidence calibration:</strong> Be honest about your conviction. Overconfidence leads to oversized positions.
+
+<strong>Emotional stability:</strong> Don't let recent results affect sizing decisions.
+
+<strong>Discipline:</strong> Stick to your sizing rules even when tempted to deviate.
+
+<p>Position sizing is a skill that improves with practice. Start conservatively, track your results, and refine your approach over time. The right position sizing won't guarantee profits, but poor position sizing will almost certainly lead to losses.</p>
+    </div>
+
+    
+      <div class="article-cta">
+        <h3>Ready to Automate Your Polymarket Trading?</h3>
+        <p>Start copying top traders and maximize your returns with Alpha Whale.</p>
+        <a href="https://app.alphawhale.trade/">Start Trading →</a>
+      </div>
+    
+
+    <div class="article-share">
+      <a href="https://twitter.com/intent/tweet?text=Position%20Sizing%20on%20Polymarket%3A%20How%20Much%20to%20Bet%20on%20Each%20Trade&url=https%3A%2F%2Falphawhale.trade%2Fblog%2Fpolymarket-position-sizing" target="_blank" class="share-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+        Share on X
+      </a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Falphawhale.trade%2Fblog%2Fpolymarket-position-sizing" target="_blank" class="share-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        </svg>
+        Share on LinkedIn
+      </a>
+    </div>
+
+    <div class="article-author">
+      <div class="author-avatar">AW</div>
+      <div class="author-info">
+        <h4>Alpha Whale Team</h4>
+        <p>Alpha Whale Team</p>
+      </div>
+    </div>
+
+    <div class="related-posts"><h3>Related Articles</h3><div class="related-posts-grid">
+      <div class="related-post-card">
+        <a href="how-to-win-on-polymarket.html">
+          <h4>How to Win on Polymarket: Practical Tips from Profitable Traders</h4>
+          <p>Learn what it actually takes to win on Polymarket. Practical strategies, common pitfalls, and honest...</p>
+        </a>
+      </div>
+      <div class="related-post-card">
+        <a href="polymarket-market-making.html">
+          <h4>Market Making on Polymarket: Strategies and Techniques</h4>
+          <p>Learn how to become a market maker on Polymarket. Understand the strategies, risks, and rewards of p...</p>
+        </a>
+      </div>
+      <div class="related-post-card">
+        <a href="polymarket-news-trading.html">
+          <h4>News Trading on Polymarket: Strategies for Event-Driven Profits</h4>
+          <p>Master news trading on Polymarket. Learn how to profit from breaking news, earnings, elections, and ...</p>
+        </a>
+      </div></div></div>
+  </article>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Brand Column -->
+      <div class="footer-brand">
+        <img src="../../alphalogo_text.png" alt="Alpha Whale" class="footer-logo">
+        <p class="footer-tagline">Trade like the whales. Copy the smartest Polymarket traders and grow your portfolio.</p>
+        <div class="footer-social">
+          <a href="https://x.com/alphawhaletrade" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Follow us on X">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Product Column -->
+      <div class="footer-column">
+        <h4 class="footer-column-title">Product</h4>
+        <a href="https://app.alphawhale.trade/" class="footer-link">Start Trading</a>
+        <a href="../documentation.html" class="footer-link">Product Guide</a>
+      </div>
+
+      <!-- Resources Column -->
+      <div class="footer-column">
+        <h4 class="footer-column-title">Resources</h4>
+        <a href="https://t.me/+zSSN2Ibk6NwxNWUx" target="_blank" rel="noopener noreferrer" class="footer-link">Join our community</a>
+        <a href="../index.html" class="footer-link">Blog</a>
+      </div>
+
+      <!-- Company Column -->
+      <div class="footer-column">
+        <h4 class="footer-column-title">Company</h4>
+        <a href="../../about.html" class="footer-link">About</a>
+        <a href="https://t.me/+zSSN2Ibk6NwxNWUx" target="_blank" rel="noopener noreferrer" class="footer-link">Contact</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copyright">&copy; 2026 Alpha Whale. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="../../privacy-policy.html">Privacy Policy</a>
+        <a href="../../terms-of-service.html">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+
