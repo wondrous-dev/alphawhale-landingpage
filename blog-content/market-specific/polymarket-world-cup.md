@@ -4,7 +4,7 @@ slug: "polymarket-world-cup"
 description: "Learn to trade World Cup prediction markets on Polymarket. Strategies for international football's biggest tournament and other global sporting events."
 category: "markets"
 author: "Alpha Whale Team"
-date: "2026-01-02"
+date: "2025-12-05"
 readTime: "10 min"
 keywords: ["polymarket world cup", "world cup prediction market", "football prediction markets", "soccer betting polymarket"]
 ---

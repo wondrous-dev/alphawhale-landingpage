@@ -4,7 +4,7 @@ slug: "polymarket-news-trading"
 description: "Master news trading on Polymarket. Learn how to profit from breaking news, earnings, elections, and other events that move prediction markets."
 category: "strategy"
 author: "Alpha Whale Team"
-date: "2026-01-15"
+date: "2026-01-01"
 readTime: "13 min"
 keywords: ["polymarket news trading", "event-driven trading", "news trading strategies", "trading on news"]
 ---

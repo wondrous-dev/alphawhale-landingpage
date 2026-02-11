@@ -4,7 +4,7 @@ slug: "prediction-market-fundamentals"
 description: "Master the fundamentals of prediction markets. Understand how they work, why they matter, and how to use them for trading on Polymarket and beyond."
 category: "strategy"
 author: "Alpha Whale Team"
-date: "2026-01-08"
+date: "2025-12-18"
 readTime: "14 min"
 keywords: ["prediction market fundamentals", "how prediction markets work", "prediction market basics", "polymarket fundamentals"]
 ---

@@ -4,7 +4,7 @@ slug: "polymarket-portfolio-management"
 description: "Master portfolio management on Polymarket. Learn how to diversify, allocate capital, and manage positions for optimal prediction market returns."
 category: "strategy"
 author: "Alpha Whale Team"
-date: "2026-01-09"
+date: "2025-12-19"
 readTime: "11 min"
 keywords: ["polymarket portfolio management", "polymarket diversification", "polymarket positions", "prediction market portfolio"]
 ---

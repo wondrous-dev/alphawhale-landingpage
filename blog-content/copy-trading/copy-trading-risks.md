@@ -4,7 +4,7 @@ slug: "copy-trading-risks"
 description: "Understand the risks of copy trading before committing capital. Learn about market risk, trader dependency, platform issues, and how to protect yourself."
 category: "copy-trading"
 author: "Alpha Whale Team"
-date: "2025-12-23"
+date: "2025-11-14"
 readTime: "9 min"
 keywords: ["copy trading risks", "copy trading dangers", "copy trading downsides", "is copy trading safe"]
 ---

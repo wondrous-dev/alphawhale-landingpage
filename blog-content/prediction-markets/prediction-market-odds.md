@@ -4,7 +4,7 @@ slug: "prediction-market-odds"
 description: "Learn how odds work in prediction markets. Understand probability pricing, expected value, and how to interpret market signals correctly."
 category: "prediction-markets"
 author: "Alpha Whale Team"
-date: "2025-12-29"
+date: "2025-11-27"
 readTime: "8 min"
 keywords: ["prediction market odds", "prediction market probability", "understanding prediction odds", "probability pricing"]
 ---

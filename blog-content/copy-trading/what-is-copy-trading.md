@@ -4,7 +4,7 @@ slug: "what-is-copy-trading"
 description: "Learn what copy trading is and how it works. Understand the benefits, risks, and best practices for automatically following successful traders."
 category: "copy-trading"
 author: "Alpha Whale Team"
-date: "2025-12-28"
+date: "2025-11-25"
 readTime: "10 min"
 keywords: ["what is copy trading", "copy trading explained", "copy trading guide", "how copy trading works"]
 ---

@@ -4,7 +4,7 @@ slug: "how-to-automate-polymarket-trades"
 description: "Learn how to set up automated trading on Polymarket. From copy trading to custom bots, discover the best methods to automate your prediction market strategy."
 category: "automation"
 author: "Alpha Whale Team"
-date: "2026-01-14"
+date: "2025-12-29"
 readTime: "11 min"
 keywords: ["how to automate polymarket trades", "polymarket automation", "automated polymarket trading", "polymarket auto trading"]
 ---

@@ -4,7 +4,7 @@ slug: "how-prediction-markets-work"
 description: "Understand exactly how prediction markets work. Learn the mechanics of pricing, trading, and resolution that make these markets function."
 category: "prediction-markets"
 author: "Alpha Whale Team"
-date: "2026-01-02"
+date: "2025-12-06"
 readTime: "9 min"
 keywords: ["how prediction markets work", "prediction market mechanics", "prediction market explained", "understanding prediction markets"]
 ---

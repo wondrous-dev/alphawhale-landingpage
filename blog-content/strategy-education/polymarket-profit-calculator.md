@@ -4,7 +4,7 @@ slug: "polymarket-profit-calculator"
 description: "Learn how to calculate profits on Polymarket. Understand returns, fees, and how to determine if a trade is worth making."
 category: "strategy"
 author: "Alpha Whale Team"
-date: "2026-01-21"
+date: "2026-01-20"
 readTime: "9 min"
 keywords: ["polymarket profit calculator", "calculate polymarket returns", "polymarket profit", "trading returns"]
 ---

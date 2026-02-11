@@ -4,7 +4,7 @@ slug: "polymarket-correlation-analysis"
 description: "Learn how to analyze correlations between Polymarket markets. Understand how related markets move together and how to use this in your trading."
 category: "strategy"
 author: "Alpha Whale Team"
-date: "2026-01-17"
+date: "2026-01-08"
 readTime: "11 min"
 keywords: ["polymarket correlation", "market relationships", "correlated markets", "diversification"]
 ---

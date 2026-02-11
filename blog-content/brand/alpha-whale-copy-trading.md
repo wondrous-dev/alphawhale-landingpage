@@ -4,7 +4,7 @@ slug: "alpha-whale-copy-trading"
 description: "Learn how Alpha Whale copy trading works for Polymarket. Understand the features, benefits, and how to get started with automated prediction market trading."
 category: "brand"
 author: "Alpha Whale Team"
-date: "2025-12-26"
+date: "2025-11-19"
 readTime: "10 min"
 keywords: ["alpha whale copy trading", "polymarket copy trading", "alpha whale platform", "copy trading automation"]
 ---

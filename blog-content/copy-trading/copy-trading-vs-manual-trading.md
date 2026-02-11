@@ -4,7 +4,7 @@ slug: "copy-trading-vs-manual-trading"
 description: "Compare copy trading with manual trading. Understand the tradeoffs to decide which approach fits your situation, skills, and goals."
 category: "copy-trading"
 author: "Alpha Whale Team"
-date: "2025-12-25"
+date: "2025-11-18"
 readTime: "10 min"
 keywords: ["copy trading vs manual trading", "copy trading comparison", "should I copy trade", "copy trading pros cons"]
 ---

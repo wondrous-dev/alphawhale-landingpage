@@ -4,7 +4,7 @@ slug: "prediction-market-copy-trading"
 description: "Learn how copy trading works in prediction markets. Discover how to find, evaluate, and follow successful traders for automated returns."
 category: "prediction-markets"
 author: "Alpha Whale Team"
-date: "2026-01-03"
+date: "2025-12-08"
 readTime: "10 min"
 keywords: ["prediction market copy trading", "copy trading prediction markets", "follow traders prediction markets", "social trading predictions"]
 ---

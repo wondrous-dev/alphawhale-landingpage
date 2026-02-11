@@ -4,7 +4,7 @@ slug: "polymarket-tax-guide"
 description: "Understand the tax implications of Polymarket trading. Learn about reporting requirements, record-keeping, and tax planning for prediction markets."
 category: "strategy"
 author: "Alpha Whale Team"
-date: "2026-01-19"
+date: "2026-01-15"
 readTime: "11 min"
 keywords: ["polymarket taxes", "crypto taxes", "trading taxes", "tax reporting"]
 ---

@@ -4,7 +4,7 @@ slug: "polymarket-trading-scripts"
 description: "Learn how to create and use trading scripts for Polymarket. Practical guide to scripting automated trades on prediction markets."
 category: "automation"
 author: "Alpha Whale Team"
-date: "2026-01-12"
+date: "2025-12-25"
 readTime: "10 min"
 keywords: ["polymarket trading scripts", "polymarket automation scripts", "prediction market scripts", "polymarket code"]
 ---

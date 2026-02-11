@@ -4,7 +4,7 @@ slug: "understanding-polymarket-liquidity"
 description: "Learn how liquidity works on Polymarket and how to identify liquid markets. Understand the impact of liquidity on trading execution and profitability."
 category: "strategy"
 author: "Alpha Whale Team"
-date: "2026-01-16"
+date: "2026-01-07"
 readTime: "11 min"
 keywords: ["polymarket liquidity", "market liquidity", "trading liquidity", "liquid markets"]
 ---

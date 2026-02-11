@@ -4,7 +4,7 @@ slug: "reading-polymarket-order-books"
 description: "Master the art of reading Polymarket order books. Learn how to interpret bid-ask spreads, depth, and liquidity to make better trading decisions."
 category: "strategy"
 author: "Alpha Whale Team"
-date: "2026-01-15"
+date: "2026-01-02"
 readTime: "10 min"
 keywords: ["polymarket order book", "reading order books", "polymarket liquidity", "bid ask spread"]
 ---

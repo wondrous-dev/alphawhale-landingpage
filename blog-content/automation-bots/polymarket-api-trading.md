@@ -4,7 +4,7 @@ slug: "polymarket-api-trading"
 description: "Learn how to use the Polymarket API for automated trading. Technical guide covering authentication, market data, order placement, and building trading bots."
 category: "automation"
 author: "Alpha Whale Team"
-date: "2026-01-13"
+date: "2025-12-27"
 readTime: "14 min"
 keywords: ["polymarket api trading", "polymarket api", "polymarket developer", "polymarket bot development"]
 ---

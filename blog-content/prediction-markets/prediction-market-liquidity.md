@@ -4,7 +4,7 @@ slug: "prediction-market-liquidity"
 description: "Understand liquidity in prediction markets. Learn how liquidity affects your trading and strategies for navigating high and low liquidity environments."
 category: "prediction-markets"
 author: "Alpha Whale Team"
-date: "2025-12-30"
+date: "2025-11-28"
 readTime: "9 min"
 keywords: ["prediction market liquidity", "liquidity prediction markets", "polymarket liquidity", "market depth prediction markets"]
 ---

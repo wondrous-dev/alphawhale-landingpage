@@ -4,7 +4,7 @@ slug: "copy-trading-returns"
 description: "Understand realistic copy trading returns. Learn what factors affect returns, how to set expectations, and how to evaluate your copy trading performance."
 category: "copy-trading"
 author: "Alpha Whale Team"
-date: "2025-12-22"
+date: "2025-11-13"
 readTime: "8 min"
 keywords: ["copy trading returns", "copy trading profits", "copy trading performance", "copy trading expectations"]
 ---

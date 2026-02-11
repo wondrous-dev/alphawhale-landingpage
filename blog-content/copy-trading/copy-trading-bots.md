@@ -4,7 +4,7 @@ slug: "copy-trading-bots"
 description: "Learn how copy trading bots work and how to use them effectively. Understand the automation technology behind modern copy trading systems."
 category: "copy-trading"
 author: "Alpha Whale Team"
-date: "2025-12-21"
+date: "2025-11-13"
 readTime: "8 min"
 keywords: ["copy trading bots", "copy trading automation", "automated copy trading", "copy trading software"]
 ---

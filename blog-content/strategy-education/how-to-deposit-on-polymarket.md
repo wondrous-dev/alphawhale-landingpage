@@ -4,7 +4,7 @@ slug: "how-to-deposit-on-polymarket"
 description: "Learn how to deposit funds on Polymarket step by step. Complete guide to funding your account with USDC, credit card, and crypto transfers."
 category: "strategy"
 author: "Alpha Whale Team"
-date: "2026-01-20"
+date: "2026-01-16"
 readTime: "9 min"
 keywords: ["how to deposit on polymarket", "polymarket deposit", "fund polymarket account", "polymarket usdc deposit"]
 ---

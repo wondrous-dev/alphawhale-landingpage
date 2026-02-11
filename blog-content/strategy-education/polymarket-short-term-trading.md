@@ -4,7 +4,7 @@ slug: "polymarket-short-term-trading"
 description: "Learn short-term trading strategies for Polymarket. Discover how to profit from quick price movements and trade frequently for consistent returns."
 category: "strategy"
 author: "Alpha Whale Team"
-date: "2026-01-18"
+date: "2026-01-12"
 readTime: "12 min"
 keywords: ["polymarket short-term", "short-term trading", "day trading", "quick profits"]
 ---

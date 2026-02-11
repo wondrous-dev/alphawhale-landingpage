@@ -4,7 +4,7 @@ slug: "polymarket-limit-orders"
 description: "Master limit orders on Polymarket. Learn how to set limit orders, get better prices, and improve your trading execution."
 category: "strategy"
 author: "Alpha Whale Team"
-date: "2026-01-21"
+date: "2026-01-20"
 readTime: "10 min"
 keywords: ["polymarket limit orders", "limit orders", "polymarket order types", "better trade execution"]
 ---

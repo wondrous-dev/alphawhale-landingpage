@@ -4,7 +4,7 @@ slug: "polymarket-copy-trading-guide"
 description: "Learn how copy trading works on Polymarket. Discover how to automatically mirror top traders and maximize your prediction market returns without manual research."
 category: "copy-trading"
 author: "Alpha Whale Team"
-date: "2026-01-16"
+date: "2026-01-04"
 readTime: "10 min"
 keywords: ["copy trading", "polymarket copy trading", "automated trading", "copy trading strategy", "prediction market automation"]
 ---

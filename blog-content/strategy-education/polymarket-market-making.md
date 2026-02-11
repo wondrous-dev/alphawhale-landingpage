@@ -4,7 +4,7 @@ slug: "polymarket-market-making"
 description: "Learn how to become a market maker on Polymarket. Understand the strategies, risks, and rewards of providing liquidity to prediction markets."
 category: "strategy"
 author: "Alpha Whale Team"
-date: "2026-01-15"
+date: "2026-01-01"
 readTime: "12 min"
 keywords: ["polymarket market making", "market maker strategies", "liquidity provision", "polymarket market maker"]
 ---

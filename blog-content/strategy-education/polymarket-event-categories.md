@@ -4,7 +4,7 @@ slug: "polymarket-event-categories"
 description: "Explore all major Polymarket event categories. Learn how to trade politics, sports, crypto, economics, and more on prediction markets."
 category: "strategy"
 author: "Alpha Whale Team"
-date: "2026-01-19"
+date: "2026-01-14"
 readTime: "14 min"
 keywords: ["polymarket categories", "event categories", "polymarket markets", "trading categories"]
 ---

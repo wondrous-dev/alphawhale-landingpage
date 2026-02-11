@@ -4,7 +4,7 @@ slug: "polymarket-trading-automation"
 description: "Learn how to automate your Polymarket trading. From simple alerts to full copy trading, discover automation options for every skill level."
 category: "polymarket-core"
 author: "Alpha Whale Team"
-date: "2026-01-08"
+date: "2025-12-17"
 readTime: "10 min"
 keywords: ["polymarket trading automation", "automate polymarket", "polymarket bot setup", "automated prediction market trading"]
 ---

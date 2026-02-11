@@ -4,7 +4,7 @@ slug: "polymarket-social-trading"
 description: "Discover social trading on Polymarket through Alpha Whale. Follow successful traders, learn their strategies, and automate your prediction market success."
 category: "copy-trading"
 author: "Alpha Whale Team"
-date: "2025-12-24"
+date: "2025-11-16"
 readTime: "9 min"
 keywords: ["polymarket social trading", "social trading prediction markets", "follow traders polymarket", "polymarket community trading"]
 ---

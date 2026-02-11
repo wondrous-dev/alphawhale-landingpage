@@ -4,7 +4,7 @@ slug: "algorithmic-trading-polymarket"
 description: "Learn how algorithmic trading works on Polymarket. Explore quantitative strategies, implementation approaches, and considerations for automated prediction market trading."
 category: "automation"
 author: "Alpha Whale Team"
-date: "2026-01-12"
+date: "2025-12-24"
 readTime: "13 min"
 keywords: ["algorithmic trading polymarket", "polymarket algo trading", "quantitative prediction markets", "polymarket quant strategies"]
 ---

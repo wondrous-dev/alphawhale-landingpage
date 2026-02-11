@@ -4,7 +4,7 @@ slug: "polymarket-position-sizing"
 description: "Master position sizing for Polymarket trading. Learn proven methods to determine how much capital to risk on each prediction market trade."
 category: "strategy"
 author: "Alpha Whale Team"
-date: "2026-01-15"
+date: "2026-01-02"
 readTime: "12 min"
 keywords: ["polymarket position sizing", "bet sizing", "position sizing strategies", "how much to bet"]
 ---

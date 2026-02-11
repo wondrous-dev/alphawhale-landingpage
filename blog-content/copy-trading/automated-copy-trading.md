@@ -4,7 +4,7 @@ slug: "automated-copy-trading"
 description: "Understand automated copy trading systems. Learn how automation improves copy trading execution and what to consider when using these systems."
 category: "copy-trading"
 author: "Alpha Whale Team"
-date: "2025-12-26"
+date: "2025-11-20"
 readTime: "9 min"
 keywords: ["automated copy trading", "copy trading automation", "automatic copy trading", "algorithmic copy trading"]
 ---

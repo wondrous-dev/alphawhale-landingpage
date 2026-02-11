@@ -4,7 +4,7 @@ slug: "polymarket-large-positions"
 description: "Learn to manage large positions on Polymarket. Strategies for building, holding, and exiting significant prediction market positions."
 category: "advanced"
 author: "Alpha Whale Team"
-date: "2025-12-28"
+date: "2025-11-24"
 readTime: "10 min"
 keywords: ["polymarket large positions", "big polymarket trades", "managing large positions", "polymarket position sizing"]
 ---
