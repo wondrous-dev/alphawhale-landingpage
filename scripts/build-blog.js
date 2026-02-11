@@ -217,7 +217,7 @@ function generateRelatedPostsHTML(relatedPosts) {
     const excerpt = (post.description || '').substring(0, 100);
     html += `
       <div class="related-post-card">
-        <a href="${post.slug}.html">
+        <a href="${post.slug}">
           <h4>${post.title}</h4>
           <p>${excerpt}${excerpt.length >= 100 ? '...' : ''}</p>
         </a>
@@ -242,7 +242,7 @@ function generateInlineLinks(currentPost, allPosts) {
     linkMap.push({
       slug: post.slug,
       title: title,
-      href: `${post.slug}.html`
+      href: `${post.slug}`
     });
   });
 
@@ -377,7 +377,7 @@ function generatePostCard(post) {
   
   return `
     <article class="post-card" data-category="${post.category}">
-      <a href="posts/${post.slug}.html">
+      <a href="posts/${post.slug}">
         <div class="post-card-image">📈</div>
         <div class="post-card-content">
           <span class="post-card-category">${categoryDisplay}</span>
@@ -442,7 +442,7 @@ function buildIndex(posts, indexTemplatePath, outputDir) {
   posts.slice(0, 3).forEach(post => {
     featuredHTML += `
       <div class="featured-post">
-        <a href="posts/${post.slug}.html">
+        <a href="posts/${post.slug}">
           <div class="featured-post-title">${post.title}</div>
           <div class="featured-post-date">${new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</div>
         </a>
@@ -496,25 +496,25 @@ function generateSitemap(posts, outputPath) {
     <lastmod>${today}</lastmod>
   </url>
   <url>
-    <loc>${baseUrl}/about.html</loc>
+    <loc>${baseUrl}/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <lastmod>${today}</lastmod>
   </url>
   <url>
-    <loc>${baseUrl}/documentation.html</loc>
+    <loc>${baseUrl}/documentation</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <lastmod>${today}</lastmod>
   </url>
   <url>
-    <loc>${baseUrl}/privacy-policy.html</loc>
+    <loc>${baseUrl}/privacy-policy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <lastmod>${today}</lastmod>
   </url>
   <url>
-    <loc>${baseUrl}/terms-of-service.html</loc>
+    <loc>${baseUrl}/terms-of-service</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <lastmod>${today}</lastmod>
@@ -531,7 +531,7 @@ function generateSitemap(posts, outputPath) {
     const postDate = new Date(post.date).toISOString().split('T')[0];
     sitemap += `
   <url>
-    <loc>${baseUrl}/blog/posts/${post.slug}.html</loc>
+    <loc>${baseUrl}/blog/posts/${post.slug}</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <lastmod>${postDate}</lastmod>
