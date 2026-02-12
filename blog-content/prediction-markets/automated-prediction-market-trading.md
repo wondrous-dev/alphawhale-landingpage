@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Automated Prediction Market Trading: Tools and Techniques"
 slug: "automated-prediction-market-trading"
 description: "Learn how to automate your prediction market trading. Understand the tools, platforms, and techniques for systematic execution."

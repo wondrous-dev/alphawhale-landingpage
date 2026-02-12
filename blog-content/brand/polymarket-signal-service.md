@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket Signal Service: Alpha Whale's Automated Trading Signals"
 slug: "polymarket-signal-service"
 description: "Learn about Polymarket trading signals through Alpha Whale. How automated signals from successful traders can improve your prediction market results."

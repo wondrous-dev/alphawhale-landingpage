@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Understanding Polymarket Fees and Costs: A Complete Breakdown"
 slug: "understanding-polymarket-fees-costs"
 description: "Learn about all the fees and costs associated with Polymarket trading. Understand how fees impact your returns and how to minimize trading costs."

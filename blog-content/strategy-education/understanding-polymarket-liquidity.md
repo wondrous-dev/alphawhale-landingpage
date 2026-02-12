@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Understanding Polymarket Liquidity: A Trader's Guide"
 slug: "understanding-polymarket-liquidity"
 description: "Learn how liquidity works on Polymarket and how to identify liquid markets. Understand the impact of liquidity on trading execution and profitability."

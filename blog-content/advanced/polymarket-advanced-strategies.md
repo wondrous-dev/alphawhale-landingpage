@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket Advanced Strategies: Expert-Level Trading Techniques"
 slug: "polymarket-advanced-strategies"
 description: "Master advanced Polymarket strategies. Expert-level techniques for portfolio construction, multi-market analysis, and sophisticated prediction trading."

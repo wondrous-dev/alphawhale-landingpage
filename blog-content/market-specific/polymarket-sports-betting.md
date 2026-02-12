@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket Sports Trading: Beyond Traditional Betting"
 slug: "polymarket-sports-betting"
 description: "Explore sports prediction markets on Polymarket. Learn how sports trading differs from traditional betting and strategies for success."

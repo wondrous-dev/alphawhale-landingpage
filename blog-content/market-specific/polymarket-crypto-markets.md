@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket Crypto Markets: Trading Crypto Predictions"
 slug: "polymarket-crypto-markets"
 description: "Learn to trade crypto-related markets on Polymarket. Strategies for predicting Bitcoin prices, ETF approvals, regulatory decisions, and more."

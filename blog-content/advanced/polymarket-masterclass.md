@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket Masterclass: Complete Advanced Trading Course"
 slug: "polymarket-masterclass"
 description: "Comprehensive masterclass for advanced Polymarket trading. Everything you need to elevate your prediction market trading to the highest level."

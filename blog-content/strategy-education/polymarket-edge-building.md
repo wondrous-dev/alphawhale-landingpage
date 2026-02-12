@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Building Edge on Polymarket: How to Gain Competitive Advantages"
 slug: "polymarket-edge-building"
 description: "Learn how to build and maintain edge on Polymarket. Discover strategies for developing competitive advantages in prediction market trading."

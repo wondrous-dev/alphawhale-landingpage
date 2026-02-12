@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket vs Betting Sites: Key Differences Explained"
 slug: "polymarket-vs-betting-sites"
 description: "Compare Polymarket prediction markets with traditional betting sites. Understand the fundamental differences in how they work and which is better for you."

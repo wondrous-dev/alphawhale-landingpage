@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Prediction Market Odds: Understanding Probability Pricing"
 slug: "prediction-market-odds"
 description: "Learn how odds work in prediction markets. Understand probability pricing, expected value, and how to interpret market signals correctly."

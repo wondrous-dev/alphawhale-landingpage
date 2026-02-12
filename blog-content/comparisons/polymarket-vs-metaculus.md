@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket vs Metaculus: Trading vs Forecasting Platforms"
 slug: "polymarket-vs-metaculus"
 description: "Compare Polymarket and Metaculus for prediction and forecasting. Understand the differences between trading platforms and forecasting communities."

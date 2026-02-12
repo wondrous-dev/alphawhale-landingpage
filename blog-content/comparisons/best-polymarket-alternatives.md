@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Best Polymarket Alternatives in 2026: Complete Comparison"
 slug: "best-polymarket-alternatives"
 description: "Explore the best alternatives to Polymarket for prediction market trading. Compare features, markets, and find the right platform for your needs."

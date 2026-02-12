@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Copy Trading Bots: Automating Your Portfolio Replication"
 slug: "copy-trading-bots"
 description: "Learn how copy trading bots work and how to use them effectively. Understand the automation technology behind modern copy trading systems."

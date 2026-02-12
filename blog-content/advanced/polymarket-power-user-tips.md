@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket Power User Tips: Maximize Your Trading Efficiency"
 slug: "polymarket-power-user-tips"
 description: "Power user tips for Polymarket. Efficiency hacks, shortcuts, and advanced techniques for serious prediction market traders."

@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket Whale Trading: Large-Scale Prediction Market Strategies"
 slug: "polymarket-whale-trading"
 description: "Learn how whale traders operate on Polymarket. Understand large-scale trading dynamics, market impact, and strategies for significant capital."

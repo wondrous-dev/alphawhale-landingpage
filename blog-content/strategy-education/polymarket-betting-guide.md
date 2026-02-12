@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket Betting Guide: How to Bet on Predictions"
 slug: "polymarket-betting-guide"
 description: "Complete guide to betting on Polymarket. Learn how prediction market betting works and how to place smart bets on real-world events."

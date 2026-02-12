@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Join Polymarket Trading: Start Your Prediction Market Journey Today"
 slug: "join-polymarket-trading"
 description: "Ready to join Polymarket trading? Learn how to get started with Alpha Whale copy trading for the easiest path to prediction market success."

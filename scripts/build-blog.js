@@ -347,6 +347,7 @@ function buildPost(markdownFile, templatePath, outputDir, allPosts) {
         <a href="https://app.alphawhale.trade/">Start Trading →</a>
       </div>
     `,
+    ROBOTS: frontmatter.noindex ? 'noindex, follow' : 'index, follow',
     RELATED_POSTS: relatedPostsHTML,
     TITLE_ENCODED: encodeURIComponent(frontmatter.title || ''),
     URL_ENCODED: encodeURIComponent(`https://alphawhale.trade/blog/${currentSlug}`)
@@ -530,7 +531,12 @@ function generateSitemap(posts, outputPath) {
   // Deduplicate by slug to prevent duplicate entries from files with the same slug
   const seenSlugs = new Set();
   let duplicateCount = 0;
+  let noindexCount = 0;
   posts.forEach(post => {
+    if (post.noindex) {
+      noindexCount++;
+      return;
+    }
     if (seenSlugs.has(post.slug)) {
       console.warn(`  ⚠️  Duplicate slug skipped in sitemap: ${post.slug}`);
       duplicateCount++;
@@ -556,7 +562,7 @@ function generateSitemap(posts, outputPath) {
 
   const uniquePostCount = seenSlugs.size;
   fs.writeFileSync(outputPath, sitemap, 'utf-8');
-  console.log(`📋 Generated sitemap.xml with ${uniquePostCount + 6} URLs`);
+  console.log(`📋 Generated sitemap.xml with ${uniquePostCount + 6} URLs (${noindexCount} noindex posts excluded)`);
 }
 
 // Main build function

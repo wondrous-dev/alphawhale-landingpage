@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Algorithmic Trading on Polymarket: Strategies and Implementation"
 slug: "algorithmic-trading-polymarket"
 description: "Learn how algorithmic trading works on Polymarket. Explore quantitative strategies, implementation approaches, and considerations for automated prediction market trading."

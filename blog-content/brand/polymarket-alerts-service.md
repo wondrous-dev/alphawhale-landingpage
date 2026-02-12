@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket Alerts Service: Never Miss a Trading Opportunity"
 slug: "polymarket-alerts-service"
 description: "Get Polymarket alerts through Alpha Whale copy trading. How automated alerts and execution help you capture every prediction market opportunity."

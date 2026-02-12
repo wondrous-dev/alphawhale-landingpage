@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket Exit Strategies: When and How to Close Positions"
 slug: "polymarket-exit-strategies"
 description: "Master exit strategies for Polymarket trading. Learn when to take profits, cut losses, and exit positions for optimal results."

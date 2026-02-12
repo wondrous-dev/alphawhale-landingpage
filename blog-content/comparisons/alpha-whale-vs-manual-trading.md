@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Alpha Whale vs Manual Trading: Which Approach Wins?"
 slug: "alpha-whale-vs-manual-trading"
 description: "Compare copy trading with Alpha Whale versus manual Polymarket trading. Understand the pros and cons of each approach for your prediction market strategy."

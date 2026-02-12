@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket World Cup Trading: Global Football Prediction Markets"
 slug: "polymarket-world-cup"
 description: "Learn to trade World Cup prediction markets on Polymarket. Strategies for international football's biggest tournament and other global sporting events."

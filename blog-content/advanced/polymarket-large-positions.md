@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket Large Positions: Managing Significant Capital"
 slug: "polymarket-large-positions"
 description: "Learn to manage large positions on Polymarket. Strategies for building, holding, and exiting significant prediction market positions."

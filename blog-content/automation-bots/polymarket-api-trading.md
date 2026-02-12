@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket API Trading: Developer's Guide to Automation"
 slug: "polymarket-api-trading"
 description: "Learn how to use the Polymarket API for automated trading. Technical guide covering authentication, market data, order placement, and building trading bots."

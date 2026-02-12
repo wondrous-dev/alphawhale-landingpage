@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket Short-Term Trading: Strategies for Quick Profits"
 slug: "polymarket-short-term-trading"
 description: "Learn short-term trading strategies for Polymarket. Discover how to profit from quick price movements and trade frequently for consistent returns."

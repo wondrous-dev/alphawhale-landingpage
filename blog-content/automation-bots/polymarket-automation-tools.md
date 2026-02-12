@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket Automation Tools: Everything You Need to Know"
 slug: "polymarket-automation-tools"
 description: "Explore the best automation tools for Polymarket trading. Learn about copy trading platforms, bots, and software that can enhance your prediction market strategy."

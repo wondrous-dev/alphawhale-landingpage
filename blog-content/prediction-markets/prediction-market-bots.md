@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Prediction Market Bots: Understanding Automated Trading Systems"
 slug: "prediction-market-bots"
 description: "Learn how prediction market bots work, their advantages and limitations, and how to use them effectively for automated trading."

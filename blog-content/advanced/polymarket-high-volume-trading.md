@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket High Volume Trading: Strategies for Active Traders"
 slug: "polymarket-high-volume-trading"
 description: "Master high-volume trading on Polymarket. Learn execution strategies, cost management, and techniques for frequent prediction market trading."

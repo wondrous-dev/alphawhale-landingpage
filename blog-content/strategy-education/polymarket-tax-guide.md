@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket Tax Considerations: What Traders Need to Know"
 slug: "polymarket-tax-guide"
 description: "Understand the tax implications of Polymarket trading. Learn about reporting requirements, record-keeping, and tax planning for prediction markets."

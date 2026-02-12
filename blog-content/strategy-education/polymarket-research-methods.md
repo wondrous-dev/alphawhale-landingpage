@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket Research Methods: How to Find and Analyze Information"
 slug: "polymarket-research-methods"
 description: "Learn effective research methods for Polymarket trading. Discover how to gather, analyze, and use information to make better trading decisions."

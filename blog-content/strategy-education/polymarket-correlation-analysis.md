@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket Correlation Analysis: Understanding Market Relationships"
 slug: "polymarket-correlation-analysis"
 description: "Learn how to analyze correlations between Polymarket markets. Understand how related markets move together and how to use this in your trading."

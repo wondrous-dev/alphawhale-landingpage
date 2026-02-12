@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Prediction Market Strategy Guide: Winning Approaches for 2026"
 slug: "prediction-market-strategy-guide"
 description: "Master prediction market strategies with this comprehensive guide. Learn proven approaches for trading on Polymarket and other prediction platforms."

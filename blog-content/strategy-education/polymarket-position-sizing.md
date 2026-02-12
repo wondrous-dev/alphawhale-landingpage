@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Position Sizing on Polymarket: How Much to Bet on Each Trade"
 slug: "polymarket-position-sizing"
 description: "Master position sizing for Polymarket trading. Learn proven methods to determine how much capital to risk on each prediction market trade."

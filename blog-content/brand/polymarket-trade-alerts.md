@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket Trade Alerts: Instant Notification and Execution"
 slug: "polymarket-trade-alerts"
 description: "Receive Polymarket trade alerts with automatic execution through Alpha Whale. How successful trader alerts can transform your prediction market results."

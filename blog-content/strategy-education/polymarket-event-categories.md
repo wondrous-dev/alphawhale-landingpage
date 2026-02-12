@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket Event Categories: A Complete Trading Guide"
 slug: "polymarket-event-categories"
 description: "Explore all major Polymarket event categories. Learn how to trade politics, sports, crypto, economics, and more on prediction markets."

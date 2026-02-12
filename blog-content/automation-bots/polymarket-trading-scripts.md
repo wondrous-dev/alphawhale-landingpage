@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket Trading Scripts: Automate Your Strategy"
 slug: "polymarket-trading-scripts"
 description: "Learn how to create and use trading scripts for Polymarket. Practical guide to scripting automated trades on prediction markets."

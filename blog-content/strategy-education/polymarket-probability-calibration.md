@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Probability Calibration for Polymarket: Improve Your Predictions"
 slug: "polymarket-probability-calibration"
 description: "Learn how to calibrate your probability estimates for better Polymarket trading. Discover techniques for making more accurate predictions."

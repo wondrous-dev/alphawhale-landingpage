@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Professional Polymarket Trading: Building a Serious Trading Practice"
 slug: "professional-polymarket-trading"
 description: "Learn what professional Polymarket trading looks like. Infrastructure, processes, and mindset for serious prediction market traders."

@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Building a Polymarket Trading System: A Step-by-Step Guide"
 slug: "building-polymarket-trading-system"
 description: "Learn how to build a systematic trading approach for Polymarket. Create rules, processes, and frameworks for consistent prediction market trading."

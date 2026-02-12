@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "How to Read Polymarket Order Books: A Complete Guide"
 slug: "reading-polymarket-order-books"
 description: "Master the art of reading Polymarket order books. Learn how to interpret bid-ask spreads, depth, and liquidity to make better trading decisions."

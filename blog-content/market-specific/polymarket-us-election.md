@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket US Election Trading: Strategies for American Politics"
 slug: "polymarket-us-election"
 description: "Master US election trading on Polymarket. Learn strategies for presidential races, congressional elections, and American political prediction markets."

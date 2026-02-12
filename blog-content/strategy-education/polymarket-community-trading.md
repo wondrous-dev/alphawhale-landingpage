@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket Community and Social Trading: Learning from Others"
 slug: "polymarket-community-trading"
 description: "Discover how to leverage the Polymarket community for better trading. Learn about social trading, following successful traders, and building your network."

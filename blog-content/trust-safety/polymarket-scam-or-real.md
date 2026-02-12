@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket Scam or Real? Honest Investigation"
 slug: "polymarket-scam-or-real"
 description: "Investigate whether Polymarket is a scam or legitimate platform. Examine the evidence, track record, and make an informed decision about prediction market trading."

@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket Trading Hours: When to Trade for Best Results"
 slug: "polymarket-trading-hours"
 description: "Learn about Polymarket trading hours and the best times to trade. Understand how timing affects liquidity, spreads, and trading opportunities."

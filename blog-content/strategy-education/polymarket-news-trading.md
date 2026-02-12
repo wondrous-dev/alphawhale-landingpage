@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "News Trading on Polymarket: Strategies for Event-Driven Profits"
 slug: "polymarket-news-trading"
 description: "Master news trading on Polymarket. Learn how to profit from breaking news, earnings, elections, and other events that move prediction markets."

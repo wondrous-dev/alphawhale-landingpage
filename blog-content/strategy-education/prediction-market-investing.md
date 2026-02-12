@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Prediction Market Investing: Building a Portfolio Strategy"
 slug: "prediction-market-investing"
 description: "Learn how to approach prediction markets as an investment. Build a sustainable portfolio strategy for long-term success on Polymarket and other platforms."

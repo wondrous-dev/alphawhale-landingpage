@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket Data and Analytics Tools: Resources for Better Trading"
 slug: "polymarket-data-tools"
 description: "Discover essential data and analytics tools for Polymarket trading. Learn how to use data resources to make better trading decisions."

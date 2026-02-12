@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket Pro Strategies: Trading Like the Experts"
 slug: "polymarket-pro-strategies"
 description: "Professional trading strategies for Polymarket. Learn the approaches used by successful prediction market traders to generate consistent returns."

@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket Withdrawal Guide: How to Get Your Funds Out"
 slug: "polymarket-withdrawal"
 description: "Complete guide to withdrawing funds from Polymarket. Understand the process, timing, fees, and troubleshooting for smooth withdrawals."

@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket Trading Signals: Follow the Smart Money"
 slug: "polymarket-trading-signals"
 description: "Access Polymarket trading signals through Alpha Whale. Learn how to leverage successful trader signals for better prediction market results."

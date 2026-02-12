@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket Expert Guide: Master-Level Trading Insights"
 slug: "polymarket-expert-guide"
 description: "Expert-level guide to Polymarket trading. Advanced insights, techniques, and wisdom for mastering prediction market trading."

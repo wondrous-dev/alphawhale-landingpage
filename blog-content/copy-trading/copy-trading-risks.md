@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Copy Trading Risks: What You Need to Know Before Starting"
 slug: "copy-trading-risks"
 description: "Understand the risks of copy trading before committing capital. Learn about market risk, trader dependency, platform issues, and how to protect yourself."

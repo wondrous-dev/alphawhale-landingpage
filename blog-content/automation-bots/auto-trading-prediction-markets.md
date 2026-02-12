@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Auto Trading Prediction Markets: Complete Guide"
 slug: "auto-trading-prediction-markets"
 description: "Everything you need to know about auto trading on prediction markets like Polymarket. Learn about automation options, risks, and how to get started."

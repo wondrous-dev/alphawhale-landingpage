@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket Trading Community: Join the Alpha Whale Network"
 slug: "polymarket-trading-community"
 description: "Join the Alpha Whale Polymarket trading community. Connect with successful traders, share insights, and improve your prediction market results together."

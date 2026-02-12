@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Copy Trading Platforms Comparison: Finding the Best Option"
 slug: "copy-trading-platforms-comparison"
 description: "Compare copy trading platforms for prediction markets. Understand features, fees, and performance to choose the best platform for your trading style."

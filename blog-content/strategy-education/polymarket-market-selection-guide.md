@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket Market Selection Guide: Choosing the Right Markets to Trade"
 slug: "polymarket-market-selection-guide"
 description: "Learn how to select the best markets to trade on Polymarket. Understand criteria for market selection and how to identify high-quality trading opportunities."

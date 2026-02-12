@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "How to Win on Polymarket: Practical Tips from Profitable Traders"
 slug: "how-to-win-on-polymarket"
 description: "Learn what it actually takes to win on Polymarket. Practical strategies, common pitfalls, and honest advice for prediction market success."

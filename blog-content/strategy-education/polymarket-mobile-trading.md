@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Mobile Trading on Polymarket: Trade Anywhere, Anytime"
 slug: "polymarket-mobile-trading"
 description: "Master mobile trading on Polymarket. Learn best practices for trading prediction markets from your mobile device."

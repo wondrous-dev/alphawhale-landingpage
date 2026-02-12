@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket Volatility Trading: Strategies for Volatile Markets"
 slug: "polymarket-volatility-trading"
 description: "Learn how to trade volatile markets on Polymarket. Discover strategies for profiting from volatility and managing risk in volatile conditions."

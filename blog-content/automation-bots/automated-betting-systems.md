@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Automated Betting Systems for Prediction Markets Explained"
 slug: "automated-betting-systems"
 description: "Learn how automated betting systems work on prediction markets like Polymarket. Understand different automation strategies and find the right approach for you."

@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket Portfolio Management: Strategies for Diversification"
 slug: "polymarket-portfolio-management"
 description: "Master portfolio management on Polymarket. Learn how to diversify, allocate capital, and manage positions for optimal prediction market returns."

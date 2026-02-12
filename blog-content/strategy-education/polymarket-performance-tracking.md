@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket Performance Tracking: Measuring Your Trading Success"
 slug: "polymarket-performance-tracking"
 description: "Learn how to track and analyze your Polymarket trading performance. Discover key metrics, tools, and methods for measuring trading success."

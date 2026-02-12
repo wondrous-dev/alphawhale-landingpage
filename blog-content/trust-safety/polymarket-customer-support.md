@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket Customer Support: Getting Help When You Need It"
 slug: "polymarket-customer-support"
 description: "Guide to Polymarket customer support options. Learn how to get help, what to expect, and how to resolve issues on the prediction market platform."

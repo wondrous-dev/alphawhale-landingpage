@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Technical Analysis for Polymarket: Chart Patterns and Indicators"
 slug: "polymarket-technical-analysis"
 description: "Learn how to apply technical analysis to Polymarket trading. Discover chart patterns, indicators, and price action strategies for prediction markets."

@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket Super Bowl Trading: Championship Prediction Strategies"
 slug: "polymarket-super-bowl"
 description: "Master Super Bowl prediction markets on Polymarket. Learn strategies for trading the biggest annual sporting event from preseason to game day."

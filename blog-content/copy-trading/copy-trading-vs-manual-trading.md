@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Copy Trading vs Manual Trading: Which Is Right for You?"
 slug: "copy-trading-vs-manual-trading"
 description: "Compare copy trading with manual trading. Understand the tradeoffs to decide which approach fits your situation, skills, and goals."

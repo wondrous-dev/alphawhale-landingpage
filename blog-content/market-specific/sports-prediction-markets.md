@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Sports Prediction Markets: Trading Championships and Games"
 slug: "sports-prediction-markets"
 description: "Learn to trade sports prediction markets effectively. Strategies for championship predictions, game outcomes, and player markets on Polymarket."

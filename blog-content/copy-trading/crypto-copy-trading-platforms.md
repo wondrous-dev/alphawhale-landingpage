@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Crypto Copy Trading Platforms: Finding the Right One for You"
 slug: "crypto-copy-trading-platforms"
 description: "Compare crypto copy trading platforms and understand what to look for. Learn how to evaluate platforms for security, features, and trader quality."

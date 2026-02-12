@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Prediction Markets vs Sportsbooks: Key Differences Explained"
 slug: "prediction-markets-vs-sportsbooks"
 description: "Compare prediction markets to traditional sportsbooks. Understand the structural differences that affect your trading strategy and potential returns."

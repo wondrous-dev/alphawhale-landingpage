@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Market Making on Polymarket: Strategies and Techniques"
 slug: "polymarket-market-making"
 description: "Learn how to become a market maker on Polymarket. Understand the strategies, risks, and rewards of providing liquidity to prediction markets."

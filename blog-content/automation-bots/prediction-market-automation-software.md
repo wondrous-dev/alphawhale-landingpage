@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Prediction Market Automation Software: Tools and Platforms"
 slug: "prediction-market-automation-software"
 description: "Explore software options for automating your prediction market trading. Compare platforms, features, and find the right tools for your Polymarket strategy."

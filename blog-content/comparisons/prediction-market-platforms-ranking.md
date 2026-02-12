@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Prediction Market Platforms Ranking 2026: The Complete Guide"
 slug: "prediction-market-platforms-ranking"
 description: "Comprehensive ranking of prediction market platforms in 2026. Compare Polymarket, Kalshi, and others to find the best platform for your trading needs."

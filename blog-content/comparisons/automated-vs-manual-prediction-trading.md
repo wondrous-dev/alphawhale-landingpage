@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Automated vs Manual Prediction Market Trading: Full Comparison"
 slug: "automated-vs-manual-prediction-trading"
 description: "Compare automated and manual trading approaches for prediction markets. Understand when each method works best and how to choose your optimal strategy."

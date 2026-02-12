@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket Institutional Trading: Enterprise-Level Prediction Markets"
 slug: "polymarket-institutional"
 description: "Explore institutional approaches to Polymarket trading. Learn how larger entities approach prediction markets and what that means for retail traders."

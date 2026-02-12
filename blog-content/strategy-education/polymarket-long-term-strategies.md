@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Polymarket Long-Term Strategies: Holding Positions for Weeks or Months"
 slug: "polymarket-long-term-strategies"
 description: "Learn long-term trading strategies for Polymarket. Discover how to hold positions for extended periods and profit from longer-term market movements."
