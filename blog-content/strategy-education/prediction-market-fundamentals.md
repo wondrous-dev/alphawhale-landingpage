@@ -1,5 +1,4 @@
 ---
-noindex: true
 title: "Prediction Market Fundamentals: Everything You Need to Know"
 slug: "prediction-market-fundamentals"
 description: "Master the fundamentals of prediction markets. Understand how they work, why they matter, and how to use them for trading on Polymarket and beyond."

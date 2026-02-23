@@ -1,5 +1,4 @@
 ---
-noindex: true
 title: "Polymarket User Reviews: What Real Traders Say"
 slug: "polymarket-user-reviews"
 description: "Compilation of Polymarket user reviews and experiences. Learn what real traders say about the platform, both positive and critical perspectives."

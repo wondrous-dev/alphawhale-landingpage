@@ -217,6 +217,12 @@
     <lastmod>2025-12-18</lastmod>
   </url>
   <url>
+    <loc>https://alphawhale.trade/blog/posts/prediction-market-fundamentals</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2025-12-18</lastmod>
+  </url>
+  <url>
     <loc>https://alphawhale.trade/blog/posts/polymarket-trading-automation</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -326,6 +332,12 @@
   </url>
   <url>
     <loc>https://alphawhale.trade/blog/posts/polymarket-security</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2025-11-29</lastmod>
+  </url>
+  <url>
+    <loc>https://alphawhale.trade/blog/posts/polymarket-user-reviews</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <lastmod>2025-11-29</lastmod>
