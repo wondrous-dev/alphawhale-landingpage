@@ -1,5 +1,4 @@
 ---
-noindex: true
 title: "Polymarket Security: How the Platform Protects Your Funds"
 slug: "polymarket-security"
 description: "Deep dive into Polymarket's security measures. Understand how the platform protects funds and what you can do to enhance your own security."

@@ -1,5 +1,4 @@
 ---
-noindex: true
 title: "How to Use Limit Orders on Polymarket: A Complete Guide"
 slug: "polymarket-limit-orders"
 description: "Master limit orders on Polymarket. Learn how to set limit orders, get better prices, and improve your trading execution."

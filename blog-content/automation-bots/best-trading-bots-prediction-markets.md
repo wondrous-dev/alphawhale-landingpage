@@ -1,5 +1,4 @@
 ---
-noindex: true
 title: "Best Trading Bots for Prediction Markets in 2026"
 slug: "best-trading-bots-prediction-markets"
 description: "Compare the top trading bots for prediction markets like Polymarket. Learn which automation solutions offer the best features for different trading styles."

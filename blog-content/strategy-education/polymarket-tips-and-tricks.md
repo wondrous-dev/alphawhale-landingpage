@@ -1,5 +1,4 @@
 ---
-noindex: true
 title: "Polymarket Tips and Tricks: Pro Strategies for Better Trading"
 slug: "polymarket-tips-and-tricks"
 description: "Insider tips and tricks for Polymarket trading. Learn the strategies and shortcuts that experienced traders use to improve their prediction market results."

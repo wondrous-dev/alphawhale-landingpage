@@ -1,5 +1,4 @@
 ---
-noindex: true
 title: "Trading Bot for Polymarket: Complete Automation Guide"
 slug: "trading-bot-for-polymarket"
 description: "Learn how trading bots work on Polymarket. Discover the benefits of automated prediction market trading and how to get started with bot-assisted strategies."

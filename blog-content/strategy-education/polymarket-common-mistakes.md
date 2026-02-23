@@ -1,5 +1,4 @@
 ---
-noindex: true
 title: "Common Polymarket Trading Mistakes: What to Avoid"
 slug: "polymarket-common-mistakes"
 description: "Learn about the most common mistakes Polymarket traders make. Discover how to avoid these errors and improve your trading results."

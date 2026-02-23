@@ -1,5 +1,4 @@
 ---
-noindex: true
 title: "Polymarket App Guide: How to Use the Platform"
 slug: "polymarket-app-guide"
 description: "Complete guide to using the Polymarket app and website. Learn how to navigate the platform, find markets, and place trades effectively."

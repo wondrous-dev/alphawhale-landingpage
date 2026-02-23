@@ -1,5 +1,4 @@
 ---
-noindex: true
 title: "Prediction Market Copy Trading: Following Successful Traders"
 slug: "prediction-market-copy-trading"
 description: "Learn how copy trading works in prediction markets. Discover how to find, evaluate, and follow successful traders for automated returns."

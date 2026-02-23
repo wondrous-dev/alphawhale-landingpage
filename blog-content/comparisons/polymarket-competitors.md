@@ -1,5 +1,4 @@
 ---
-noindex: true
 title: "Polymarket Competitors: Complete Market Analysis"
 slug: "polymarket-competitors"
 description: "Analyze Polymarket's competitors in the prediction market space. Understand the competitive landscape and where each platform excels."

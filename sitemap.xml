@@ -4,37 +4,61 @@
     <loc>https://alphawhale.trade/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <lastmod>2026-02-12</lastmod>
+    <lastmod>2026-02-23</lastmod>
   </url>
   <url>
     <loc>https://alphawhale.trade/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-02-12</lastmod>
+    <lastmod>2026-02-23</lastmod>
   </url>
   <url>
     <loc>https://alphawhale.trade/documentation</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-02-12</lastmod>
+    <lastmod>2026-02-23</lastmod>
   </url>
   <url>
     <loc>https://alphawhale.trade/privacy-policy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <lastmod>2026-02-12</lastmod>
+    <lastmod>2026-02-23</lastmod>
   </url>
   <url>
     <loc>https://alphawhale.trade/terms-of-service</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <lastmod>2026-02-12</lastmod>
+    <lastmod>2026-02-23</lastmod>
   </url>
   <url>
     <loc>https://alphawhale.trade/blog/</loc>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-02-12</lastmod>
+    <lastmod>2026-02-23</lastmod>
+  </url>
+  <url>
+    <loc>https://alphawhale.trade/blog/posts/polymarket-betting-guide</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-01-22</lastmod>
+  </url>
+  <url>
+    <loc>https://alphawhale.trade/blog/posts/polymarket-usa-guide</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-01-22</lastmod>
+  </url>
+  <url>
+    <loc>https://alphawhale.trade/blog/posts/polymarket-app-guide</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-01-21</lastmod>
+  </url>
+  <url>
+    <loc>https://alphawhale.trade/blog/posts/polymarket-limit-orders</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-01-20</lastmod>
   </url>
   <url>
     <loc>https://alphawhale.trade/blog/posts/polymarket-profit-calculator</loc>
@@ -61,6 +85,18 @@
     <lastmod>2026-01-16</lastmod>
   </url>
   <url>
+    <loc>https://alphawhale.trade/blog/posts/polymarket-tax-guide</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-01-15</lastmod>
+  </url>
+  <url>
+    <loc>https://alphawhale.trade/blog/posts/polymarket-common-mistakes</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-01-10</lastmod>
+  </url>
+  <url>
     <loc>https://alphawhale.trade/blog/posts/polymarket-trading-bot</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -79,6 +115,12 @@
     <lastmod>2026-01-03</lastmod>
   </url>
   <url>
+    <loc>https://alphawhale.trade/blog/posts/polymarket-position-sizing</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-01-02</lastmod>
+  </url>
+  <url>
     <loc>https://alphawhale.trade/blog/posts/polymarket-copy-trading</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -89,6 +131,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <lastmod>2025-12-31</lastmod>
+  </url>
+  <url>
+    <loc>https://alphawhale.trade/blog/posts/trading-bot-for-polymarket</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2025-12-30</lastmod>
   </url>
   <url>
     <loc>https://alphawhale.trade/blog/posts/automated-polymarket-trading</loc>
@@ -103,6 +151,12 @@
     <lastmod>2025-12-29</lastmod>
   </url>
   <url>
+    <loc>https://alphawhale.trade/blog/posts/best-trading-bots-prediction-markets</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2025-12-28</lastmod>
+  </url>
+  <url>
     <loc>https://alphawhale.trade/blog/posts/polymarket-trading-strategies</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -113,6 +167,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <lastmod>2025-12-26</lastmod>
+  </url>
+  <url>
+    <loc>https://alphawhale.trade/blog/posts/how-to-win-on-polymarket</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2025-12-23</lastmod>
   </url>
   <url>
     <loc>https://alphawhale.trade/blog/posts/polymarket-trading-guide</loc>
@@ -128,6 +188,12 @@
   </url>
   <url>
     <loc>https://alphawhale.trade/blog/posts/polymarket-for-beginners</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2025-12-21</lastmod>
+  </url>
+  <url>
+    <loc>https://alphawhale.trade/blog/posts/polymarket-tips-and-tricks</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <lastmod>2025-12-21</lastmod>
@@ -169,6 +235,24 @@
     <lastmod>2025-12-15</lastmod>
   </url>
   <url>
+    <loc>https://alphawhale.trade/blog/posts/prediction-market-strategies</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2025-12-14</lastmod>
+  </url>
+  <url>
+    <loc>https://alphawhale.trade/blog/posts/polymarket-competitors</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2025-12-13</lastmod>
+  </url>
+  <url>
+    <loc>https://alphawhale.trade/blog/posts/polymarket-vs-betting-sites</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2025-12-11</lastmod>
+  </url>
+  <url>
     <loc>https://alphawhale.trade/blog/posts/polymarket-election-trading</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -179,6 +263,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <lastmod>2025-12-10</lastmod>
+  </url>
+  <url>
+    <loc>https://alphawhale.trade/blog/posts/prediction-market-copy-trading</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2025-12-08</lastmod>
   </url>
   <url>
     <loc>https://alphawhale.trade/blog/posts/how-prediction-markets-work</loc>
@@ -217,10 +307,28 @@
     <lastmod>2025-12-01</lastmod>
   </url>
   <url>
+    <loc>https://alphawhale.trade/blog/posts/polymarket-scam-or-real</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2025-12-01</lastmod>
+  </url>
+  <url>
     <loc>https://alphawhale.trade/blog/posts/prediction-market-arbitrage</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <lastmod>2025-11-30</lastmod>
+  </url>
+  <url>
+    <loc>https://alphawhale.trade/blog/posts/polymarket-withdrawal</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2025-11-30</lastmod>
+  </url>
+  <url>
+    <loc>https://alphawhale.trade/blog/posts/polymarket-security</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2025-11-29</lastmod>
   </url>
   <url>
     <loc>https://alphawhale.trade/blog/posts/what-is-copy-trading</loc>
@@ -257,6 +365,18 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <lastmod>2025-11-19</lastmod>
+  </url>
+  <url>
+    <loc>https://alphawhale.trade/blog/posts/best-copy-trading-strategies</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2025-11-16</lastmod>
+  </url>
+  <url>
+    <loc>https://alphawhale.trade/blog/posts/copy-trading-risks</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2025-11-14</lastmod>
   </url>
   <url>
     <loc>https://alphawhale.trade/blog/posts/copy-trading-returns</loc>

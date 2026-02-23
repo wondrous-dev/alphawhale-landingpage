@@ -1,5 +1,4 @@
 ---
-noindex: true
 title: "Polymarket USA: Guide for American Traders"
 slug: "polymarket-usa-guide"
 description: "Everything US-based traders need to know about Polymarket. Understand regulations, access, and how to trade prediction markets from the United States."
