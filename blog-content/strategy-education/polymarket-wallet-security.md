@@ -1,5 +1,4 @@
 ---
-noindex: true
 title: "Polymarket Wallet Setup and Security: Protect Your Funds"
 slug: "polymarket-wallet-security"
 description: "Learn how to set up and secure your Polymarket wallet. Understand best practices for protecting your funds and trading safely."

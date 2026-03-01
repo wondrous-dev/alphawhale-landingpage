@@ -1,5 +1,4 @@
 ---
-noindex: true
 title: "Polymarket Social Trading: Learn and Earn from Top Traders"
 slug: "polymarket-social-trading"
 description: "Discover social trading on Polymarket through Alpha Whale. Follow successful traders, learn their strategies, and automate your prediction market success."

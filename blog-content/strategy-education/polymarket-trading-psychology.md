@@ -1,5 +1,4 @@
 ---
-noindex: true
 title: "Polymarket Trading Psychology: Master Your Mindset"
 slug: "polymarket-trading-psychology"
 description: "Understanding trading psychology is essential for Polymarket success. Learn to recognize and overcome the mental traps that undermine prediction market traders."

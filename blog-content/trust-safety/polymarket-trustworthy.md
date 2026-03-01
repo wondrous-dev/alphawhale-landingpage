@@ -1,5 +1,4 @@
 ---
-noindex: true
 title: "Is Polymarket Trustworthy? Building Confidence in the Platform"
 slug: "polymarket-trustworthy"
 description: "Evaluate Polymarket's trustworthiness based on track record, transparency, and user experience. Make informed decisions about prediction market trading."

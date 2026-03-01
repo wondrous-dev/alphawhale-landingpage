@@ -1,5 +1,4 @@
 ---
-noindex: true
 title: "Crypto Prediction Markets: Trading Digital Asset Forecasts"
 slug: "crypto-prediction-markets"
 description: "Explore prediction markets focused on cryptocurrency. Learn to trade Bitcoin price predictions, DeFi outcomes, and blockchain developments."

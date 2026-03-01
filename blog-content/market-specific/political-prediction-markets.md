@@ -1,5 +1,4 @@
 ---
-noindex: true
 title: "Political Prediction Markets: The Complete Trading Guide"
 slug: "political-prediction-markets"
 description: "Master political prediction markets on Polymarket. Learn strategies for trading elections, policy outcomes, and political events."

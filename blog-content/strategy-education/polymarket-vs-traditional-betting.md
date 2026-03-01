@@ -1,5 +1,4 @@
 ---
-noindex: true
 title: "Polymarket vs. Traditional Betting: Key Differences Explained"
 slug: "polymarket-vs-traditional-betting"
 description: "Understand how Polymarket differs from traditional betting. Learn the unique advantages of prediction markets over sportsbooks and betting platforms."
