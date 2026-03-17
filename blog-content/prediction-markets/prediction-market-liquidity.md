@@ -1,5 +1,4 @@
 ---
-noindex: true
 title: "Prediction Market Liquidity: Why It Matters and How to Trade It"
 slug: "prediction-market-liquidity"
 description: "Understand liquidity in prediction markets. Learn how liquidity affects your trading and strategies for navigating high and low liquidity environments."

@@ -1,5 +1,4 @@
 ---
-noindex: true
 title: "How Accurate Are Polymarket Predictions? A Data-Driven Analysis"
 slug: "polymarket-prediction-accuracy"
 description: "Discover how accurate Polymarket predictions really are. Analyze historical data on prediction market accuracy and what it means for traders."
