@@ -436,7 +436,8 @@ function buildIndex(posts, indexTemplatePath, outputDir) {
   // Sort posts by date (newest first)
   posts.sort((a, b) => new Date(b.date) - new Date(a.date));
   
-  const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);
+  const postsPerPage = Number.isFinite(POSTS_PER_PAGE) ? POSTS_PER_PAGE : posts.length;
+  const totalPages = Math.max(1, Math.ceil(posts.length / postsPerPage));
   
   // Generate featured posts (top 3)
   let featuredHTML = '';
@@ -455,8 +456,8 @@ function buildIndex(posts, indexTemplatePath, outputDir) {
   for (let page = 1; page <= totalPages; page++) {
     let index = fs.readFileSync(indexTemplatePath, 'utf-8');
     
-    const startIdx = (page - 1) * POSTS_PER_PAGE;
-    const endIdx = startIdx + POSTS_PER_PAGE;
+    const startIdx = (page - 1) * postsPerPage;
+    const endIdx = startIdx + postsPerPage;
     const pagePosts = posts.slice(startIdx, endIdx);
     
     // Generate post cards HTML
